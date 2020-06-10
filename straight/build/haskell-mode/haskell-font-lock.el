@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/haskell-mode/haskell-font-lock.el

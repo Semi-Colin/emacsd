@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/emacs-dashboard/banners/3.txt

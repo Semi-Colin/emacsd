@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/aggressive-indent-mode/aggressive-indent.el
