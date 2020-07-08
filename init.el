@@ -1,8 +1,3 @@
-;; Early Optimization
-(setq gc-cons-threshold most-positive-fixnum)
-(setq frame-inhibit-implied-resize t)
-(advice-add #'x-apply-session-resources :override #'ignore)
-
 ;; Configure Straight.el
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -18,12 +13,14 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Packages
+(straight-use-package 'use-package)
 (straight-use-package 'dracula-theme)
 (straight-use-package 'org) ; org mode is neat
 (straight-use-package 'org-bullets)
 (straight-use-package 'go-mode) ; programming modes
 (straight-use-package 'rust-mode)
 (straight-use-package 'haskell-mode)
+(straight-use-package 'gdscript-mode)
 (straight-use-package 'page-break-lines) ; dashboard and dependencies
 (straight-use-package 'projectile)
 (straight-use-package 'all-the-icons)
@@ -32,6 +29,16 @@
 (straight-use-package 'modalka)
 (straight-use-package 'telephone-line)
 (straight-use-package 'easy-kill)
+(straight-use-package 'evil)
+(use-package company
+  :config
+  (add-to-list 'company-backends 'company-capf)
+  :straight t
+  )
+(straight-use-package 'company-go)
+(straight-use-package 'lsp-mode)
+(straight-use-package 'flycheck)
+(straight-use-package 'esup)
 
 ;; Aesthetics
 (setq linum-delay t)
@@ -41,7 +48,7 @@
 (tool-bar-mode -1)
 
 (load-theme 'dracula t)
-(set-frame-font "iosevka 14" nil)
+(set-frame-font "iosevka 15" nil)
 
 (telephone-line-mode 1)
 
@@ -86,13 +93,33 @@
   (forward-line -1)
   (indent-according-to-mode))
 
+(defun open-next-line ()
+  "Insert a new line and go to it."
+  (interactive)
+  (end-of-line 1)
+  (open-line 1)
+  (next-line 1))
+
+(defun open-prev-line ()
+  "Insert a new line behind and go to it."
+  (interactive)
+  (previous-line 1)
+  (end-of-line 1)
+  (open-line 1)
+  (next-line 1))
+
+(defalias 'w 'save-buffer)
+(defalias 'q 'delete-window)
+(defalias 'qa 'save-buffers-kill-terminal)
+(defalias 'e 'find-file)
+
 ;; Keys
 (modalka-global-mode 1) ; enable modalka everywhere
 (setq-default cursor-type '(bar . 1))
 (setq modalka-cursor-type 'box)
 (global-set-key (kbd "<escape>") 'modalka-mode) ; toggle insert and normal mode
 
-; map numbers to universal
+					; map numbers to universal
 (modalka-define-kbd "1" "C-1")
 (modalka-define-kbd "2" "C-2")
 (modalka-define-kbd "3" "C-3")
@@ -104,14 +131,18 @@
 (modalka-define-kbd "9" "C-9")
 (modalka-define-kbd "0" "C-0")
 
-(modalka-define-kbd "z" "C-SPC") ; mark
+(modalka-define-kbd "v" "C-SPC") ; mark
 (modalka-define-kbd "q" "C-/") ; undo
 (modalka-define-kbd "w" "M-w") ; copy
 (modalka-define-kbd "e" "C-y") ; paste
 (modalka-define-kbd "W" "C-w") ; cut
 (modalka-define-kbd "E" "M-y") ; weird paste
 
-(define-key modalka-mode-map (kbd "v") #'backward-delete-char)
+(define-key modalka-mode-map (kbd "x") #'delete-char) ; delete-character
+(define-key modalka-mode-map (kbd "c") #'open-next-line)
+(define-key modalka-mode-map (kbd "C") #'open-prev-line)
+
+(modalka-define-kbd ":" "M-x")
 
 (modalka-define-kbd "i" "C-p") ; up char
 (modalka-define-kbd "k" "C-n") ; down char
@@ -123,7 +154,7 @@
 (define-key modalka-mode-map (kbd "M-i") #'move-line-up)
 (define-key modalka-mode-map (kbd "M-k") #'move-line-down)
 
-(define-key modalka-mode-map (kbd "x") #'easy-mark)
+(define-key modalka-mode-map (kbd "V") #'easy-mark)
 
 (modalka-define-kbd "h" "C-a") ; beginning of line
 (modalka-define-kbd ";" "C-e") ; end of line
@@ -148,6 +179,12 @@
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+;; IDEmacs
+(add-hook 'after-init-hook 'global-company-mode)
+(setq company-dabbrev-downcase 0)
+
+(global-flycheck-mode)
 
 ;; Programming
 

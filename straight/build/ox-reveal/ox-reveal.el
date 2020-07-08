@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/org-reveal/ox-reveal.el

@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/emacs-gdscript-mode/gdscript-keywords.el

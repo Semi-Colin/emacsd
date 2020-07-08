@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/gocode/emacs-company/company-go.el
