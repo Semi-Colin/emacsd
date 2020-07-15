@@ -3,7 +3,7 @@
 
 "28.0.50"
 
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ("2020-07-07 20:55:35" ("emacs") (:type git :host github :repo "raxod502/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "org-elpa" ("2020-07-07 20:55:35" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2020-07-07 20:55:35" nil (:type git :host github :repo "melpa/melpa" :no-build t :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2020-07-07 20:55:35" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :no-build t :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "emacsmirror-mirror" ("2020-07-07 20:55:35" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :no-build t :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "dracula-theme" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "dracula/emacs" :package "dracula-theme" :local-repo "emacs")) "org" ("2020-07-07 20:55:35" nil (:type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org" :package "org")) "org-bullets" ("2020-07-07 20:55:35" nil (:type git :flavor melpa :host github :repo "integral-dw/org-bullets" :package "org-bullets" :local-repo "org-bullets")) "go-mode" ("2020-07-07 20:55:35" nil (:type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el" :package "go-mode" :local-repo "go-mode.el")) "rust-mode" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "rust-lang/rust-mode" :package "rust-mode" :local-repo "rust-mode")) "page-break-lines" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "purcell/page-break-lines" :package "page-break-lines" :local-repo "page-break-lines")) "projectile" ("2020-07-07 20:55:35" ("emacs" "pkg-info") (:type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile" :package "projectile" :local-repo "projectile")) "pkg-info" ("2020-07-07 20:55:35" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2020-07-07 20:55:35" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "all-the-icons" ("2020-07-07 20:55:35" ("emacs" "memoize") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "memoize" ("2020-07-07 20:55:35" nil (:type git :flavor melpa :host github :repo "skeeto/emacs-memoize" :package "memoize" :local-repo "emacs-memoize")) "dashboard" ("2020-07-07 20:55:35" ("emacs" "page-break-lines") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "aggressive-indent" ("2020-07-07 20:55:35" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "Malabarba/aggressive-indent-mode" :package "aggressive-indent" :local-repo "aggressive-indent-mode")) "xah-fly-keys" ("2020-06-03 10:55:13" ("emacs") (:type git :flavor melpa :host github :repo "xahlee/xah-fly-keys" :package "xah-fly-keys" :local-repo "xah-fly-keys")) "modalka" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "mrkkrp/modalka" :package "modalka" :local-repo "modalka")) "telephone-line" ("2020-07-07 20:55:35" ("emacs" "cl-lib" "cl-generic" "seq") (:type git :flavor melpa :host github :repo "dbordak/telephone-line" :package "telephone-line" :local-repo "telephone-line")) "haskell-mode" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :files (:defaults "NEWS" "logo.svg" "haskell-mode-pkg.el") :host github :repo "haskell/haskell-mode" :package "haskell-mode" :local-repo "haskell-mode")) "haskell-emacs" ("2020-06-03 15:11:30" nil (:type git :flavor melpa :files (:defaults "*.hs" "*.org" "Foreign" "haskell-emacs-pkg.el") :host github :repo "knupfer/haskell-emacs" :package "haskell-emacs" :local-repo "haskell-emacs")) "golint" ("2020-06-15 18:20:13" nil (:type git :flavor melpa :files ("misc/emacs/*.el" "golint-pkg.el") :host github :repo "golang/lint" :package "golint" :local-repo "lint")) "helm" ("2020-06-09 09:32:46" ("emacs" "async" "popup" "helm-core") (:type git :flavor melpa :files ("*.el" "emacs-helm.sh" (:exclude "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") "helm-pkg.el") :host github :repo "emacs-helm/helm" :package "helm" :local-repo "helm")) "async" ("2020-06-09 09:32:44" ("emacs") (:type git :flavor melpa :host github :repo "jwiegley/emacs-async" :package "async" :local-repo "emacs-async")) "popup" ("2020-06-09 09:32:45" ("emacs" "cl-lib") (:type git :flavor melpa :files ("popup.el" "popup-pkg.el") :host github :repo "auto-complete/popup-el" :package "popup" :local-repo "popup-el")) "helm-core" ("2020-06-09 09:32:45" ("emacs" "async") (:flavor melpa :files ("helm-core-pkg.el" "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") :package "helm-core" :local-repo "helm" :type git :repo "emacs-helm/helm" :host github)) "easy-kill" ("2020-07-07 20:55:35" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "leoliu/easy-kill" :package "easy-kill" :local-repo "easy-kill")) "org-journal" ("2020-06-13 21:11:49" ("emacs" "org") (:type git :flavor melpa :host github :repo "bastibe/org-journal" :package "org-journal" :local-repo "org-journal")) "evil" ("2020-07-07 20:55:35" ("emacs" "undo-tree" "goto-chg" "cl-lib") (:type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil" :package "evil" :local-repo "evil")) "undo-tree" ("2020-07-07 20:55:35" nil (:type git :host github :repo "emacs-straight/undo-tree" :files ("*" (:exclude ".git")) :package "undo-tree" :local-repo "undo-tree")) "goto-chg" ("2020-07-07 20:55:35" ("undo-tree") (:type git :flavor melpa :host github :repo "emacs-evil/goto-chg" :package "goto-chg" :local-repo "goto-chg")) "org-present" ("2020-06-24 15:31:42" ("org") (:type git :flavor melpa :host github :repo "rlister/org-present" :package "org-present" :local-repo "org-present")) "ox-reveal" ("2020-06-25 15:34:00" ("org") (:type git :flavor melpa :host github :repo "yjwen/org-reveal" :package "ox-reveal" :local-repo "org-reveal")) "company" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "company-mode/company-mode" :package "company" :local-repo "company-mode")) "company-go" ("2020-07-07 20:55:35" ("company" "go-mode") (:type git :flavor melpa :files ("emacs-company/company-go.el" "company-go-pkg.el") :host github :repo "mdempsky/gocode" :package "company-go" :local-repo "gocode")) "lsp-mode" ("2020-07-07 20:55:35" ("emacs" "dash" "dash-functional" "f" "ht" "spinner" "markdown-mode" "lv") (:type git :flavor melpa :host github :repo "emacs-lsp/lsp-mode" :package "lsp-mode" :local-repo "lsp-mode")) "dash" ("2020-07-07 20:55:35" nil (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "dash-functional" ("2020-07-07 20:55:35" ("dash" "emacs") (:flavor melpa :files ("dash-functional.el" "dash-functional-pkg.el") :package "dash-functional" :local-repo "dash.el" :type git :repo "magnars/dash.el" :host github)) "f" ("2020-07-07 20:55:35" ("s" "dash") (:type git :flavor melpa :files ("f.el" "f-pkg.el") :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "s" ("2020-07-07 20:55:35" nil (:type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "ht" ("2020-07-07 20:55:35" ("dash") (:type git :flavor melpa :files ("ht.el" "ht-pkg.el") :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "spinner" ("2020-07-07 20:55:35" nil (:type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git")) :package "spinner" :local-repo "spinner")) "markdown-mode" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "lv" ("2020-07-07 20:55:35" nil (:type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra" :package "lv" :local-repo "hydra")) "gdscript-mode" ("2020-07-07 20:55:35" ("emacs") (:type git :flavor melpa :host github :repo "GDQuest/emacs-gdscript-mode" :package "gdscript-mode" :local-repo "emacs-gdscript-mode")) "flycheck" ("2020-07-07 20:55:35" ("dash" "pkg-info" "let-alist" "seq" "emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "let-alist" ("2020-07-07 20:55:35" ("emacs") (:type git :host github :repo "emacsmirror/let-alist" :package "let-alist" :local-repo "let-alist")) "company-box" ("2020-07-05 11:53:47" ("emacs" "dash" "dash-functional" "company") (:type git :flavor melpa :files (:defaults "images" "company-box-pkg.el") :host github :repo "sebastiencs/company-box" :package "company-box" :local-repo "company-box")) "esup" ("2020-07-07 20:55:35" ("cl-lib" "emacs") (:type git :flavor melpa :host github :repo "jschaf/esup" :package "esup" :local-repo "esup")) "use-package" ("2020-07-07 20:55:35" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2020-07-07 20:55:35" nil (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github))))
+#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ("2020-07-15 08:28:51" ("emacs") (:type git :host github :repo "raxod502/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "org-elpa" ("2020-07-15 08:28:51" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2020-07-15 08:28:51" nil (:type git :host github :repo "melpa/melpa" :no-build t :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2020-07-15 08:28:51" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :no-build t :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "emacsmirror-mirror" ("2020-07-15 08:28:51" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :no-build t :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "dracula-theme" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "dracula/emacs" :package "dracula-theme" :local-repo "emacs")) "org" ("2020-07-15 08:28:51" nil (:type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org" :package "org")) "org-bullets" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :host github :repo "integral-dw/org-bullets" :package "org-bullets" :local-repo "org-bullets")) "go-mode" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el" :package "go-mode" :local-repo "go-mode.el")) "rust-mode" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "rust-lang/rust-mode" :package "rust-mode" :local-repo "rust-mode")) "page-break-lines" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "purcell/page-break-lines" :package "page-break-lines" :local-repo "page-break-lines")) "projectile" ("2020-07-10 15:30:42" ("emacs" "pkg-info") (:type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile" :package "projectile" :local-repo "projectile")) "pkg-info" ("2020-07-15 08:28:51" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2020-07-15 08:28:51" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "all-the-icons" ("2020-07-15 08:28:51" ("emacs" "memoize") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "memoize" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :host github :repo "skeeto/emacs-memoize" :package "memoize" :local-repo "emacs-memoize")) "dashboard" ("2020-07-15 08:28:51" ("emacs" "page-break-lines") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "aggressive-indent" ("2020-07-15 08:28:51" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "Malabarba/aggressive-indent-mode" :package "aggressive-indent" :local-repo "aggressive-indent-mode")) "xah-fly-keys" ("2020-06-03 10:55:13" ("emacs") (:type git :flavor melpa :host github :repo "xahlee/xah-fly-keys" :package "xah-fly-keys" :local-repo "xah-fly-keys")) "modalka" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "mrkkrp/modalka" :package "modalka" :local-repo "modalka")) "telephone-line" ("2020-07-15 08:28:51" ("emacs" "cl-lib" "cl-generic" "seq") (:type git :flavor melpa :host github :repo "dbordak/telephone-line" :package "telephone-line" :local-repo "telephone-line")) "haskell-mode" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :files (:defaults "NEWS" "logo.svg" "haskell-mode-pkg.el") :host github :repo "haskell/haskell-mode" :package "haskell-mode" :local-repo "haskell-mode")) "haskell-emacs" ("2020-06-03 15:11:30" nil (:type git :flavor melpa :files (:defaults "*.hs" "*.org" "Foreign" "haskell-emacs-pkg.el") :host github :repo "knupfer/haskell-emacs" :package "haskell-emacs" :local-repo "haskell-emacs")) "golint" ("2020-06-15 18:20:13" nil (:type git :flavor melpa :files ("misc/emacs/*.el" "golint-pkg.el") :host github :repo "golang/lint" :package "golint" :local-repo "lint")) "helm" ("2020-06-09 09:32:46" ("emacs" "async" "popup" "helm-core") (:type git :flavor melpa :files ("*.el" "emacs-helm.sh" (:exclude "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") "helm-pkg.el") :host github :repo "emacs-helm/helm" :package "helm" :local-repo "helm")) "async" ("2020-06-09 09:32:44" ("emacs") (:type git :flavor melpa :host github :repo "jwiegley/emacs-async" :package "async" :local-repo "emacs-async")) "popup" ("2020-06-09 09:32:45" ("emacs" "cl-lib") (:type git :flavor melpa :files ("popup.el" "popup-pkg.el") :host github :repo "auto-complete/popup-el" :package "popup" :local-repo "popup-el")) "helm-core" ("2020-06-09 09:32:45" ("emacs" "async") (:flavor melpa :files ("helm-core-pkg.el" "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") :package "helm-core" :local-repo "helm" :type git :repo "emacs-helm/helm" :host github)) "easy-kill" ("2020-07-15 08:28:51" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "leoliu/easy-kill" :package "easy-kill" :local-repo "easy-kill")) "org-journal" ("2020-07-15 08:28:51" ("emacs" "org") (:type git :flavor melpa :host github :repo "bastibe/org-journal" :package "org-journal" :local-repo "org-journal")) "evil" ("2020-07-10 15:30:42" ("emacs" "undo-tree" "goto-chg" "cl-lib") (:type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil" :package "evil" :local-repo "evil")) "undo-tree" ("2020-07-10 15:30:42" nil (:type git :host github :repo "emacs-straight/undo-tree" :files ("*" (:exclude ".git")) :package "undo-tree" :local-repo "undo-tree")) "goto-chg" ("2020-07-10 15:30:42" ("undo-tree") (:type git :flavor melpa :host github :repo "emacs-evil/goto-chg" :package "goto-chg" :local-repo "goto-chg")) "org-present" ("2020-06-24 15:31:42" ("org") (:type git :flavor melpa :host github :repo "rlister/org-present" :package "org-present" :local-repo "org-present")) "ox-reveal" ("2020-06-25 15:34:00" ("org") (:type git :flavor melpa :host github :repo "yjwen/org-reveal" :package "ox-reveal" :local-repo "org-reveal")) "company" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "company-mode/company-mode" :package "company" :local-repo "company-mode")) "company-go" ("2020-07-15 08:28:51" ("company" "go-mode") (:type git :flavor melpa :files ("emacs-company/company-go.el" "company-go-pkg.el") :host github :repo "mdempsky/gocode" :package "company-go" :local-repo "gocode")) "lsp-mode" ("2020-07-15 08:28:51" ("emacs" "dash" "dash-functional" "f" "ht" "spinner" "markdown-mode" "lv") (:type git :flavor melpa :host github :repo "emacs-lsp/lsp-mode" :package "lsp-mode" :local-repo "lsp-mode")) "dash" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "dash-functional" ("2020-07-15 08:28:51" ("dash" "emacs") (:flavor melpa :files ("dash-functional.el" "dash-functional-pkg.el") :package "dash-functional" :local-repo "dash.el" :type git :repo "magnars/dash.el" :host github)) "f" ("2020-07-15 08:28:51" ("s" "dash") (:type git :flavor melpa :files ("f.el" "f-pkg.el") :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "s" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "ht" ("2020-07-15 08:28:51" ("dash") (:type git :flavor melpa :files ("ht.el" "ht-pkg.el") :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "spinner" ("2020-07-15 08:28:51" nil (:type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git")) :package "spinner" :local-repo "spinner")) "markdown-mode" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "jrblevin/markdown-mode" :package "markdown-mode" :local-repo "markdown-mode")) "lv" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra" :package "lv" :local-repo "hydra")) "gdscript-mode" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "GDQuest/emacs-gdscript-mode" :package "gdscript-mode" :local-repo "emacs-gdscript-mode")) "flycheck" ("2020-07-15 08:28:51" ("dash" "pkg-info" "let-alist" "seq" "emacs") (:type git :flavor melpa :host github :repo "flycheck/flycheck" :package "flycheck" :local-repo "flycheck")) "let-alist" ("2020-07-15 08:28:51" ("emacs") (:type git :host github :repo "emacsmirror/let-alist" :package "let-alist" :local-repo "let-alist")) "company-box" ("2020-07-05 11:53:47" ("emacs" "dash" "dash-functional" "company") (:type git :flavor melpa :files (:defaults "images" "company-box-pkg.el") :host github :repo "sebastiencs/company-box" :package "company-box" :local-repo "company-box")) "esup" ("2020-07-10 15:48:30" ("cl-lib" "emacs") (:type git :flavor melpa :host github :repo "jschaf/esup" :package "esup" :local-repo "esup")) "use-package" ("2020-07-15 08:28:51" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2020-07-15 08:28:51" nil (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "xkcd" ("2020-07-09 10:36:55" ("json") (:type git :flavor melpa :host github :repo "vibhavp/emacs-xkcd" :package "xkcd" :local-repo "emacs-xkcd")) "cargo" ("2020-07-09 20:38:06" ("emacs" "rust-mode" "markdown-mode") (:type git :flavor melpa :host github :repo "kwrooijen/cargo.el" :package "cargo" :local-repo "cargo.el")) "org-recur" ("2020-07-15 08:28:51" ("emacs" "org") (:type git :flavor melpa :host github :repo "m-cat/org-recur" :package "org-recur" :local-repo "org-recur")) "ido-vertical-mode" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :host github :repo "creichert/ido-vertical-mode.el" :package "ido-vertical-mode" :local-repo "ido-vertical-mode.el")) "gcmh" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host gitlab :repo "koral/gcmh" :package "gcmh" :local-repo "gcmh")) "deft" ("2020-07-15 08:28:51" nil (:type git :flavor melpa :host github :repo "jrblevin/deft" :package "deft" :local-repo "deft")) "smex" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "nonsequitur/smex" :package "smex" :local-repo "smex")) "poet-theme" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "kunalb/poet" :package "poet-theme" :local-repo "poet")) "visual-fill-column" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :host github :repo "joostkremers/visual-fill-column" :package "visual-fill-column" :local-repo "visual-fill-column")) "general" ("2020-07-15 08:28:51" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/general.el" :package "general" :local-repo "general.el")) "org-notebook" ("2020-07-14 20:42:17" ("emacs" "org" "cl-lib") (:type git :flavor melpa :host github :repo "Rahi374/org-notebook" :package "org-notebook" :local-repo "org-notebook")) "org-roam" ("2020-07-15 08:28:51" ("emacs" "dash" "f" "s" "org" "emacsql" "emacsql-sqlite3") (:type git :flavor melpa :host github :repo "org-roam/org-roam" :package "org-roam" :local-repo "org-roam")) "emacsql" ("2020-07-15 08:28:51" ("emacs") (:type git :flavor melpa :files ("emacsql.el" "emacsql-compiler.el" "emacsql-system.el" "README.md" "emacsql-pkg.el") :host github :repo "skeeto/emacsql" :package "emacsql" :local-repo "emacsql")) "emacsql-sqlite3" ("2020-07-15 08:28:51" ("emacs" "emacsql") (:type git :flavor melpa :host github :repo "cireu/emacsql-sqlite3" :package "emacsql-sqlite3" :local-repo "emacsql-sqlite3"))))
 
 #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ((straight-x straight straight-autoloads) (autoload 'straight-get-recipe "straight" "Interactively select a recipe from one of the recipe repositories.
 All recipe repositories in `straight-recipe-repositories' will
@@ -2838,10 +2838,601 @@ instead.
 
 (fn PACKAGE)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "use-package-jump" '("use-package-find-require"))) (autoload 'use-package-lint "use-package-lint" "Check for errors in use-package declarations.
 For example, if the module's `:if' condition is met, but even
-with the specified `:load-path' the module cannot be found." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "use-package-lint" '("use-package-lint-declaration"))) (provide 'use-package-autoloads))))
+with the specified `:load-path' the module cannot be found." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "use-package-lint" '("use-package-lint-declaration"))) (provide 'use-package-autoloads)) "xkcd" ((xkcd-autoloads xkcd) (autoload 'xkcd-mode "xkcd" "Major mode for viewing xkcd (http://xkcd.com/) comics.
 
-#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 1 "melpa" nil "gnu-elpa-mirror" nil "emacsmirror-mirror" nil "straight" nil "dracula-theme" nil "org" (org :type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org") "org-bullets" nil "go-mode" nil "rust-mode" nil "page-break-lines" nil "projectile" nil "pkg-info" nil "epl" nil "cl-lib" nil "all-the-icons" nil "memoize" nil "dashboard" nil "agressive-indent-mode" nil "agressive-indent" nil "aggressive-indent" nil "xah-fly-keys" nil "modalka" nil "telephone-line" nil "cl-generic" nil "seq" nil "haskell-mode" nil "haskell-emacs" nil "golint" nil "helm" nil "async" nil "popup" nil "helm-core" nil "easy-kill" nil "org-journal" nil "evil" nil "undo-tree" nil "goto-chg" nil "org-present" nil "ox-reveal" nil "company" nil "company-go" nil "lsp-mode" nil "dash" nil "dash-functional" nil "f" nil "s" nil "ht" nil "spinner" nil "markdown-mode" nil "lv" nil "gdscript-mode" nil "flycheck" nil "let-alist" nil "company-box" nil "fly-check" nil "esup" nil "use-package" nil "bind-key" nil)) melpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "emacsmirror-mirror" nil "straight" nil "dracula-theme" (dracula-theme :type git :flavor melpa :host github :repo "dracula/emacs") "org-bullets" (org-bullets :type git :flavor melpa :host github :repo "integral-dw/org-bullets") "go-mode" (go-mode :type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el") "rust-mode" (rust-mode :type git :flavor melpa :host github :repo "rust-lang/rust-mode") "page-break-lines" (page-break-lines :type git :flavor melpa :host github :repo "purcell/page-break-lines") "projectile" (projectile :type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "cl-lib" nil "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "memoize" (memoize :type git :flavor melpa :host github :repo "skeeto/emacs-memoize") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard") "agressive-indent-mode" nil "agressive-indent" nil "aggressive-indent" (aggressive-indent :type git :flavor melpa :host github :repo "Malabarba/aggressive-indent-mode") "xah-fly-keys" (xah-fly-keys :type git :flavor melpa :host github :repo "xahlee/xah-fly-keys") "modalka" (modalka :type git :flavor melpa :host github :repo "mrkkrp/modalka") "telephone-line" (telephone-line :type git :flavor melpa :host github :repo "dbordak/telephone-line") "cl-generic" nil "seq" nil "haskell-mode" (haskell-mode :type git :flavor melpa :files (:defaults "NEWS" "logo.svg" "haskell-mode-pkg.el") :host github :repo "haskell/haskell-mode") "haskell-emacs" (haskell-emacs :type git :flavor melpa :files (:defaults "*.hs" "*.org" "Foreign" "haskell-emacs-pkg.el") :host github :repo "knupfer/haskell-emacs") "golint" (golint :type git :flavor melpa :files ("misc/emacs/*.el" "golint-pkg.el") :host github :repo "golang/lint") "helm" (helm :type git :flavor melpa :files ("*.el" "emacs-helm.sh" (:exclude "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") "helm-pkg.el") :host github :repo "emacs-helm/helm") "async" (async :type git :flavor melpa :host github :repo "jwiegley/emacs-async") "popup" (popup :type git :flavor melpa :files ("popup.el" "popup-pkg.el") :host github :repo "auto-complete/popup-el") "helm-core" (helm-core :type git :flavor melpa :files ("helm-core-pkg.el" "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") :host github :repo "emacs-helm/helm") "easy-kill" (easy-kill :type git :flavor melpa :host github :repo "leoliu/easy-kill") "org-journal" (org-journal :type git :flavor melpa :host github :repo "bastibe/org-journal") "evil" (evil :type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil") "undo-tree" nil "goto-chg" (goto-chg :type git :flavor melpa :host github :repo "emacs-evil/goto-chg") "org-present" (org-present :type git :flavor melpa :host github :repo "rlister/org-present") "ox-reveal" (ox-reveal :type git :flavor melpa :host github :repo "yjwen/org-reveal") "company" (company :type git :flavor melpa :host github :repo "company-mode/company-mode") "company-go" (company-go :type git :flavor melpa :files ("emacs-company/company-go.el" "company-go-pkg.el") :host github :repo "mdempsky/gocode") "lsp-mode" (lsp-mode :type git :flavor melpa :host github :repo "emacs-lsp/lsp-mode") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "dash-functional" (dash-functional :type git :flavor melpa :files ("dash-functional.el" "dash-functional-pkg.el") :host github :repo "magnars/dash.el") "f" (f :type git :flavor melpa :files ("f.el" "f-pkg.el") :host github :repo "rejeep/f.el") "s" (s :type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el") "ht" (ht :type git :flavor melpa :files ("ht.el" "ht-pkg.el") :host github :repo "Wilfred/ht.el") "spinner" nil "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "lv" (lv :type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra") "gdscript-mode" (gdscript-mode :type git :flavor melpa :host github :repo "GDQuest/emacs-gdscript-mode") "flycheck" (flycheck :type git :flavor melpa :host github :repo "flycheck/flycheck") "let-alist" nil "company-box" (company-box :type git :flavor melpa :files (:defaults "images" "company-box-pkg.el") :host github :repo "sebastiencs/company-box") "fly-check" nil "esup" (esup :type git :flavor melpa :host github :repo "jschaf/esup") "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "agressive-indent-mode" nil "agressive-indent" nil "cl-generic" nil "seq" nil "undo-tree" (undo-tree :type git :host github :repo "emacs-straight/undo-tree" :files ("*" (:exclude ".git"))) "spinner" (spinner :type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git"))) "let-alist" nil "fly-check" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "agressive-indent-mode" nil "agressive-indent" nil "cl-generic" nil "seq" nil "let-alist" (let-alist :type git :host github :repo "emacsmirror/let-alist") "fly-check" nil))))
+(fn)" t nil) (autoload 'xkcd-get "xkcd" "Get the xkcd number NUM.
 
-("org-elpa" "melpa" "gnu-elpa-mirror" "emacsmirror-mirror" "straight" "emacs" "use-package" "bind-key" "dracula-theme" "org" "org-bullets" "go-mode" "rust-mode" "haskell-mode" "gdscript-mode" "page-break-lines" "projectile" "pkg-info" "epl" "cl-lib" "all-the-icons" "memoize" "dashboard" "aggressive-indent" "modalka" "telephone-line" "cl-generic" "seq" "easy-kill" "evil" "undo-tree" "goto-chg" "company" "company-go" "lsp-mode" "dash" "dash-functional" "f" "s" "ht" "spinner" "markdown-mode" "lv" "flycheck" "let-alist" "esup")
+(fn NUM)" t nil) (autoload 'xkcd-get-latest "xkcd" "Get the latest xkcd." t nil) (defalias 'xkcd 'xkcd-get-latest) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "xkcd" '("get-xkcd-from-url" "xkcd-"))) (provide 'xkcd-autoloads)) "cargo" ((cargo-process cargo cargo-autoloads) (autoload 'cargo-minor-mode "cargo" "Cargo minor mode. Used to hold keybindings for cargo-mode.
+
+If called interactively, enable cargo minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\\{cargo-minor-mode-map}
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cargo" '("cargo-minor-mode"))) (autoload 'cargo-process-bench "cargo-process" "Run the Cargo bench command.
+With the prefix argument, modify the command's invocation.
+Cargo: Run the benchmarks." t nil) (autoload 'cargo-process-build "cargo-process" "Run the Cargo build command.
+With the prefix argument, modify the command's invocation.
+Cargo: Compile the current project." t nil) (autoload 'cargo-process-clean "cargo-process" "Run the Cargo clean command.
+With the prefix argument, modify the command's invocation.
+Cargo: Remove the target directory." t nil) (autoload 'cargo-process-doc "cargo-process" "Run the Cargo doc command.
+With the prefix argument, modify the command's invocation.
+Cargo: Build this project's and its dependencies' documentation." t nil) (autoload 'cargo-process-doc-open "cargo-process" "Run the Cargo doc command with the --open switch.
+With the prefix argument, modify the command's invocation.
+Cargo: Open this project's documentation." t nil) (autoload 'cargo-process-new "cargo-process" "Run the Cargo new command.
+With the prefix argument, modify the command's invocation.
+NAME is the name of your application.
+If BIN is t then create a binary application, otherwise a library.
+Cargo: Create a new cargo project.
+
+(fn NAME &optional BIN)" t nil) (autoload 'cargo-process-init "cargo-process" "Run the Cargo init command.
+With the prefix argument, modify the command's invocation.
+DIRECTORY is the directory you want to create a cargo project in.
+If BIN is t then create a binary application, otherwise a library.
+Cargo: Create a new cargo project in current directory.
+
+DIRECTORY is created if necessary.
+
+(fn DIRECTORY &optional BIN)" t nil) (autoload 'cargo-process-run "cargo-process" "Run the Cargo run command.
+With the prefix argument, modify the command's invocation.
+Cargo: Build and execute src/main.rs." t nil) (autoload 'cargo-process-run-bin "cargo-process" "Run the Cargo run command --bin <name>.
+With the prefix argument, modify the command's invocation.
+Cargo: Build and execute a specific binary
+
+(fn COMMAND)" t nil) (autoload 'cargo-process-run-example "cargo-process" "Run the Cargo run command --example <name>.
+With the prefix argument, modify the command's invocation.
+Cargo: Build and execute with --example <name>.
+
+(fn COMMAND)" t nil) (autoload 'cargo-process-search "cargo-process" "Run the Cargo search command.
+With the prefix argument, modify the command's invocation.
+SEARCH-TERM is used as the search term for the Cargo registry.
+Cargo: Search registry for crates.
+
+(fn SEARCH-TERM)" t nil) (autoload 'cargo-process-test "cargo-process" "Run the Cargo test command.
+With the prefix argument, modify the command's invocation.
+Cargo: Run the tests." t nil) (autoload 'cargo-process-current-test "cargo-process" "Run the Cargo test command for the current test.
+With the prefix argument, modify the command's invocation.
+Cargo: Run the tests." t nil) (autoload 'cargo-process-current-file-tests "cargo-process" "Run the Cargo test command for the current file.
+With the prefix argument, modify the command's invocation.
+Cargo: Run the tests." t nil) (autoload 'cargo-process-update "cargo-process" "Run the Cargo update command.
+With the prefix argument, modify the command's invocation.
+Cargo: Update dependencies listed in Cargo.lock." t nil) (autoload 'cargo-process-fmt "cargo-process" "Run the Cargo fmt command.
+With the prefix argument, modify the command's invocation.
+Requires Cargo Fmt to be installed." t nil) (autoload 'cargo-process-outdated "cargo-process" "Run the Cargo outdated command.
+With the prefix argument, modify the command's invocation.
+Requires Cargo Outdated to be installed." t nil) (autoload 'cargo-process-check "cargo-process" "Run the Cargo check command.
+With the prefix argument, modify the command's invocation.
+Cargo: Check compile the current project.
+Requires cargo-check to be installed." t nil) (autoload 'cargo-process-clippy "cargo-process" "Run the Cargo clippy command.
+With the prefix argument, modify the command's invocation.
+Cargo: Clippy compile the current project.
+Requires Cargo clippy to be installed." t nil) (autoload 'cargo-process-add "cargo-process" "Run the Cargo add command.
+With the prefix argument, modify the command's invocation.
+CRATES is the name of the crate to add.
+Cargo: This command allows you to add a dependency to a Cargo.toml manifest file.
+
+(fn CRATE)" t nil) (autoload 'cargo-process-audit "cargo-process" "Run the Cargo audit command.
+With the prefix argument, modify the command's invocation.
+Cargo: Audit checks the current project's Cargo.lock for security vulnerabilities.
+Requires Cargo Audit to be installed." t nil) (autoload 'cargo-process-rm "cargo-process" "Run the Cargo rm command.
+With the prefix argument, modify the command's invocation.
+CRATE is the name of the crate to remove.
+Cargo: Remove a dependency from a Cargo.toml manifest file.
+
+(fn CRATE)" t nil) (autoload 'cargo-process-upgrade "cargo-process" "Run the Cargo update command.
+With the prefix argument, modify the command's invocation.
+If ALL is t then update all crates, otherwise specify CRATES.
+Cargo: Upgrade dependencies as specified in the local manifest file
+
+(fn &optional ALL CRATES)" t nil) (autoload 'cargo-process-repeat "cargo-process" "Run the last cargo-process command." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cargo-process" '("cargo-" "manifest-path-argument" "rustc-errno" "set-rust-backtrace"))) (provide 'cargo-autoloads)) "org-recur" ((org-recur-autoloads org-recur) (autoload 'org-recur-finish "org-recur" "Reschedule an `org-mode' task according to its org-recur date string.
+The org-recur syntax is '|DATE|', where DATE can be either an
+absolute date or more commonly a delta, e.g. a task heading
+containing '|+2|' indicates to `org-recur-finish' to reschedule
+the task to two days from now.
+
+All date strings supported by `org-read-date' are available. Also
+available is 'wkdy' (customizable with `org-recur-weekday') which
+schedules the task to the next weekday (customizable with
+`org-recur-weekday-recurrence'). Also possible is the 'N1,N2,...'
+syntax, wherein the earliest date string among the set of N is
+selected. For example, '|Mon,Fri|' indicates that the task should
+recur every Monday and Friday, and the soonest among them is
+chosen when calling `org-recur-finish'.
+
+If the task does not contain org-recur syntax, then depending on
+the values of `org-recur-finish-done' and
+`org-recur-finish-archive' change the task status to DONE and/or
+archive it, respectively" t nil) (autoload 'org-recur-schedule-date "org-recur" "Schedule an `org-mode' task according to the org-recur syntax string in DATE.
+See `org-recur-finish' for the syntax.
+If no org-recur syntax is found, nothing happens.
+
+To schedule a task to tomorrow:
+
+#+BEGIN_SRC elisp
+(org-recur-schedule-date \"|+1|\")
+#+END_SRC
+
+(fn DATE)" t nil) (autoload 'org-recur-schedule-today "org-recur" "Schedule an `org-mode' task to the current date." t nil) (autoload 'org-recur-mode "org-recur" "Highlight org-recur dates in org-mode.
+
+With a prefix argument ARG, enable org-recur mode if ARG is
+positive, and disable it otherwise. If called from Lisp, enable
+the mode if ARG is omitted or nil, and toggle it if ARG is
+`toggle'.
+
+(fn &optional ARG)" t nil) (autoload 'org-recur-agenda-mode "org-recur" "Highlight org-recur dates in `org-agenda'.
+
+With a prefix argument ARG, enable org-recur-agenda mode if ARG
+is positive, and disable it otherwise. If called from Lisp,
+enable the mode if ARG is omitted or nil, and toggle it if ARG is
+`toggle'.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-recur" '("org-recur-"))) (provide 'org-recur-autoloads)) "ido-vertical-mode" ((ido-vertical-mode ido-vertical-mode-autoloads) (defvar ido-vertical-mode nil "Non-nil if Ido-Vertical mode is enabled.
+See the `ido-vertical-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `ido-vertical-mode'.") (custom-autoload 'ido-vertical-mode "ido-vertical-mode" nil) (autoload 'ido-vertical-mode "ido-vertical-mode" "Makes ido-mode display vertically.
+
+If called interactively, enable Ido-Vertical mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ido-vertical-mode" '("ido-vertical-" "turn-o"))) (provide 'ido-vertical-mode-autoloads)) "gcmh" ((gcmh-autoloads gcmh) (defvar gcmh-mode nil "Non-nil if Gcmh mode is enabled.
+See the `gcmh-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `gcmh-mode'.") (custom-autoload 'gcmh-mode "gcmh" nil) (autoload 'gcmh-mode "gcmh" "Minor mode to tweak Garbage Collection strategy.
+
+If called interactively, enable Gcmh mode if ARG is positive, and
+disable it if ARG is zero or negative.  If called from Lisp, also
+enable the mode if ARG is omitted or nil, and toggle it if ARG is
+`toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gcmh" '("gcmh-"))) (provide 'gcmh-autoloads)) "deft" ((deft-autoloads deft) (autoload 'deft-find-file "deft" "Find FILE interactively using the minibuffer.
+FILE must exist and be a relative or absolute path, with extension.
+If FILE is not inside `deft-directory', fall back to using `find-file'.
+
+(fn FILE)" t nil) (autoload 'deft-new-file "deft" "Create a new file quickly.
+Use either an automatically generated filename or the filter string if non-nil
+and `deft-use-filter-string-for-filename' is set.  If the filter string is
+non-nil and title is not from filename, use it as the title." t nil) (autoload 'deft "deft" "Switch to *Deft* buffer and load files." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "deft" '("deft-" "org-deft-store-link"))) (provide 'deft-autoloads)) "smex" ((smex-autoloads smex) (autoload 'smex "smex" nil t nil) (autoload 'smex-major-mode-commands "smex" "Like `smex', but limited to commands that are relevant to the active major mode." t nil) (autoload 'smex-initialize "smex" nil t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smex" '("smex-"))) (provide 'smex-autoloads)) "poet-theme" ((poet-theme poet-dark-theme poet-dark-monochrome-theme poet-monochrome-theme poet-theme-autoloads) (when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "poet-dark-monochrome-theme" '("poet-"))) (when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "poet-dark-theme" '("poet-"))) (when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "poet-monochrome-theme" '("poet-"))) (when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "poet-theme" '("poet"))) (provide 'poet-theme-autoloads)) "visual-fill-column" ((visual-fill-column-autoloads visual-fill-column) (autoload 'visual-fill-column-mode "visual-fill-column" "Wrap lines according to `fill-column' in `visual-line-mode'.
+
+If called interactively, enable Visual-Fill-Column mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (put 'global-visual-fill-column-mode 'globalized-minor-mode t) (defvar global-visual-fill-column-mode nil "Non-nil if Global Visual-Fill-Column mode is enabled.
+See the `global-visual-fill-column-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-visual-fill-column-mode'.") (custom-autoload 'global-visual-fill-column-mode "visual-fill-column" nil) (autoload 'global-visual-fill-column-mode "visual-fill-column" "Toggle Visual-Fill-Column mode in all buffers.
+With prefix ARG, enable Global Visual-Fill-Column mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Visual-Fill-Column mode is enabled in all buffers where
+`turn-on-visual-fill-column-mode' would do it.
+See `visual-fill-column-mode' for more information on Visual-Fill-Column mode.
+
+(fn &optional ARG)" t nil) (autoload 'visual-fill-column-split-window-sensibly "visual-fill-column" "Split WINDOW sensibly, unsetting its margins first.
+This function unsets the window margins and calls
+`split-window-sensibly'.
+
+By default, `split-window-sensibly' does not split a window
+vertically if it has wide margins, even if there is enough space
+for a vertical split.  This function can be used as the value of
+`split-window-preferred-function' to enable vertically splitting
+windows with wide margins.
+
+(fn &optional WINDOW)" nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "visual-fill-column" '("turn-on-visual-fill-column-mode" "visual-fill-column-"))) (provide 'visual-fill-column-autoloads)) "general" ((general \.dirs-local general-autoloads) (autoload 'general-define-key "general" "The primary key definition function provided by general.el.
+
+Define MAPS, optionally using DEFINER, in the keymap(s) corresponding to STATES
+and KEYMAPS.
+
+MAPS consists of paired keys (vectors or strings; also see
+`general-implicit-kbd') and definitions (those mentioned in `define-key''s
+docstring and general.el's \"extended\" definitions). All pairs (when not
+ignored) will be recorded and can be later displayed with
+`general-describe-keybindings'.
+
+If DEFINER is specified, a custom key definer will be used to bind MAPS. See
+general.el's documentation/README for more information.
+
+Unlike with normal key definitions functions, the keymaps in KEYMAPS should be
+quoted (this allows using the keymap name for other purposes, e.g. deferring
+keybindings if the keymap symbol is not bound, optionally inferring the
+corresponding major mode for a symbol by removing \"-map\" for :which-key,
+easily storing the keymap name for use with `general-describe-keybindings',
+etc.). Note that general.el provides other key definer macros that do not
+require quoting keymaps.
+
+STATES corresponds to the evil state(s) to bind the keys in. Non-evil users
+should not set STATES. When STATES is non-nil, `evil-define-key*' will be
+used (the evil auxiliary keymaps corresponding STATES and KEYMAPS will be used);
+otherwise `define-key' will be used (unless DEFINER is specified). KEYMAPS
+defaults to 'global. There is also 'local, which create buffer-local
+keybindings for both evil and non-evil keybindings. There are other special,
+user-alterable \"shorthand\" symbols for keymaps and states (see
+`general-keymap-aliases' and `general-state-aliases').
+
+Note that STATES and KEYMAPS can either be lists or single symbols. If any
+keymap does not exist, those keybindings will be deferred until the keymap does
+exist, so using `eval-after-load' is not necessary with this function.
+
+PREFIX corresponds to a key to prefix keys in MAPS with and defaults to none. To
+bind/unbind a key specified with PREFIX, \"\" can be specified as a key in
+MAPS (e.g. ...:prefix \"SPC\" \"\" nil... will unbind space).
+
+The keywords in this paragraph are only useful for evil users. If
+NON-NORMAL-PREFIX is specified, this prefix will be used instead of PREFIX for
+states in `general-non-normal-states' (e.g. the emacs and insert states). This
+argument will only have an effect if one of these states is in STATES or if
+corresponding global keymap (e.g. `evil-insert-state-map') is in KEYMAPS.
+Alternatively, GLOBAL-PREFIX can be used with PREFIX and/or NON-NORMAL-PREFIX to
+bind keys in all states under the specified prefix. Like with NON-NORMAL-PREFIX,
+GLOBAL-PREFIX will prevent PREFIX from applying to `general-non-normal-states'.
+INFIX can be used to append a string to all of the specified prefixes. This is
+potentially useful when you are using GLOBAL-PREFIX and/or NON-NORMAL-PREFIX so
+that you can sandwich keys in between all the prefixes and the specified keys in
+MAPS. This may be particularly useful if you are using default prefixes in a
+wrapper function/macro so that you can add to them without needing to re-specify
+all of them. If none of the other prefix keyword arguments are specified, INFIX
+will have no effect.
+
+If PREFIX-COMMAND or PREFIX-MAP is specified, a prefix command and/or keymap
+will be created. PREFIX-NAME can be additionally specified to set the keymap
+menu name/prompt. If PREFIX-COMMAND is specified, `define-prefix-command' will
+be used. Otherwise, only a prefix keymap will be created. Previously created
+prefix commands/keymaps will never be redefined/cleared. All prefixes (including
+the INFIX key, if specified) will then be bound to PREFIX-COMMAND or PREFIX-MAP.
+If the user did not specify any PREFIX or manually specify any KEYMAPS, general
+will bind all MAPS in the prefix keymap corresponding to either PREFIX-MAP or
+PREFIX-COMMAND instead of in the default keymap.
+
+PREDICATE corresponds to a predicate to check to determine whether a definition
+should be active (e.g. \":predicate '(eobp)\"). Definitions created with a
+predicate will only be active when the predicate is true. When the predicate is
+false, key lookup will continue to search for a match in lower-precedence
+keymaps.
+
+In addition to the normal definitions supported by `define-key', general.el also
+provides \"extended\" definitions, which are plists containing the normal
+definition as well as other keywords. For example, PREDICATE can be specified
+globally or locally in an extended definition. New global (~general-define-key~)
+and local (extended definition) keywords can be added by the user. See
+`general-extended-def-keywords' and general.el's documentation/README for more
+information.
+
+PACKAGE is the global version of the extended definition keyword that specifies
+the package a keymap is defined in (used for \"autoloading\" keymaps)
+
+PROPERTIES, REPEAT, and JUMP are the global versions of the extended definition
+keywords used for adding evil command properties to commands.
+
+MAJOR-MODES, WK-MATCH-KEYS, WK-MATCH-BINDINGS, and WK-FULL-KEYS are the
+corresponding global versions of which-key extended definition keywords. They
+will only have an effect for extended definitions that specify :which-key or
+:wk. See the section on extended definitions in the general.el
+documentation/README for more information.
+
+LISPY-PLIST and WORF-PLIST are the global versions of extended definition
+keywords that are used for each corresponding custom DEFINER.
+
+(fn &rest MAPS &key DEFINER (STATES general-default-states) (KEYMAPS general-default-keymaps KEYMAPS-SPECIFIED-P) (PREFIX general-default-prefix) (NON-NORMAL-PREFIX general-default-non-normal-prefix) (GLOBAL-PREFIX general-default-global-prefix) INFIX PREFIX-COMMAND PREFIX-MAP PREFIX-NAME PREDICATE PACKAGE PROPERTIES REPEAT JUMP MAJOR-MODES (WK-MATCH-KEYS t) (WK-MATCH-BINDING t) (WK-FULL-KEYS t) LISPY-PLIST WORF-PLIST &allow-other-keys)" nil nil) (autoload 'general-emacs-define-key "general" "A wrapper for `general-define-key' that is similar to `define-key'.
+It has a positional argument for KEYMAPS (that will not be overridden by a later
+:keymaps argument). Besides this, it acts the same as `general-define-key', and
+ARGS can contain keyword arguments in addition to keybindings. This can
+basically act as a drop-in replacement for `define-key', and unlike with
+`general-define-key', KEYMAPS does not need to be quoted.
+
+(fn KEYMAPS &rest ARGS)" nil t) (function-put 'general-emacs-define-key 'lisp-indent-function '1) (autoload 'general-evil-define-key "general" "A wrapper for `general-define-key' that is similar to `evil-define-key'.
+It has positional arguments for STATES and KEYMAPS (that will not be overridden
+by a later :keymaps or :states argument). Besides this, it acts the same as
+`general-define-key', and ARGS can contain keyword arguments in addition to
+keybindings. This can basically act as a drop-in replacement for
+`evil-define-key', and unlike with `general-define-key', KEYMAPS does not need
+to be quoted.
+
+(fn STATES KEYMAPS &rest ARGS)" nil t) (function-put 'general-evil-define-key 'lisp-indent-function '2) (autoload 'general-def "general" "General definer that takes a variable number of positional arguments in ARGS.
+This macro will act as `general-define-key', `general-emacs-define-key', or
+`general-evil-define-key' based on how many of the initial arguments do not
+correspond to keybindings. All quoted and non-quoted lists and symbols before
+the first string, vector, or keyword are considered to be positional arguments.
+This means that you cannot use a function or variable for a key that starts
+immediately after the positional arguments. If you need to do this, you should
+use one of the definers that `general-def' dispatches to or explicitly separate
+the positional arguments from the maps with a bogus keyword pair like
+\":start-maps t\"
+
+(fn &rest ARGS)" nil t) (function-put 'general-def 'lisp-indent-function 'defun) (autoload 'general-create-definer "general" "A helper macro to create wrappers for `general-def'.
+This can be used to create key definers that will use a certain keymap, evil
+state, prefix key, etc. by default. NAME is the wrapper name and DEFAULTS are
+the default arguments. WRAPPING can also be optionally specified to use a
+different definer than `general-def'. It should not be quoted.
+
+(fn NAME &rest DEFAULTS &key WRAPPING &allow-other-keys)" nil t) (function-put 'general-create-definer 'lisp-indent-function 'defun) (autoload 'general-defs "general" "A wrapper that splits into multiple `general-def's.
+Each consecutive grouping of positional argument followed by keyword/argument
+pairs (having only one or the other is fine) marks the start of a new section.
+Each section corresponds to one use of `general-def'. This means that settings
+only apply to the keybindings that directly follow.
+
+Since positional arguments can appear at any point, unqouted symbols are always
+considered to be positional arguments (e.g. a keymap). This means that variables
+can never be used for keys with `general-defs'. Variables can still be used for
+definitions or as arguments to keywords.
+
+(fn &rest ARGS)" nil t) (function-put 'general-defs 'lisp-indent-function 'defun) (autoload 'general-unbind "general" "A wrapper for `general-def' to unbind multiple keys simultaneously.
+Insert after all keys in ARGS before passing ARGS to `general-def.' \":with
+ #'func\" can optionally specified to use a custom function instead (e.g.
+ `ignore').
+
+(fn &rest ARGS)" nil t) (function-put 'general-unbind 'lisp-indent-function 'defun) (autoload 'general-describe-keybindings "general" "Show all keys that have been bound with general in an org buffer.
+Any local keybindings will be shown first followed by global keybindings.
+With a non-nil prefix ARG only show bindings in active maps.
+
+(fn &optional ARG)" t nil) (autoload 'general-key "general" "Act as KEY's definition in the current context.
+This uses an extended menu item's capability of dynamically computing a
+definition. It is recommended over `general-simulate-key' wherever possible. See
+the docstring of `general-simulate-key' and the readme for information about the
+benefits and downsides of `general-key'.
+
+KEY should be a string given in `kbd' notation and should correspond to a single
+definition (as opposed to a sequence of commands). When STATE is specified, look
+up KEY with STATE as the current evil state. When specified, DOCSTRING will be
+the menu item's name/description.
+
+Let can be used to bind variables around key lookup. For example:
+(general-key \"some key\"
+  :let ((some-var some-val)))
+
+SETUP and TEARDOWN can be used to run certain functions before and after key
+lookup. For example, something similar to using :state 'emacs would be:
+(general-key \"some key\"
+  :setup (evil-local-mode -1)
+  :teardown (evil-local-mode))
+
+ACCEPT-DEFAULT, NO-REMAP, and POSITION are passed to `key-binding'.
+
+(fn KEY &key STATE DOCSTRING LET SETUP TEARDOWN ACCEPT-DEFAULT NO-REMAP POSITION)" nil t) (function-put 'general-key 'lisp-indent-function '1) (autoload 'general-simulate-keys "general" "Deprecated. Please use `general-simulate-key' instead.
+
+(fn KEYS &optional STATE KEYMAP (LOOKUP t) DOCSTRING NAME)" nil t) (autoload 'general-simulate-key "general" "Create and return a command that simulates KEYS in STATE and KEYMAP.
+
+`general-key' should be prefered over this whenever possible as it is simpler
+and has saner functionality in many cases because it does not rely on
+`unread-command-events' (e.g. \"C-h k\" will show the docstring of the command
+to be simulated ; see the readme for more information). The main downsides of
+`general-key' are that it cannot simulate a command followed by keys or
+subsequent commands, and which-key does not currently work well with it when
+simulating a prefix key/incomplete key sequence.
+
+KEYS should be a string given in `kbd' notation. It can also be a list of a
+single command followed by a string of the key(s) to simulate after calling that
+command. STATE should only be specified by evil users and should be a quoted
+evil state. KEYMAP should not be quoted. Both STATE and KEYMAP aliases are
+supported (but they have to be set when the macro is expanded). When neither
+STATE or KEYMAP are specified, the key(s) will be simulated in the current
+context.
+
+If NAME is specified, it will replace the automatically generated function name.
+NAME should not be quoted. If DOCSTRING is specified, it will replace the
+automatically generated docstring.
+
+Normally the generated function will look up KEY in the correct context to try
+to match a command. To prevent this lookup, LOOKUP can be specified as nil.
+Generally, you will want to keep LOOKUP non-nil because this will allow checking
+the evil repeat property of matched commands to determine whether or not they
+should be recorded. See the docstring for `general--simulate-keys' for more
+information about LOOKUP.
+
+When a WHICH-KEY description is specified, it will replace the command name in
+the which-key popup.
+
+When a command name is specified and that command has been remapped (i.e. [remap
+command] is currently bound), the remapped version will be used instead of the
+original command unless REMAP is specified as nil (it is true by default).
+
+The advantages of this over a keyboard macro are as follows:
+- Prefix arguments are supported
+- The user can control the context in which the keys are simulated
+- The user can simulate both a named command and keys
+- The user can simulate an incomplete key sequence (e.g. for a keymap)
+
+(fn KEYS &key STATE KEYMAP NAME DOCSTRING (LOOKUP t) WHICH-KEY (REMAP t))" nil t) (function-put 'general-simulate-key 'lisp-indent-function 'defun) (autoload 'general-key-dispatch "general" "Create and return a command that runs FALLBACK-COMMAND or a command in MAPS.
+MAPS consists of <key> <command> pairs. If a key in MAPS is matched, the
+corresponding command will be run. Otherwise FALLBACK-COMMAND will be run with
+the unmatched keys. So, for example, if \"ab\" was pressed, and \"ab\" is not
+one of the key sequences from MAPS, the FALLBACK-COMMAND will be run followed by
+the simulated keypresses of \"ab\". Prefix arguments will still work regardless
+of which command is run. This is useful for binding under non-prefix keys. For
+example, this can be used to redefine a sequence like \"cw\" or \"cow\" in evil
+but still have \"c\" work as `evil-change'. If TIMEOUT is specified,
+FALLBACK-COMMAND will also be run in the case that the user does not press the
+next key within the TIMEOUT (e.g. 0.5).
+
+NAME and DOCSTRING are optional keyword arguments. They can be used to replace
+the automatically generated name and docstring for the created function. By
+default, `cl-gensym' is used to prevent name clashes (e.g. allows the user to
+create multiple different commands using `self-insert-command' as the
+FALLBACK-COMMAND without explicitly specifying NAME to manually prevent
+clashes).
+
+When INHERIT-KEYMAP is specified, all the keybindings from that keymap will be
+inherited in MAPS.
+
+When a WHICH-KEY description is specified, it will replace the command name in
+the which-key popup.
+
+When command to be executed has been remapped (i.e. [remap command] is currently
+bound), the remapped version will be used instead of the original command unless
+REMAP is specified as nil (it is true by default).
+
+(fn FALLBACK-COMMAND &rest MAPS &key TIMEOUT INHERIT-KEYMAP NAME DOCSTRING WHICH-KEY (REMAP t) &allow-other-keys)" nil t) (function-put 'general-key-dispatch 'lisp-indent-function '1) (autoload 'general-predicate-dispatch "general" "
+
+(fn FALLBACK-DEF &rest DEFS &key DOCSTRING &allow-other-keys)" nil t) (function-put 'general-predicate-dispatch 'lisp-indent-function '1) (autoload 'general-translate-key "general" "Translate keys in the keymap(s) corresponding to STATES and KEYMAPS.
+STATES should be the name of an evil state, a list of states, or nil. KEYMAPS
+should be a symbol corresponding to the keymap to make the translations in or a
+list of keymap names. Keymap and state aliases are supported (as well as 'local
+and 'global for KEYMAPS).
+
+MAPS corresponds to a list of translations (key replacement pairs). For example,
+specifying \"a\" \"b\" will bind \"a\" to \"b\"'s definition in the keymap.
+Specifying nil as a replacement will unbind a key.
+
+If DESTRUCTIVE is non-nil, the keymap will be destructively altered without
+creating a backup. If DESTRUCTIVE is nil, store a backup of the keymap on the
+initial invocation, and for future invocations always look up keys in the
+original/backup keymap. On the other hand, if DESTRUCTIVE is non-nil, calling
+this function multiple times with \"a\" \"b\" \"b\" \"a\", for example, would
+continue to swap and unswap the definitions of these keys. This means that when
+DESTRUCTIVE is non-nil, all related swaps/cycles should be done in the same
+invocation.
+
+If both MAPS and DESCTRUCTIVE are nil, only create the backup keymap.
+
+(fn STATES KEYMAPS &rest MAPS &key DESTRUCTIVE &allow-other-keys)" nil nil) (function-put 'general-translate-key 'lisp-indent-function 'defun) (autoload 'general-swap-key "general" "Wrapper around `general-translate-key' for swapping keys.
+STATES, KEYMAPS, and ARGS are passed to `general-translate-key'. ARGS should
+consist of key swaps (e.g. \"a\" \"b\" is equivalent to \"a\" \"b\" \"b\" \"a\"
+with `general-translate-key') and optionally keyword arguments for
+`general-translate-key'.
+
+(fn STATES KEYMAPS &rest ARGS)" nil t) (function-put 'general-swap-key 'lisp-indent-function 'defun) (autoload 'general-auto-unbind-keys "general" "Advise `define-key' to automatically unbind keys when necessary.
+This will prevent errors when a sub-sequence of a key is already bound (e.g. the
+user attempts to bind \"SPC a\" when \"SPC\" is bound, resulting in a \"Key
+sequnce starts with non-prefix key\" error). When UNDO is non-nil, remove
+advice.
+
+(fn &optional UNDO)" nil nil) (autoload 'general-add-hook "general" "A drop-in replacement for `add-hook'.
+Unlike `add-hook', HOOKS and FUNCTIONS can be single items or lists. APPEND and
+LOCAL are passed directly to `add-hook'. When TRANSIENT is non-nil, each
+function will remove itself from the hook it is in after it is run once. If
+TRANSIENT is a function, call it on the return value in order to determine
+whether to remove a function from the hook. For example, if TRANSIENT is
+#'identity, remove each function only if it returns non-nil. TRANSIENT could
+alternatively check something external and ignore the function's return value.
+
+(fn HOOKS FUNCTIONS &optional APPEND LOCAL TRANSIENT)" nil nil) (autoload 'general-remove-hook "general" "A drop-in replacement for `remove-hook'.
+Unlike `remove-hook', HOOKS and FUNCTIONS can be single items or lists. LOCAL is
+passed directly to `remove-hook'.
+
+(fn HOOKS FUNCTIONS &optional LOCAL)" nil nil) (autoload 'general-advice-add "general" "A drop-in replacement for `advice-add'.
+SYMBOLS, WHERE, FUNCTIONS, and PROPS correspond to the arguments for
+`advice-add'. Unlike `advice-add', SYMBOLS and FUNCTIONS can be single items or
+lists. When TRANSIENT is non-nil, each function will remove itself as advice
+after it is run once. If TRANSIENT is a function, call it on the return value in
+order to determine whether to remove a function as advice. For example, if
+TRANSIENT is #'identity, remove each function only if it returns non-nil.
+TRANSIENT could alternatively check something external and ignore the function's
+return value.
+
+(fn SYMBOLS WHERE FUNCTIONS &optional PROPS TRANSIENT)" nil nil) (autoload 'general-add-advice "general") (autoload 'general-advice-remove "general" "A drop-in replacement for `advice-remove'.
+Unlike `advice-remove', SYMBOLS and FUNCTIONS can be single items or lists.
+
+(fn SYMBOLS FUNCTIONS)" nil nil) (autoload 'general-remove-advice "general") (autoload 'general-evil-setup "general" "Set up some basic equivalents for vim mapping functions.
+This creates global key definition functions for the evil states.
+Specifying SHORT-NAMES as non-nil will create non-prefixed function
+aliases such as `nmap' for `general-nmap'.
+
+(fn &optional SHORT-NAMES _)" nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "general" '("general-"))) (provide 'general-autoloads)) "org-notebook" ((org-notebook org-notebook-autoloads) (autoload 'org-notebook-new-notebook "org-notebook" "Create a new org-notebook notebook" t nil) (autoload 'org-notebook-insert-image "org-notebook" "Insert an image with auto-completion for the next image name and open the drawing program" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-notebook" '("org-notebook-"))) (provide 'org-notebook-autoloads)) "emacsql" ((emacsql emacsql-compiler emacsql-autoloads) (autoload 'emacsql-show-last-sql "emacsql" "Display the compiled SQL of the s-expression SQL expression before point.
+A prefix argument causes the SQL to be printed into the current buffer.
+
+(fn &optional PREFIX)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql" '("emacsql-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql-compiler" '("emacsql-"))) (provide 'emacsql-autoloads)) "emacsql-sqlite3" ((emacsql-sqlite3 emacsql-sqlite3-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacsql-sqlite3" '("emacsql-sqlite3-"))) (provide 'emacsql-sqlite3-autoloads)) "org-roam" ((org-roam-buffer org-roam-completion org-roam-compat org-roam-protocol org-roam-db org-roam-dev org-roam-dailies org-roam-autoloads org-roam-macs org-roam-capture org-roam-doctor org-roam-graph org-roam) (defvar org-roam-mode nil "Non-nil if Org-Roam mode is enabled.
+See the `org-roam-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `org-roam-mode'.") (custom-autoload 'org-roam-mode "org-roam" nil) (autoload 'org-roam-mode "org-roam" "Minor mode for Org-roam.
+
+This mode sets up several hooks, to ensure that the cache is updated on file
+changes, renames and deletes. It is also in charge of graceful termination of
+the database connection.
+
+When called interactively, toggle `org-roam-mode'. with prefix
+ARG, enable `org-roam-mode' if ARG is positive, otherwise disable
+it.
+
+When called from Lisp, enable `org-roam-mode' if ARG is omitted,
+nil, or positive. If ARG is `toggle', toggle `org-roam-mode'.
+Otherwise, behave as if called interactively.
+
+(fn &optional ARG)" t nil) (defalias 'org-roam 'org-roam-buffer-toggle-display) (autoload 'org-roam-diagnostics "org-roam" "Collect and print info for `org-roam' issues." t nil) (autoload 'org-roam-find-file "org-roam" "Find and open an Org-roam file.
+INITIAL-PROMPT is the initial title prompt.
+COMPLETIONS is a list of completions to be used instead of
+`org-roam--get-title-path-completions`.
+FILTER-FN is the name of a function to apply on the candidates
+which takes as its argument an alist of path-completions.  See
+`org-roam--get-title-path-completions' for details.
+
+(fn &optional INITIAL-PROMPT COMPLETIONS FILTER-FN)" t nil) (autoload 'org-roam-find-directory "org-roam" "Find and open `org-roam-directory'." t nil) (autoload 'org-roam-find-ref "org-roam" "Find and open an Org-roam file from a ref.
+ARG is used to forward interactive calls to
+`org-roam--get-ref-path-completions'
+FILTER can either be a string or a function:
+- If it is a string, it should be the type of refs to include as
+candidates (e.g. \"cite\" ,\"website\" ,etc.)
+- If it is a function, it should be the name of a function that
+takes three arguments: the type, the ref, and the file of the
+current candidate.  It should return t if that candidate is to be
+included as a candidate.
+
+(fn ARG &optional FILTER)" t nil) (autoload 'org-roam-random-note "org-roam" "Find a random Org-roam file." t nil) (autoload 'org-roam-insert "org-roam" "Find an Org-roam file, and insert a relative org link to it at point.
+Return selected file if it exists.
+If LOWERCASE, downcase the title before insertion.
+COMPLETIONS is a list of completions to be used instead of
+`org-roam--get-title-path-completions`.
+FILTER-FN is the name of a function to apply on the candidates
+which takes as its argument an alist of path-completions.
+If DESCRIPTION is provided, use this as the link label.  See
+`org-roam--get-title-path-completions' for details.
+
+(fn &optional LOWERCASE COMPLETIONS FILTER-FN DESCRIPTION)" t nil) (autoload 'org-roam-insert-immediate "org-roam" "Find an Org-roam file, and insert a relative org link to it at point.
+This variant of `org-roam-insert' inserts the link immediately by
+using the template in `org-roam-capture-immediate-template'. The
+interactive ARG and ARGS are passed to `org-roam-insert'.
+See `org-roam-insert' for details.
+
+(fn ARG &rest ARGS)" t nil) (autoload 'org-roam-find-file-immediate "org-roam" "Find and open an Org-roam file.
+This variant of `org-roam-find-file' uses the template in
+`org-roam-capture-immediate-template', avoiding the capture
+process. The interactive ARG and ARGS are passed to
+`org-roam-find-file'. See `org-roam-find-file' for details.
+
+(fn ARG &rest ARGS)" t nil) (autoload 'org-roam-jump-to-index "org-roam" "Find the index file in `org-roam-directory'.
+The path to the index can be defined in `org-roam-index-file'.
+Otherwise, the function will look in your `org-roam-directory'
+for a note whose title is 'Index'.  If it does not exist, the
+command will offer you to create one." t nil) (autoload 'org-roam-switch-to-buffer "org-roam" "Switch to an existing Org-roam buffer." t nil) (autoload 'org-roam-version "org-roam" "Return `org-roam' version.
+Interactively, or when MESSAGE is non-nil, show in the echo area.
+
+(fn &optional MESSAGE)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam" '("org-roam-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-buffer" '("org-roam-buffer"))) (autoload 'org-roam-capture "org-roam-capture" "Launches an `org-capture' process for a new or existing note.
+This uses the templates defined at `org-roam-capture-templates'." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-capture" '("org-roam-capture-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-completion" '("org-roam-completion-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-dailies" '("org-roam-dailies-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-db" '("org-roam-db"))) (autoload 'org-roam-dev-mode "org-roam-dev" "Minor mode for setting the dev environment of Org-roam.
+
+If called interactively, enable Org-Roam-Dev mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'org-roam-doctor "org-roam-doctor" "Perform a check on the current buffer to ensure cleanliness.
+If CHECKALL, run the check for all Org-roam files.
+
+(fn &optional CHECKALL)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-doctor" '("org-roam-doctor-"))) (autoload 'org-roam-graph "org-roam-graph" "Build and possibly display a graph for FILE from NODE-QUERY.
+If FILE is nil, default to current buffer's file name.
+ARG may be any of the following values:
+  - nil       show the graph.
+  - `\\[universal-argument]'     show the graph for FILE.
+  - `\\[universal-argument]' N   show the graph for FILE limiting nodes to N steps.
+  - `\\[universal-argument] \\[universal-argument]' build the graph.
+  - `\\[universal-argument]' -   build the graph for FILE.
+  - `\\[universal-argument]' -N  build the graph for FILE limiting nodes to N steps.
+
+(fn &optional ARG FILE NODE-QUERY)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-graph" '("org-roam-graph-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-macs" '("org-roam-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-protocol" '("org-roam-protocol-open-"))) (provide 'org-roam-autoloads))))
+
+#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 1 "melpa" nil "gnu-elpa-mirror" nil "emacsmirror-mirror" nil "straight" nil "dracula-theme" nil "org" (org :type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org") "org-bullets" nil "go-mode" nil "rust-mode" nil "page-break-lines" nil "projectile" nil "pkg-info" nil "epl" nil "cl-lib" nil "all-the-icons" nil "memoize" nil "dashboard" nil "agressive-indent-mode" nil "agressive-indent" nil "aggressive-indent" nil "xah-fly-keys" nil "modalka" nil "telephone-line" nil "cl-generic" nil "seq" nil "haskell-mode" nil "haskell-emacs" nil "golint" nil "helm" nil "async" nil "popup" nil "helm-core" nil "easy-kill" nil "org-journal" nil "evil" nil "undo-tree" nil "goto-chg" nil "org-present" nil "ox-reveal" nil "company" nil "company-go" nil "lsp-mode" nil "dash" nil "dash-functional" nil "f" nil "s" nil "ht" nil "spinner" nil "markdown-mode" nil "lv" nil "gdscript-mode" nil "flycheck" nil "let-alist" nil "company-box" nil "fly-check" nil "esup" nil "use-package" nil "bind-key" nil "xkcd" nil "json" nil "cargo" nil "org-recur" nil "setq" nil "ido-vertical-mode" nil "gcmh" nil "deft" nil "smex" nil "poet-theme" nil "visual-fill-column" nil "general" nil "org-notebook" nil "org-roam" nil "emacsql" nil "emacsql-sqlite3" nil)) melpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "emacsmirror-mirror" nil "straight" nil "dracula-theme" (dracula-theme :type git :flavor melpa :host github :repo "dracula/emacs") "org-bullets" (org-bullets :type git :flavor melpa :host github :repo "integral-dw/org-bullets") "go-mode" (go-mode :type git :flavor melpa :files ("go-mode.el" "go-mode-pkg.el") :host github :repo "dominikh/go-mode.el") "rust-mode" (rust-mode :type git :flavor melpa :host github :repo "rust-lang/rust-mode") "page-break-lines" (page-break-lines :type git :flavor melpa :host github :repo "purcell/page-break-lines") "projectile" (projectile :type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "cl-lib" nil "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "memoize" (memoize :type git :flavor melpa :host github :repo "skeeto/emacs-memoize") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard") "agressive-indent-mode" nil "agressive-indent" nil "aggressive-indent" (aggressive-indent :type git :flavor melpa :host github :repo "Malabarba/aggressive-indent-mode") "xah-fly-keys" (xah-fly-keys :type git :flavor melpa :host github :repo "xahlee/xah-fly-keys") "modalka" (modalka :type git :flavor melpa :host github :repo "mrkkrp/modalka") "telephone-line" (telephone-line :type git :flavor melpa :host github :repo "dbordak/telephone-line") "cl-generic" nil "seq" nil "haskell-mode" (haskell-mode :type git :flavor melpa :files (:defaults "NEWS" "logo.svg" "haskell-mode-pkg.el") :host github :repo "haskell/haskell-mode") "haskell-emacs" (haskell-emacs :type git :flavor melpa :files (:defaults "*.hs" "*.org" "Foreign" "haskell-emacs-pkg.el") :host github :repo "knupfer/haskell-emacs") "golint" (golint :type git :flavor melpa :files ("misc/emacs/*.el" "golint-pkg.el") :host github :repo "golang/lint") "helm" (helm :type git :flavor melpa :files ("*.el" "emacs-helm.sh" (:exclude "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") "helm-pkg.el") :host github :repo "emacs-helm/helm") "async" (async :type git :flavor melpa :host github :repo "jwiegley/emacs-async") "popup" (popup :type git :flavor melpa :files ("popup.el" "popup-pkg.el") :host github :repo "auto-complete/popup-el") "helm-core" (helm-core :type git :flavor melpa :files ("helm-core-pkg.el" "helm.el" "helm-lib.el" "helm-source.el" "helm-multi-match.el" "helm-core-pkg.el") :host github :repo "emacs-helm/helm") "easy-kill" (easy-kill :type git :flavor melpa :host github :repo "leoliu/easy-kill") "org-journal" (org-journal :type git :flavor melpa :host github :repo "bastibe/org-journal") "evil" (evil :type git :flavor melpa :files (:defaults "doc/build/texinfo/evil.texi" (:exclude "evil-test-helpers.el") "evil-pkg.el") :host github :repo "emacs-evil/evil") "undo-tree" nil "goto-chg" (goto-chg :type git :flavor melpa :host github :repo "emacs-evil/goto-chg") "org-present" (org-present :type git :flavor melpa :host github :repo "rlister/org-present") "ox-reveal" (ox-reveal :type git :flavor melpa :host github :repo "yjwen/org-reveal") "company" (company :type git :flavor melpa :host github :repo "company-mode/company-mode") "company-go" (company-go :type git :flavor melpa :files ("emacs-company/company-go.el" "company-go-pkg.el") :host github :repo "mdempsky/gocode") "lsp-mode" (lsp-mode :type git :flavor melpa :host github :repo "emacs-lsp/lsp-mode") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "dash-functional" (dash-functional :type git :flavor melpa :files ("dash-functional.el" "dash-functional-pkg.el") :host github :repo "magnars/dash.el") "f" (f :type git :flavor melpa :files ("f.el" "f-pkg.el") :host github :repo "rejeep/f.el") "s" (s :type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el") "ht" (ht :type git :flavor melpa :files ("ht.el" "ht-pkg.el") :host github :repo "Wilfred/ht.el") "spinner" nil "markdown-mode" (markdown-mode :type git :flavor melpa :host github :repo "jrblevin/markdown-mode") "lv" (lv :type git :flavor melpa :files ("lv.el" "lv-pkg.el") :host github :repo "abo-abo/hydra") "gdscript-mode" (gdscript-mode :type git :flavor melpa :host github :repo "GDQuest/emacs-gdscript-mode") "flycheck" (flycheck :type git :flavor melpa :host github :repo "flycheck/flycheck") "let-alist" nil "company-box" (company-box :type git :flavor melpa :files (:defaults "images" "company-box-pkg.el") :host github :repo "sebastiencs/company-box") "fly-check" nil "esup" (esup :type git :flavor melpa :host github :repo "jschaf/esup") "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "xkcd" (xkcd :type git :flavor melpa :host github :repo "vibhavp/emacs-xkcd") "json" nil "cargo" (cargo :type git :flavor melpa :host github :repo "kwrooijen/cargo.el") "org-recur" (org-recur :type git :flavor melpa :host github :repo "m-cat/org-recur") "setq" nil "ido-vertical-mode" (ido-vertical-mode :type git :flavor melpa :host github :repo "creichert/ido-vertical-mode.el") "gcmh" (gcmh :type git :flavor melpa :host gitlab :repo "koral/gcmh") "deft" (deft :type git :flavor melpa :host github :repo "jrblevin/deft") "smex" (smex :type git :flavor melpa :host github :repo "nonsequitur/smex") "poet-theme" (poet-theme :type git :flavor melpa :host github :repo "kunalb/poet") "visual-fill-column" (visual-fill-column :type git :flavor melpa :host github :repo "joostkremers/visual-fill-column") "general" (general :type git :flavor melpa :host github :repo "noctuid/general.el") "org-notebook" (org-notebook :type git :flavor melpa :host github :repo "Rahi374/org-notebook") "org-roam" (org-roam :type git :flavor melpa :host github :repo "org-roam/org-roam") "emacsql" (emacsql :type git :flavor melpa :files ("emacsql.el" "emacsql-compiler.el" "emacsql-system.el" "README.md" "emacsql-pkg.el") :host github :repo "skeeto/emacsql") "emacsql-sqlite3" (emacsql-sqlite3 :type git :flavor melpa :host github :repo "cireu/emacsql-sqlite3"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "agressive-indent-mode" nil "agressive-indent" nil "cl-generic" nil "seq" nil "undo-tree" (undo-tree :type git :host github :repo "emacs-straight/undo-tree" :files ("*" (:exclude ".git"))) "spinner" (spinner :type git :host github :repo "emacs-straight/spinner" :files ("*" (:exclude ".git"))) "let-alist" nil "fly-check" nil "json" nil "setq" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "agressive-indent-mode" nil "agressive-indent" nil "cl-generic" nil "seq" nil "let-alist" (let-alist :type git :host github :repo "emacsmirror/let-alist") "fly-check" nil "json" nil "setq" nil))))
+
+("org-elpa" "melpa" "gnu-elpa-mirror" "emacsmirror-mirror" "straight" "emacs" "use-package" "bind-key" "dracula-theme" "org" "org-bullets" "org-journal" "org-roam" "dash" "f" "s" "emacsql" "emacsql-sqlite3" "poet-theme" "org-recur" "go-mode" "rust-mode" "haskell-mode" "gdscript-mode" "page-break-lines" "all-the-icons" "memoize" "dashboard" "aggressive-indent" "cl-lib" "modalka" "general" "telephone-line" "cl-generic" "seq" "easy-kill" "ido-vertical-mode" "smex" "visual-fill-column" "company" "company-go" "lsp-mode" "dash-functional" "ht" "spinner" "markdown-mode" "lv" "flycheck" "pkg-info" "epl" "let-alist" "deft" "gcmh")
 
 t

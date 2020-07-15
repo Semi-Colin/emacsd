@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/ido-vertical-mode.el/ido-vertical-mode.el

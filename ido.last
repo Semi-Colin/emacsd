@@ -1,0 +1,136 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/semi/Code/yed/rust/" . "src/")
+ ("/home/semi/Code/yed/scribe/" . "src/")
+ ("/home/semi/Code/luminance/first-steps/" . "src/")
+ ("/home/semi/Code/luminance/" . "first-steps/")
+ ("/home/semi/Code/yed/" . "brick/")
+ ("/home/semi/Code/" . "yed/")
+ ("/home/semi/school/bell_prep/" . "day_5/")
+ ("/home/semi/org/school/bell_prep/" . "day_5/")
+ ("/home/semi/org/school/" . "bell_prep/")
+ ("/home/" . "semi/")
+ ("/home/semi/.config/" . "emacs/")
+ ("/home/semi/school/" . "bell_prep/")
+ ("/home/semi/org/" . "school/")
+ ("/home/semi/" . ".config/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/semi/.config/emacs/"
+ "/home/semi/org/school/"
+ "/home/semi/school/"
+ "/home/semi/school/bell_prep/day_7/"
+ "/home/semi/Code/yed/brick/"
+ "/home/semi/Code/yed/haskell/"
+ "/home/semi/Code/yed/rust/src/"
+ "/home/semi/Code/yed/scribe/src/"
+ "/home/semi/Code/luminance/first-steps/src/"
+ "/home/semi/Code/luminance/first-steps/"
+ "/home/semi/Code/yed/scribe/"
+ "/home/semi/Code/yed/"
+ "/home/semi/school/bell_prep/day_5/"
+ "/home/semi/org/school/bell_prep/day_5/"
+ "/home/semi/org/school/bell_prep/day_4/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "assignments.org"
+ "meetings.org"
+ "assignments.org_archive"
+ "hughes-colin-ignatian-identity.org"
+ "Main.hs"
+ "main.hs"
+ "main.rs"
+ "Cargo.toml"
+ "cargo.toml"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/semi/.config/emacs/" (24334 32792 120069 238000) "auto-save-list/" ".git/" "hooks/" "description" "refs/" "smex-items" "./" "init.el" "info/" "../" "HEAD" "ido.last" "recentf~" ".lsp-session-v1" "objects/" "eshell/" "xkcd/" "elpa/" "backup/" "straight/" "recentf" "bookmarks" "config" "#init.el#")
+
+ ("/home/semi/org/school/" (24334 32182 533055 602000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+
+ ("/home/semi/school/" (24334 32182 533055 602000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+
+ ("/home/semi/school/bell_prep/" (24334 31544 27041 318000) "day_4/" "day_3/" "./" "../" "day_6/" "day_5/" "notebook/" "day_2/" "day_7/" "day_1/")
+
+ ("/home/semi/school/bell_prep/notebook/" (24334 31948 395050 364000) "img/" "./" "../")
+
+ ("/home/semi/org/school/bell_prep/day_5/" (24334 25706 665076 319000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
+
+ ("/home/semi/school/bell_prep/day_5/" (24334 25706 665076 319000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
+
+ ("/home/semi/Code/yed/brick/" (24334 17617 687167 902000) "Main.o" "Main" "CHANGELOG.md" "Main.hs" "dist-newstyle/" "Main.hi" "./" "../" "src/" "Setup.hs" "cabal.project.local" "yed.cabal")
+
+ ("/home/semi/school/bell_prep/day_7/" (24334 25706 691076 320000) "hughes-colin-ignatian-identity.log" "./" "../" "hughes-colin-ignatian-identity.odt" "hughes-colin-ignatian-identity.pdf" ".~lock.hughes-colin-ignatian-identity.odt#" "hughes-colin-ignatian-identity.tex" "hughes-colin-ignatian-identity.org")
+
+ ("/home/semi/.config/" (24334 22332 241000 833000) "autostart/" "glib-2.0/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "neofetch/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "dunst/" "vlc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "nvim/" "okularrc" "ardour6/" "GIMP/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "mimeapps.list" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/")
+
+ ("/home/semi/" (24334 7052 712455 66000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" "Public/" "deps/" ".zcompdump-colin-void-5.8" ".gitconfig" ".deft/" ".themes/" ".config/" ".mozilla/" ".zcompdump" ".zshrc.pre-oh-my-zsh" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" ".zshrc" ".ghc/" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".elinks/" ".aspell.en.pws" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" "org/" ".gradle/" ".xsession-errors" ".aspell.en.prepl" "Downloads/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".dbus/" ".npm/" ".cargo/" ".redeclipse/" "Images/" "go/" "Templates/" ".java/" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".inputrc" ".cabal/")
+
+ ("/home/semi/school/bell_prep/day_6/" (24333 10477 292052 777000) "./" "../" "Hughes-Colin-Examen-Reflection.docx" "Hughes-Colin-Study-Habits.docx")
+
+ ("/home/semi/org/journal/" (24333 56517 812095 560000) "./" "../" ".#2020-07-13.org" "2020-07-06.org")
+
+ ("/home/semi/Code/yed/" (24333 2695 652217 966000) "brick/" "yed/" "./" "../" "xi/" "rust/")
+
+ ("/home/semi/Code/luminance/first-steps/src/" (24332 45952 818204 33000) "./" "../" "main.rs")
+
+ ("/home/semi/Code/yed/rust/src/" (24332 45952 818204 33000) "./" "../" "main.rs")
+
+ ("/home/semi/Code/yed/haskell/" (24333 2001 665202 441000) "./" "../")
+
+ ("/home/semi/Code/yed/yed/" (24332 60385 614042 450000) "view.go" "yed" "./" "../" "message.go" "buffer.go" "file_test.go" "file.go")
+
+ ("/home/semi/Code/yed/rust/" (24331 17605 880127 372000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "target/" ".gitignore")
+
+ ("/home/semi/Code/luminance/first-steps/" (24331 34510 166046 175000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "main.rs" "target/" ".gitignore")
+
+ ("/home/semi/Code/luminance/" (24331 33440 618022 249000) "./" "../" "first-steps/")
+
+ ("/home/semi/Code/" (24331 33415 943021 697000) "gamepadtest/" "supertris/" "yed/" "./" "../" "semilin.github.io/" "xi-term/" "chortle/" "rng-core/" "luminance/" "forks/" "learn-luminance/" "lang/" "sorting/")
+
+ ("/home/semi/Code/yed/scribe/" (24331 17605 880127 372000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "target/" ".gitignore")
+
+ ("/home/semi/Code/yed/scribe/src/" (24331 32366 461025 601000) "./" "../" "main.rs")
+
+ ("/home/semi/go/" (24301 33378 608847 169000) "pkg/" "./" "termdraw/" "../" "src/" "bin/")
+
+ ("/home/semi/go/src/" (24321 18306 646444 42000) "./" "mvdan.cc/" "../" "github.com/" "golang.org/" "honnef.co/")
+
+ ("/home/semi/go/src/github.com/" (24327 45615 910039 123000) "yuin/" "gdamore/" "linde12/" "BurntSushi/" "./" "../" "MichaelS11/" "jfreymuth/" "mattn/" "hajimehoshi/" "lucasb-eyer/" "gofrs/" "sergi/" "go-gl/" "golang/")
+
+ ("/home/semi/go/src/github.com/go-gl/" (24313 26596 829528 523000) "./" "../" "glfw/")
+
+ ("/home/semi/go/src/github.com/go-gl/glfw/" (24330 32768 186023 828000) "LICENSE" "v3.2/" "v3.1/" ".git/" "README.md" "scripts/" "v3.0/" "./" "../" ".travis.yml" "v3.3/" "AUTHORS")
+
+ ("/home/semi/go/src/github.com/go-gl/glfw/v3.3/" (24313 26598 130528 450000) "./" "../" "glfw/")
+
+ ("/home/semi/go/src/github.com/go-gl/glfw/v3.3/glfw/" (24313 26598 144528 449000) "go.mod" "c_glfw_lin.go" "input.go" "util.go" "window.c" "time.go" "build_cgo_hack.go" "./" "vulkan.go" "monitor.c" "../" "context.go" "glfw.go" "c_glfw_darwin.go" "native_linbsd.go" "c_glfw.go" "native_windows.go" "error.go" "c_glfw_freebsd.go" "c_glfw_windows.go" "GLFW_C_REVISION.txt" "input.c" "error.c" "monitor.go" "native_darwin.go" "build.go" "glfw/" "window.go")
+
+ ("/home/semi/school/computer_architecture/" (24329 64779 401206 529000) "./" "../" "ram.org" "ssd.org")
+
+ ("/home/semi/org/school/bell_prep/" (24329 1338 582068 308000) "day_4/" "day_3/" "./" "../" "day_5/" "day_2/" "day_1/")
+
+ ("/home/semi/.deft/" (24328 63082 146024 432000) "./" "../")
+
+ ("/home/semi/org/school/bell_prep/day_4/" (24328 54226 915349 373000) "Digital_Citizenship.tex" "Hughes-Colin-Digital_Citizenship.pdf" "./" "../" "Digital_Citizenship.org" "Digital_Citizenship.odt" "Digital_Citizenship.log")
+
+ ("/home/semi/org/" (24328 44929 606141 392000) "./" "../" "journal/" "school/" "personal/")
+
+ ("/home/" (24277 30943 906202 658000) "./" "../" "semi/")
+
+ ("/home/semi/school/algorithms/" (24306 32517 426139 107000) "./" "../" "final/" "sorting/" "decksorter/")
+
+ ("/home/semi/Documents/" (24327 49762 921131 892000) "./" "BlackmagicDesign/" "../" "ardour/" "random/" "godot/" "theflyingrat/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

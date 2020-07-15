@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/org-notebook/org-notebook.el

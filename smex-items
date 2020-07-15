@@ -1,0 +1,55 @@
+
+;; ----- smex-history -----
+(
+ org-roam-find-file
+ w
+ company-mode
+ q
+ org-agenda
+ delete-file
+ dired
+)
+
+;; ----- smex-data -----
+(
+ (w . 198)
+ (eval-buffer . 46)
+ (load-theme . 2)
+ (e . 6)
+ (visual-fill-column-mode . 2)
+ (visual-line-mode . 2)
+ (menu-bar--display-line-numbers-mode-relative . 4)
+ (menu-bar--display-line-numbers-mode-visual . 1)
+ (package-upload-file . 1)
+ (completion-at-point . 3)
+ (q . 3)
+ (new-class-note . 3)
+ (find-variable . 1)
+ (describe-function . 1)
+ (delete-file . 4)
+ (eval-defun . 1)
+ (flyspell-mode . 2)
+ (flyspell-buffer . 1)
+ (flyspell-word . 1)
+ (flyspell-correct-word . 2)
+ (lsp . 8)
+ (gofmt . 2)
+ (flycheck-mode . 4)
+ (linum-mode . 8)
+ (display-line-numbers-mode . 1)
+ (org-recur-finish . 4)
+ (straight-use-package . 1)
+ (org-new-class-note . 4)
+ (set-variable . 2)
+ (make-directory . 1)
+ (org-bullets-mode . 1)
+ (paragraph-indent-minor-mode . 1)
+ (org-mode . 2)
+ (dashboard-mode . 2)
+ (dashboard-return . 1)
+ (org-notebook-new-notebook . 2)
+ (dired . 1)
+ (org-agenda . 2)
+ (company-mode . 1)
+ (org-roam-find-file . 1)
+)

@@ -1,0 +1,13 @@
+ls
+go build
+./yed
+clear
+ls
+nvim file
+clear
+ls
+exit
+ls
+go build
+./yed
+go test
