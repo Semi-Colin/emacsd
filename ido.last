@@ -2,12 +2,14 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/semi/.config/emacs/straight/build/" . "cargo/")
+ ("/home/semi/.config/emacs/straight/" . "build/")
  ("/home/semi/Code/yed/rust/" . "src/")
  ("/home/semi/Code/yed/scribe/" . "src/")
  ("/home/semi/Code/luminance/first-steps/" . "src/")
  ("/home/semi/Code/luminance/" . "first-steps/")
  ("/home/semi/Code/yed/" . "brick/")
- ("/home/semi/Code/" . "yed/")
+ ("/home/semi/Code/" . "speedmath/")
  ("/home/semi/school/bell_prep/" . "day_5/")
  ("/home/semi/org/school/bell_prep/" . "day_5/")
  ("/home/semi/org/school/" . "bell_prep/")
@@ -21,8 +23,12 @@
 ;; ----- ido-work-directory-list -----
 (
  "/home/semi/.config/emacs/"
- "/home/semi/org/school/"
  "/home/semi/school/"
+ "/home/semi/.config/emacs/straight/build/cargo/"
+ "/home/semi/Code/speedmath/src/"
+ "/home/semi/Code/speedmath/"
+ "/home/semi/Code/ultratable/"
+ "/home/semi/org/school/"
  "/home/semi/school/bell_prep/day_7/"
  "/home/semi/Code/yed/brick/"
  "/home/semi/Code/yed/haskell/"
@@ -40,44 +46,62 @@
 ;; ----- ido-work-file-list -----
 (
  "init.el"
- "assignments.org"
  "meetings.org"
+ "cargo-process.el"
+ "cargo.el"
+ "assignments.org"
+ "Problem.hs"
+ "Main.hs"
+ "question.go"
  "assignments.org_archive"
  "hughes-colin-ignatian-identity.org"
- "Main.hs"
- "main.hs"
- "main.rs"
- "Cargo.toml"
- "cargo.toml"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/semi/.config/emacs/" (24334 32792 120069 238000) "auto-save-list/" ".git/" "hooks/" "description" "refs/" "smex-items" "./" "init.el" "info/" "../" "HEAD" "ido.last" "recentf~" ".lsp-session-v1" "objects/" "eshell/" "xkcd/" "elpa/" "backup/" "straight/" "recentf" "bookmarks" "config" "#init.el#")
+ ("/home/semi/.config/emacs/" (24335 52216 99091 183000) "auto-save-list/" ".git/" "hooks/" "description" "refs/" "smex-items" "./" "init.el" "info/" "../" "HEAD" "ido.last" "recentf~" ".lsp-session-v1" "objects/" "eshell/" "xkcd/" "elpa/" "backup/" "straight/" "recentf" "bookmarks" "config" "#init.el#")
 
- ("/home/semi/org/school/" (24334 32182 533055 602000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+ ("/home/semi/school/" (24335 52082 471088 193000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
 
- ("/home/semi/school/" (24334 32182 533055 602000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+ ("/home/semi/org/journal/" (24335 51594 769077 283000) "./" "../" "2020-07-13.org" "2020-07-06.org")
 
- ("/home/semi/school/bell_prep/" (24334 31544 27041 318000) "day_4/" "day_3/" "./" "../" "day_6/" "day_5/" "notebook/" "day_2/" "day_7/" "day_1/")
+ ("/home/semi/.config/" (24335 44598 728017 375000) "autostart/" "glib-2.0/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "cordless/" "neofetch/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "dunst/" "vlc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "nvim/" "okularrc" "ardour6/" "GIMP/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "mimeapps.list" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/")
+
+ ("/home/semi/school/bell_prep/day_7/" (24335 45067 709027 866000) "hughes-colin-ignatian-identity.log" "./" "../" "hughes-colin-ignatian-identity.odt" "hughes-colin-ignatian-identity.pdf" "hughes-colin-ignatian-identity.tex" "hughes-colin-ignatian-identity.org")
+
+ ("/home/semi/school/bell_prep/day_5/" (24335 45067 736027 867000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
+
+ ("/home/semi/.config/emacs/straight/build/cargo/" (24335 44084 790005 878000) "cargo-process.elc" "./" "cargo-process.el" "../" "cargo.el" "cargo.elc" "cargo-autoloads.el")
+
+ ("/home/semi/.config/emacs/straight/build/" (24334 32514 699063 32000) "ht/" "s/" "xah-fly-keys/" "gdscript-mode/" "dashboard/" "org-roam/" "f/" "poet-theme/" "dracula-theme/" "company/" "aggressive-indent/" "modalka/" "lsp-mode/" "emacsql/" "./" "deft/" "flycheck/" "org-journal/" "helm/" "undo-tree/" "../" "org-recur/" "markdown-mode/" "pkg-info/" "let-alist/" "haskell-emacs/" "epl/" "cargo/" "all-the-icons/" "goto-chg/" "easy-kill/" "telephone-line/" "lv/" "smex/" "org/" "org-bullets/" "projectile/" "dash/" "page-break-lines/" "esup/" "xkcd/" "bind-key/" "async/" "dash-functional/" "company-box/" "ox-reveal/" "emacsql-sqlite3/" "popup/" "rust-mode/" "straight/" "ido-vertical-mode/" "helm-core/" "visual-fill-column/" "org-notebook/" "haskell-mode/" "gcmh/" "company-go/" "use-package/" "golint/" "general/" "memoize/" "org-present/" "go-mode/" "spinner/" "evil/")
+
+ ("/home/semi/.config/emacs/straight/" (24335 44061 405005 355000) "build/" "build-cache.el" "./" "../" "repos/")
+
+ ("/home/semi/.config/emacs/elpa/" (24278 50998 266286 492000) "archives/" "./" "../")
+
+ ("/home/semi/school/bell_prep/" (24335 35592 237158 675000) "day_4/" "day_8/" "day_3/" "day_10/" "./" "../" "day_6/" "day_9/" "day_5/" "notebook/" "day_2/" "day_7/" "day_1/")
+
+ ("/home/semi/Code/speedmath/" (24335 31813 469074 144000) "CHANGELOG.md" "dist-newstyle/" "./" "../" "src/" ".#question.go" "speedmath.cabal" "Setup.hs" "go/")
+
+ ("/home/semi/Code/speedmath/src/" (24335 35661 440160 223000) "Main.hs" "./" "../" "Problem.hs")
+
+ ("/home/semi/Code/" (24335 18713 566231 609000) "gamepadtest/" "canvas2org/" "supertris/" "yed/" "./" "../" "semilin.github.io/" "xi-term/" "chortle/" "rng-core/" "luminance/" "forks/" "learn-luminance/" "lang/" "sorting/" "speedmath/")
+
+ ("/home/semi/org/school/bell_prep/day_5/" (24335 18361 36223 723000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
+
+ ("/home/semi/org/school/" (24335 18067 574217 158000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+
+ ("/home/semi/Code/ultratable/" (24335 18350 694223 491000) "./" "../")
+
+ ("/home/semi/org/school/bell_prep/" (24334 31544 27041 318000) "day_4/" "day_3/" "./" "../" "day_6/" "day_5/" "notebook/" "day_2/" "day_7/" "day_1/")
+
+ ("/home/semi/" (24335 8389 909000 669000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" "Public/" "deps/" "org-roam/" ".zcompdump-colin-void-5.8" ".gitconfig" ".deft/" ".themes/" ".config/" ".mozilla/" ".zcompdump" ".zshrc.pre-oh-my-zsh" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" ".zshrc" ".ghc/" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".elinks/" ".aspell.en.pws" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" "org/" ".gradle/" ".xsession-errors" ".aspell.en.prepl" "Downloads/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".dbus/" ".npm/" ".cargo/" ".redeclipse/" "Images/" "go/" "Templates/" ".java/" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".inputrc" ".cabal/")
 
  ("/home/semi/school/bell_prep/notebook/" (24334 31948 395050 364000) "img/" "./" "../")
 
- ("/home/semi/org/school/bell_prep/day_5/" (24334 25706 665076 319000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
-
- ("/home/semi/school/bell_prep/day_5/" (24334 25706 665076 319000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
-
  ("/home/semi/Code/yed/brick/" (24334 17617 687167 902000) "Main.o" "Main" "CHANGELOG.md" "Main.hs" "dist-newstyle/" "Main.hi" "./" "../" "src/" "Setup.hs" "cabal.project.local" "yed.cabal")
 
- ("/home/semi/school/bell_prep/day_7/" (24334 25706 691076 320000) "hughes-colin-ignatian-identity.log" "./" "../" "hughes-colin-ignatian-identity.odt" "hughes-colin-ignatian-identity.pdf" ".~lock.hughes-colin-ignatian-identity.odt#" "hughes-colin-ignatian-identity.tex" "hughes-colin-ignatian-identity.org")
-
- ("/home/semi/.config/" (24334 22332 241000 833000) "autostart/" "glib-2.0/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "neofetch/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "dunst/" "vlc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "nvim/" "okularrc" "ardour6/" "GIMP/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "mimeapps.list" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/")
-
- ("/home/semi/" (24334 7052 712455 66000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" "Public/" "deps/" ".zcompdump-colin-void-5.8" ".gitconfig" ".deft/" ".themes/" ".config/" ".mozilla/" ".zcompdump" ".zshrc.pre-oh-my-zsh" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" ".zshrc" ".ghc/" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".elinks/" ".aspell.en.pws" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" "org/" ".gradle/" ".xsession-errors" ".aspell.en.prepl" "Downloads/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".dbus/" ".npm/" ".cargo/" ".redeclipse/" "Images/" "go/" "Templates/" ".java/" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".inputrc" ".cabal/")
-
  ("/home/semi/school/bell_prep/day_6/" (24333 10477 292052 777000) "./" "../" "Hughes-Colin-Examen-Reflection.docx" "Hughes-Colin-Study-Habits.docx")
-
- ("/home/semi/org/journal/" (24333 56517 812095 560000) "./" "../" ".#2020-07-13.org" "2020-07-06.org")
 
  ("/home/semi/Code/yed/" (24333 2695 652217 966000) "brick/" "yed/" "./" "../" "xi/" "rust/")
 
@@ -94,8 +118,6 @@
  ("/home/semi/Code/luminance/first-steps/" (24331 34510 166046 175000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "main.rs" "target/" ".gitignore")
 
  ("/home/semi/Code/luminance/" (24331 33440 618022 249000) "./" "../" "first-steps/")
-
- ("/home/semi/Code/" (24331 33415 943021 697000) "gamepadtest/" "supertris/" "yed/" "./" "../" "semilin.github.io/" "xi-term/" "chortle/" "rng-core/" "luminance/" "forks/" "learn-luminance/" "lang/" "sorting/")
 
  ("/home/semi/Code/yed/scribe/" (24331 17605 880127 372000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "target/" ".gitignore")
 
@@ -116,8 +138,6 @@
  ("/home/semi/go/src/github.com/go-gl/glfw/v3.3/glfw/" (24313 26598 144528 449000) "go.mod" "c_glfw_lin.go" "input.go" "util.go" "window.c" "time.go" "build_cgo_hack.go" "./" "vulkan.go" "monitor.c" "../" "context.go" "glfw.go" "c_glfw_darwin.go" "native_linbsd.go" "c_glfw.go" "native_windows.go" "error.go" "c_glfw_freebsd.go" "c_glfw_windows.go" "GLFW_C_REVISION.txt" "input.c" "error.c" "monitor.go" "native_darwin.go" "build.go" "glfw/" "window.go")
 
  ("/home/semi/school/computer_architecture/" (24329 64779 401206 529000) "./" "../" "ram.org" "ssd.org")
-
- ("/home/semi/org/school/bell_prep/" (24329 1338 582068 308000) "day_4/" "day_3/" "./" "../" "day_5/" "day_2/" "day_1/")
 
  ("/home/semi/.deft/" (24328 63082 146024 432000) "./" "../")
 

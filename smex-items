@@ -1,19 +1,19 @@
 
 ;; ----- smex-history -----
 (
- org-roam-find-file
  w
- company-mode
- q
- org-agenda
- delete-file
- dired
+ eval-buffer
+ omni-leader/body
+ eval-region
+ describe-key
+ lsp
+ linum-mode
 )
 
 ;; ----- smex-data -----
 (
- (w . 198)
- (eval-buffer . 46)
+ (w . 276)
+ (eval-buffer . 78)
  (load-theme . 2)
  (e . 6)
  (visual-fill-column-mode . 2)
@@ -22,23 +22,23 @@
  (menu-bar--display-line-numbers-mode-visual . 1)
  (package-upload-file . 1)
  (completion-at-point . 3)
- (q . 3)
+ (q . 5)
  (new-class-note . 3)
  (find-variable . 1)
- (describe-function . 1)
+ (describe-function . 2)
  (delete-file . 4)
  (eval-defun . 1)
  (flyspell-mode . 2)
  (flyspell-buffer . 1)
  (flyspell-word . 1)
  (flyspell-correct-word . 2)
- (lsp . 8)
+ (lsp . 10)
  (gofmt . 2)
  (flycheck-mode . 4)
  (linum-mode . 8)
  (display-line-numbers-mode . 1)
  (org-recur-finish . 4)
- (straight-use-package . 1)
+ (straight-use-package . 4)
  (org-new-class-note . 4)
  (set-variable . 2)
  (make-directory . 1)
@@ -49,7 +49,20 @@
  (dashboard-return . 1)
  (org-notebook-new-notebook . 2)
  (dired . 1)
- (org-agenda . 2)
+ (org-agenda . 6)
  (company-mode . 1)
  (org-roam-find-file . 1)
+ (write-file . 1)
+ (eww-follow-link . 1)
+ (org-link-open-from-string . 1)
+ (org-journal-new-entry . 2)
+ (helm-org-rifle . 4)
+ (org-capture . 1)
+ (buffer-menu . 1)
+ (org-reveal . 1)
+ (jp-toggles/nil . 1)
+ (jp-toggles/body . 5)
+ (describe-key . 1)
+ (eval-region . 5)
+ (omni-leader/body . 3)
 )

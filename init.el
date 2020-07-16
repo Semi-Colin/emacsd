@@ -40,6 +40,7 @@
 		      ) 
 (straight-use-package 'org-bullets)
 (straight-use-package 'org-journal) 
+(straight-use-package 'helm-org-rifle)
 (straight-use-package 'org-roam)
 (straight-use-package 'poet-theme)
 (use-package org-recur
@@ -62,6 +63,9 @@
 (straight-use-package 'aggressive-indent) ; editing
 (straight-use-package 'modalka)
 (straight-use-package 'general)
+(straight-use-package 'posframe)
+(straight-use-package 'hydra)
+(straight-use-package 'pretty-hydra)
 (straight-use-package 'telephone-line)
 (straight-use-package 'easy-kill)
 ;(straight-use-package 'evil)
@@ -237,6 +241,32 @@
 ;; (global-set-key (kbd "M-;") 'end-of-line)
 ;; (global-set-key (kbd "M-a") 'execute-extended-command)
 
+(define-key modalka-mode-map (kbd "SPC") #'omni-leader/body)
+
+(pretty-hydra-define omni-leader
+  (:color blue :quit-key "q")
+  ("org"
+   (("o a" org-agenda "agenda")
+    ("o r" helm-org-rifle "rifle")
+    ("o j" org-journal-new-entry "journal entry"))
+   "file"
+   (("f f" find-file "open")
+    ("f b" switch-to-buffer "switch buffer"))
+   ))
+;; (general-create-definer my-leader-def
+;;   :keymaps 'modalka-mode-map
+;;   :prefix "SPC"
+;;   )
+
+;; (my-leader-def
+;;   :keymaps 'modalka-mode-map
+;;   "f f" 'find-file
+;;   "f b" 'switch-to-buffer
+;;   "o a" 'org-agenda
+;;   "o c" 'org-capture
+;;   "o j" 'org-journal-new-entry
+;;   )
+
 ;; General Editing
 (electric-pair-mode)
 (aggressive-indent-global-mode)
@@ -262,20 +292,20 @@
 ;; Programming
 
 ;; Golang
-(add-hook 'go-mode-hook 'line-number-mode)
+(add-hook 'go-mode-hook #'linum-mode)
+(add-hook 'go-mode-hook #'lsp)
 
 ;; Rust
-(add-hook 'rust-mode-hook 'line-number-mode)
+(add-hook 'rust-mode-hook #'line-number-mode)
 
 ;; Elisp
-(add-hook 'lisp-mode-hook 'line-number-mode)
+(add-hook 'lisp-mode-hook #'line-number-mode)
 
 ;; Org
 (add-hook 'org-mode-hook #'org-bullets-mode)
 (add-hook 'org-mode-hook #'org-indent-mode)
 (add-hook 'text-mode-hook #'visual-fill-column-mode)
 (add-hook 'text-mode-hook #'visual-line-mode)
-(add-hook 'text-mode-hook (lambda () (line-number-mode 0)))
 (add-hook 'text-mode-hook #'flyspell-mode)
 (add-hook 'org-mode-hook 'org-agenda-file-to-front)
 (add-hook 'text-mode-hook (lambda ()
@@ -286,6 +316,15 @@
 	  )
 					;(add-hook 'after-init-hook #'(define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish))
 					;(define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
+
+(setq org-deadline-warning-days 7)
+
+(setq org-agenda-sorting-strategy
+      (quote
+       ((agenda deadline-up priority-down)
+	(todo priority-down category-keep)
+	(tags priority-down category-keep)
+	(search category-keep))))
 
 
 (setq org-journal-dir "~/org/journal")
@@ -362,7 +401,7 @@
  '(custom-safe-themes
    '("2d035eb93f92384d11f18ed00930e5cc9964281915689fa035719cab71766a15" "dcdd1471fde79899ae47152d090e3551b889edf4b46f00df36d653adc2bf550d" default))
  '(org-agenda-files
-   '("~/school/assignments.org_archive" "~/school/assignments.org" "~/school/bell_prep/day_7/hughes-colin-ignatian-identity.org" "~/school/bell_prep/day_5/note-taking.org" "~/org/journal/2020-07-06.org" "~/org/school/meetings.org"))
+   '("~/org/journal/2020-07-13.org" "~/org/school/meetings.org" "~/org/journal/2020-07-06.org" "~/school/bell_prep/day_5/note-taking.org" "~/school/bell_prep/day_7/hughes-colin-ignatian-identity.org" "~/school/assignments.org" "~/school/assignments.org_archive"))
  '(org-hidden-keywords '(author date email title))
  '(org-journal-dir "~/org/journal")
  '(org-journal-enable-agenda-integration t)
