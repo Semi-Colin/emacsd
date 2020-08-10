@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/nord-emacs/nord-theme.el

@@ -1,0 +1,744 @@
+#+title:Emacs Config
+#+options: num:0
+
+This is my personal emacs init file. I am restarting it, because my old one was kind of a copy-pasted mess.
+
+* Table of Contents                                                     :toc:
+- [[#packages][Packages]]
+  - [[#bootstrap][Bootstrap]]
+  - [[#use-package][Use-package]]
+- [[#org][Org]]
+  - [[#get-latest-version][Get latest version]]
+  - [[#aesthetics][Aesthetics]]
+  - [[#log-time][Log Time]]
+  - [[#superstar][Superstar]]
+  - [[#toc][TOC]]
+  - [[#faces][Faces]]
+  - [[#capture][Capture]]
+  - [[#tempo][Tempo]]
+  - [[#roam][Roam]]
+  - [[#writegood][Writegood]]
+  - [[#center-window][Center Window]]
+  - [[#recur][Recur]]
+  - [[#indentation][Indentation]]
+  - [[#agenda][Agenda]]
+  - [[#super-agenda][Super Agenda]]
+  - [[#journal][Journal]]
+- [[#aesthetics-1][Aesthetics]]
+  - [[#theme][Theme]]
+  - [[#font][Font]]
+  - [[#default-ui][Default UI]]
+  - [[#modeline][Modeline]]
+  - [[#dashboard][Dashboard]]
+- [[#functionality][Functionality]]
+  - [[#ido][Ido]]
+  - [[#smex][Smex]]
+  - [[#matching-parens][Matching Parens]]
+  - [[#centaur-tabs][Centaur Tabs]]
+  - [[#flymake][Flymake]]
+  - [[#company][Company]]
+  - [[#eglot][eglot]]
+  - [[#elfeed][elfeed]]
+  - [[#notmuch][NotMuch]]
+- [[#custom][Custom]]
+  - [[#functions][Functions]]
+- [[#programming][Programming]]
+  - [[#rust][Rust]]
+  - [[#go][Go]]
+  - [[#haskell][Haskell]]
+- [[#editing][Editing]]
+  - [[#aggressive-indent][Aggressive Indent]]
+  - [[#electric-indent][Electric Indent]]
+  - [[#line-numbers][Line Numbers]]
+  - [[#ace-jump][Ace Jump]]
+  - [[#yasnippets][Yasnippets]]
+- [[#keybinds][Keybinds]]
+  - [[#hydra][Hydra]]
+  - [[#ryo-modal][Ryo-Modal]]
+  - [[#global][Global]]
+  - [[#which-key][Which Key]]
+
+* Packages
+** Bootstrap
+
+   Yeah, this code is copy-pasted, but I think it gets a pass because it's pretty much necessary.
+   #+BEGIN_SRC emacs-lisp
+
+   (defvar bootstrap-version)
+   (let ((bootstrap-file
+   (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+   (bootstrap-version 5))
+   (unless (file-exists-p bootstrap-file)
+   (with-current-buffer
+   (url-retrieve-synchronously
+   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+   'silent 'inhibit-cookies)
+   (goto-char (point-max))
+   (eval-print-last-sexp)))
+   (load bootstrap-file nil 'nomessage))
+   
+   #+END_SRC
+** Use-package
+   A lot of packages use use-package as their examples, and I don't know how to translate those to just raw straight. So I install it here.
+   #+begin_src emacs-lisp
+   (straight-use-package 'use-package)
+   #+end_src
+
+* Org
+
+Org-mode really is the killer application for emacs.
+** Get latest version
+#+begin_src 
+(straight-use-package 'org)
+(require 'org)
+(require 'ox)
+#+end_src
+** Aesthetics
+   Hide keywords for title, date, and author.
+   #+begin_src emacs-lisp
+   (setq org-hidden-keywords '(author date email title))
+   #+end_src
+** Log Time
+This will automatically write a timestamp when I close a todo.
+#+begin_src elisp
+(setq org-log-done 'time)
+#+end_src
+** Superstar
+
+Superstar is a descendant of org-bullets, which increases performance and makes its scope a little bit better.
+*** Install with straight.el
+    #+begin_src emacs-lisp
+
+    (straight-use-package 'org-superstar)
+    
+    #+end_src
+    
+*** Activate when opening an org-mode file
+    #+begin_src emacs-lisp
+
+    (add-hook 'org-mode-hook #'org-superstar-mode)
+   
+    #+end_src    
+** TOC
+#+begin_src elisp
+  (straight-use-package 'toc-org)
+  (add-hook 'org-mode-hook 'toc-org-mode)
+#+end_src
+** TODO Faces
+*** Todo
+#+begin_src elisp 
+(setq org-todo-keyword-faces
+      '(("TODO" . "yellow") ("DONE" . "dark gray")
+        ))
+#+end_src
+** Capture
+*** Templates
+#+begin_src elisp 
+(setq org-capture-templates
+      '(
+      ("t" "Task" entry (file+headline "~/org/personal/tasks.org" "Tasks")
+      "* TODO %?\n  %i\n")
+      ("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
+      "* TODO %?\nDEADLINE: %t")
+      ))
+      
+#+end_src
+*** Keybind
+#+begin_src elisp
+(global-set-key (kbd "C-c x") 'org-capture)
+#+end_src
+** Tempo
+   Org tempo is a quick shortcut for adding blocks. For example, writing simply " <s " and followed by TAB will automatically fill out a source code block. Seems pretty nifty, and quite useful (especially for this config file) 
+   
+   #+BEGIN_SRC emacs-lisp
+     (require 'org-tempo)
+   #+END_SRC
+*** TODO Make Tempo Cooperate with Electric Pairs
+*** Credit
+[[https://orgmode.org/manual/Structure-Templates.html][orgmode.org]]
+** Roam
+*** Install
+#+begin_src elisp
+(straight-use-package 'org-roam)
+#+end_src
+*** Tag Sources
+#+begin_src elisp
+(setq org-roam-tag-sources '(prop))
+#+end_src
+*** Company
+#+begin_src elisp
+(straight-use-package 'company-org-roam)
+#+end_src
+*** Use Ido
+#+begin_src elisp
+(setq org-roam-completion-system 'ido)
+#+end_src
+** Writegood
+*** Install
+#+begin_src elisp
+(straight-use-package 'writegood-mode)
+#+end_src
+*** Config
+#+begin_src elisp
+(global-set-key (kbd "C-c g") 'writegood-mode)
+#+end_src
+** Center Window
+*** Install
+#+begin_src elisp
+(straight-use-package 'centered-window)
+#+end_src
+*** Config
+#+begin_src elisp
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
+(add-hook 'org-mode-hook 'centered-window-mode)
+#+end_src
+** Recur
+Org-mode's scheduled dates is pretty lacking, so recur covers most of the gaps.
+*** Install
+#+begin_src elisp
+(straight-use-package 'org-recur)
+#+end_src
+** Indentation
+   For some reason, org-mode does not auto-indent by default.
+
+   #+begin_src elisp
+
+   (add-hook 'org-mode-hook #'org-indent-mode)
+   
+   #+end_src
+** Agenda
+*** Keybind
+#+begin_src elisp
+(global-set-key (kbd "C-c a") 'org-agenda)
+#+end_src
+*** Time Grid
+#+begin_src elisp
+(setq org-agenda-use-time-grid nil)
+#+end_src
+** Super Agenda
+*** Install
+#+begin_src elisp
+  (straight-use-package 'org-super-agenda)
+#+end_src
+*** Config
+#+begin_src elisp
+
+#+end_src
+** Journal
+*** Install
+#+begin_src 
+(straight-use-package 'org-journal)
+#+end_src
+*** Config
+#+begin_src emacs-lisp
+(setq org-journal-dir "~/org/journal")
+(setq org-journal-file-format "%d-%m-%Y.org")
+(setq org-journal-enable-agenda-integration t)
+#+end_src
+*** Keybinds
+#+begin_src emacs-lisp 
+(global-set-key (kbd "C-c j") 'org-journal-new-entry)
+#+end_src
+*** Activate
+#+begin_src elisp
+(require 'org-journal)
+#+end_src
+* Aesthetics
+
+I'll be honest, GUI Emacs does not look great by default... let's fix that!
+** DONE Theme
+
+I used the Dracula theme in my old config as well. It seems to be the only one I've tried that properly works with org-mode.
+*** Install Dracula
+     #+begin_src emacs-lisp
+     ;(straight-use-package 'dracula-theme)
+     #+end_src
+*** Install Doom Themes
+     #+begin_src emacs-lisp
+     (straight-use-package 'doom-themes)
+     #+end_src
+*** Set theme to Doom One
+     #+begin_src emacs-lisp
+     (load-theme 'doom-one t)
+     #+end_src
+     
+** Font
+  
+   Fira Code looks pretty nice in my opinion. 
+*** Set
+    #+begin_src emacs-lisp
+    (set-frame-font "Fira Code 14" nil t)
+    #+end_src
+*** Credit
+
+    [[https://stackoverflow.com/a/6050987][Dov Grobgeld on StackExchange]]
+   
+** Default UI
+*** Hide the menu bar
+    #+begin_src emacs-lisp
+    (menu-bar-mode -1)
+    #+end_src
+    
+*** Hide the scroll bar
+    #+begin_src emacs-lisp
+    (scroll-bar-mode -1)
+    #+end_src
+    
+*** Hide the tool bar
+    #+begin_src emacs-lisp
+    (tool-bar-mode -1)
+    #+end_src
+    
+** Modeline
+
+More Doom stealing, yay.
+*** Install
+    #+begin_src emacs-lisp
+    (straight-use-package 'doom-modeline)
+    #+end_src
+    
+*** Activate
+    #+begin_src emacs-lisp
+    (doom-modeline-mode 1)
+    #+end_src
+** Dashboard
+
+Even more Doom stealing!
+*** Install
+Dependencies
+    #+begin_src emacs-lisp
+      (straight-use-package 'page-break-lines)
+      (straight-use-package 'all-the-icons)
+    #+end_src
+    
+    Dashboard
+    #+begin_src emacs-lisp
+      (straight-use-package 'dashboard)
+      (dashboard-setup-startup-hook)
+    #+end_src
+    
+*** Config
+**** Comply with emacsclient
+     #+begin_src emacs-lisp
+                                               ;(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+     #+end_src
+     
+**** Set the banner title and logo
+     #+begin_src emacs-lisp
+       (setq dashboard-banner-logo-title "Semimacs")
+       (setq dashboard-startup-banner 'logo)
+     #+end_src
+     
+**** Center the content
+     #+begin_src emacs-lisp
+       (setq dashboard-center-content t)
+     #+end_src
+     
+**** Set what items should appear
+     #+begin_src emacs-lisp
+                                               ;     (setq dashboard-items '((recents  . 5)
+                                               ;                        (bookmarks . 5)
+                                               ;                       (agenda . 5))
+     #+end_src
+     
+**** Show cool looking icons!
+     #+begin_src emacs-lisp
+       (setq dashboard-set-heading-icons t)
+       (setq dashboard-set-file-icons t)
+     #+end_src
+     
+**** Display load time and packages and such.
+     #+begin_src emacs-lisp
+       (setq dashboard-set-init-info t)
+     #+end_src
+
+**** Show a dumb footer message
+     #+begin_src emacs-lisp
+       (setq dashboard-footer-messages '("Yeah, I look like I know what I'm doing."))
+     #+end_src
+      
+* Functionality
+** Ido
+*** Enable
+#+begin_src emacs-lisp
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+#+end_src
+
+Credit: [[https://masteringemacs.org/article/introduction-to-ido-mode][masteringemacs.org]]
+*** Vertical Hints
+#+begin_src emacs-lisp
+(straight-use-package 'ido-vertical-mode)
+(ido-vertical-mode 1)
+#+end_src
+** Smex
+*** Install
+#+begin_src emacs-lisp 
+(straight-use-package 'smex)
+(global-set-key (kbd "M-x") 'smex)
+#+end_src
+** Matching Parens
+#+begin_src elisp
+  (show-paren-mode t)
+#+end_src
+** Centaur Tabs
+*** Install
+#+begin_src emacs-lisp 
+(straight-use-package 'centaur-tabs)
+(centaur-tabs-mode t)
+#+end_src
+*** Customization
+#+begin_src emacs-lisp
+(setq centaur-tabs-set-icons t)
+(setq centaur-tabs-style "bar")
+#+end_src
+** Flymake
+Flymake is slightly outdated for eglot, so I have to install the newest version
+#+begin_src emacs-lisp
+(straight-use-package 'flymake)
+#+end_src
+** Company
+*** Install
+#+begin_src emacs-lisp
+(straight-use-package 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+#+end_src
+*** Extra Backends
+#+begin_src emacs-lisp
+(straight-use-package 'company-go)
+#+end_src
+** eglot
+*** Install
+#+begin_src emacs-lisp
+(straight-use-package 'eglot)
+#+end_src
+** elfeed
+*** Install
+#+begin_src emacs-lisp
+(straight-use-package 'elfeed)
+#+end_src
+*** Feeds
+#+begin_src emacs-lisp 
+(setq elfeed-feeds
+'(("https://xkcd.com/rss.xml" entertainment)
+("https://www.distrotube.com/videos/index.xml" technology)
+("https://lukesmith.xyz/rss.xml" technology)
+("reddit.com/r/emacs/.rss" software)
+))
+#+end_src
+** NotMuch
+*** Install
+#+begin_src elisp
+(straight-use-package 'notmuch)
+#+end_src
+* Custom
+** Functions 
+*** Quicktangle
+    org-babel-tangle is too slow, so I wrote my own in go.
+
+    #+begin_src emacs-lisp 
+    #+end_src
+*** Reload-config
+#+begin_src emacs-lisp
+(defun reload-config ()
+(interactive)
+(quicktangle "~/.config/emacs/config.org" "~/.config/emacs/config.el")
+(load-file "~/.config/emacs/config.el")
+)
+#+end_src
+*** Open-next-line
+#+begin_src emacs-lisp 
+(defun open-next-line ()
+(interactive)
+(end-of-line)
+(newline-and-indent)
+)
+#+end_src
+*** Open-prev-line
+#+begin_src emacs-lisp
+(defun open-prev-line ()
+(interactive)
+(beginning-of-line)
+(newline-and-indent)
+(previous-line)
+)
+
+#+end_src
+*** Delete Line
+#+begin_src emacs-lisp
+(defun delete-line ()
+(interactive)
+(beginning-of-line)
+(kill-line)
+)
+#+end_src
+* Programming
+** Rust
+*** Rust-mode
+    #+begin_src emacs-lisp
+    (straight-use-package 'rust-mode
+    :defer t)
+    #+end_src
+** Go
+*** Go-mode
+    #+begin_src emacs-lisp
+    (straight-use-package 'go-mode
+    :defer t
+    )
+    #+end_src
+*** LSP
+#+begin_src emacs-lisp 
+(add-hook 'go-mode-hook 'eglot-ensure)
+#+end_src
+** Haskell
+*** Haskell-mode
+#+begin_src 
+(straight-use-package 'haskell-mode)
+#+end_src
+* Editing
+** Aggressive Indent
+
+This plugin is great; it just indents everything as I am typing.
+*** Install
+    #+begin_src emacs-lisp
+    (straight-use-package 'aggressive-indent)
+    #+end_src
+*** Activate Globally
+    #+begin_src emacs-lisp
+    (global-aggressive-indent-mode 1)
+    #+end_src
+** Electric Indent
+Honestly don't know how people live without it.
+*** Activate
+   #+begin_src emacs-lisp
+   (electric-pair-mode 1)
+   #+end_src
+   
+** Line Numbers
+** Ace Jump
+*** Install
+#+begin_src elisp
+  (straight-use-package 'ace-jump-mode)
+#+end_src
+*** Config
+#+begin_src elisp
+  ;(setq ace-jump-mode-move-keys
+        ;(split-string "fjdkslaghrueiwoqprieowpqtyvmcxzbn"))
+#+end_src
+** Yasnippets
+*** Install
+#+begin_src elisp
+(straight-use-package 'yasnippet)
+#+end_src
+*** Activate on programming buffers
+#+begin_src elisp
+  (require 'yasnippet)
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook #'yas-minor-mode)
+#+end_src
+*** Default Snippets
+#+begin_src elisp
+(straight-use-package 'yasnippet-snippets)
+#+end_src
+* Keybinds
+** Hydra
+*** Install
+#+begin_src emacs-lisp
+(straight-use-package 'hydra)
+#+end_src
+** Ryo-Modal
+*** Install
+   #+begin_src emacs-lisp
+     (use-package ryo-modal
+     :straight t
+     :commands ryo-modal-mode
+   #+end_src
+*** Toggle
+    #+begin_src emacs-lisp
+      :bind ("<escape>" . ryo-modal-mode)
+    #+end_src
+*** Movement
+   #+begin_src emacs-lisp
+     :config
+     (ryo-modal-keys 
+      (:norepeat t)
+      ("i" previous-line)
+      ("j" backward-char)
+      ("k" next-line)
+      ("l" forward-char)
+      ("o" forward-word)
+      ("u" backward-word)
+      ("J" beginning-of-line)
+      ("L" end-of-line)
+      ("h" ace-jump-mode)
+      )
+   #+end_src
+*** General
+#+begin_src emacs-lisp
+  (ryo-modal-keys
+   (:norepeat t)
+   ("g" keyboard-escape-quit)
+   )
+#+end_src
+*** Editings
+#+begin_src emacs-lisp 
+  (ryo-modal-keys
+   (:norepeat t)
+   ("x" delete-char)
+   ("r" open-next-line)
+   ("R" open-prev-line)
+   ("v" set-mark-command) 
+   ("q" undo)
+   ("w" kill-ring-save)
+   ("t" yank)
+   ))
+#+end_src
+*** Functions
+**** Change Word
+#+begin_src emacs-lisp
+(defun change-word ()
+(interactive)
+(kill-word 1)
+(ryo-modal-mode 0)
+)
+#+end_src
+**** Backward Change Word
+#+begin_src emacs-lisp
+  (defun backward-change-word ()
+    (interactive)
+    (backward-kill-word 1)
+    (ryo-modal-mode 0)
+    )
+#+end_src
+**** Change Line
+#+begin_src emacs-lisp
+  (defun change-line ()
+    (interactive)
+    (delete-line)
+    (ryo-modal-mode -1)
+    )
+#+end_src
+*** Hydras
+**** Delete
+#+begin_src emacs-lisp 
+  (ryo-modal-key
+   "d" :hydra
+   '(hydra-delete (:color blue)
+                  "Delete..."
+                  ("o" kill-word "word forward")
+                  ("u" backward-kill-word "word backward")
+                  ("d" delete-line "line")
+                  ("r" kill-region "region")
+                  ))
+#+end_src
+**** Change
+#+begin_src emacs-lisp
+  (ryo-modal-key 
+   "c" :hydra
+   '(hydra-change (:color blue)
+                  "Change..."
+                  ("o" change-word "word forward")
+                  ("u" backward-change-word "word backward")
+                  ("c" change-line "line")
+                  ("r" kill-region "region")
+  ))
+#+end_src
+**** Leader
+***** Org
+#+begin_src elisp
+  (defhydra org-leader (:color blue)
+    "Org"
+    ("a" org-agenda "Agenda")
+    ("j" org-journal-new-entry "Journal")
+    ("c" org-capture "Capture")
+    )
+#+end_src
+***** Roam
+#+begin_src elisp
+  (defhydra roam-leader (:color blue)
+    "Roam"
+    ("f" org-roam-find-file "Find File")
+    )
+#+end_src
+***** File
+#+begin_src elisp
+  (defhydra file-leader (:color blue)
+    "File"
+    ("f" find-file "Find File")
+    ("s" save-buffer "Save")
+    ("b" switch-to-buffer "Switch Buffer")
+    ("d" dired "Dired")
+    )
+#+end_src
+***** Activate
+#+begin_src elisp
+  (ryo-modal-key 
+   "SPC" :hydra
+   '(hydra-leader (:color blue)
+                  "Leader"
+                  ("o" org-leader/body "Org")
+                  ("r" roam-leader/body "Roam")
+                  ("f" file-leader/body "File")
+                  ("TAB" other-window "Switch window")
+  ))
+#+end_src
+**** Major Mode
+***** Install
+#+begin_src elisp
+(straight-use-package 'major-mode-hydra)
+#+end_src
+***** Keybind
+#+begin_src elisp
+  (ryo-modal-set-key (kbd "RET") 'major-mode-hydra)
+#+end_src
+***** Elisp
+#+begin_src elisp
+(major-mode-hydra-define emacs-lisp-mode nil
+("Eval"
+   (("e b" eval-buffer "buffer")
+    ("e d" eval-defun "defun")
+    ("e r" eval-region "region"))
+   "REPL"
+   (("I" ielm "ielm"))
+   "Doc"
+   (("d d" describe-foo-at-point "thing-at-pt")
+    ("d f" describe-function "function")
+    ("d v" describe-variable "variable")
+    ("d i" info-lookup-symbol "info lookup"))))
+#+end_src
+***** Org
+#+begin_src elisp
+    (major-mode-hydra-define org-mode (:color blue)
+    ("tree"
+    (("a" org-archive-subtree "archive")
+    ("t" org-todo "toggle todo")
+    ("r" org-refile "refile")
+    )
+    ))
+#+end_src
+*** Global Activation
+#+begin_src emacs-lisp
+  (add-hook 'text-mode-hook #'ryo-modal-mode)
+  (add-hook 'prog-mode-hook #'ryo-modal-mode)
+#+end_src
+** Global
+Map C-ESC to keyboard-escape-quit
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-<escape>") 'keyboard-escape-quit)
+#+end_src
+** Which Key
+Which Key tells me what keybindings are available
+
+*** Install
+#+begin_src emacs-lisp
+  (straight-use-package 'which-key)
+#+end_src
+
+*** Config
+#+begin_src emacs-lisp
+  (which-key-mode)
+  (setq which-key-idle-delay 1)
+#+end_src

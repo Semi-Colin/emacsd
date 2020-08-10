@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/centered-window-mode/centered-window.el

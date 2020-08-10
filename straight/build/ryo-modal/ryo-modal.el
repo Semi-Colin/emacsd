@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/ryo-modal/ryo-modal.el

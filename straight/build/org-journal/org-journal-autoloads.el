@@ -6,20 +6,18 @@
 ;;;### (autoloads nil "org-journal" "org-journal.el" (0 0 0 0))
 ;;; Generated autoloads from org-journal.el
 
+(add-hook 'calendar-today-visible-hook 'org-journal-mark-entries)
+
+(add-hook 'calendar-today-invisible-hook 'org-journal-mark-entries)
+
 (autoload 'org-journal-mode "org-journal" "\
 Mode for writing or viewing entries written in the journal.
 
 \(fn)" t nil)
 
-(eval-after-load "calendar" '(progn (define-key calendar-mode-map "m" 'org-journal-mark-entries) (define-key calendar-mode-map "j" 'org-journal-read-entry) (define-key calendar-mode-map (kbd "C-j") 'org-journal-display-entry) (define-key calendar-mode-map "]" 'org-journal-next-entry) (define-key calendar-mode-map "[" 'org-journal-previous-entry) (define-key calendar-mode-map (kbd "i j") 'org-journal-new-date-entry) (define-key calendar-mode-map (kbd "f f") 'org-journal-search-forever) (define-key calendar-mode-map (kbd "f F") 'org-journal-search-future) (define-key calendar-mode-map (kbd "f w") 'org-journal-search-calendar-week) (define-key calendar-mode-map (kbd "f m") 'org-journal-search-calendar-month) (define-key calendar-mode-map (kbd "f y") 'org-journal-search-calendar-year)))
+(define-obsolete-function-alias 'org-journal-open-next-entry 'org-journal-next-entry)
 
-(autoload 'org-journal-is-journal "org-journal" "\
-Determine if file is a journal file." nil nil)
-
-(add-to-list 'magic-mode-alist '(org-journal-is-journal . org-journal-mode))
-
-(autoload 'org-journal-dir-and-file-format->pattern "org-journal" "\
-Return the current journal file pattern" nil nil)
+(define-obsolete-function-alias 'org-journal-open-previous-entry 'org-journal-previous-entry)
 
 (autoload 'org-journal-convert-created-property-timestamps "org-journal" "\
 Convert CREATED property timestamps to `org-journal-created-property-timestamp-format'.
@@ -60,28 +58,14 @@ Create a new entry in the future.
 (autoload 'org-journal-open-current-journal-file "org-journal" "\
 Open the current journal file" t nil)
 
-(autoload 'org-journal-open-next-entry "org-journal" "\
-Open the next journal entry starting from a currently displayed one.
-
-\(fn &optional NO-SELECT)" t nil)
-
-(autoload 'org-journal-open-previous-entry "org-journal" "\
-Open the previous journal entry starting from a currently displayed one.
-
-\(fn &optional NO-SELECT)" t nil)
-
-(autoload 'org-journal-list-files "org-journal" "\
-Returns a list of all files in the journal directory." nil nil)
-
 (autoload 'org-journal-invalidate-cache "org-journal" "\
-Reset `org-journal-journals', `org-journal-dates' and remove the
-file `org-journal-cache-file'." t nil)
+Clear `org-journal-dates' hash table, and the cache file." t nil)
 
 (autoload 'org-journal-mark-entries "org-journal" "\
-Mark days in the calendar for which a diary entry is present" t nil)
+Mark days in the calendar for which a journal entry is present." t nil)
 
 (autoload 'org-journal-read-entry "org-journal" "\
-Open journal entry for selected date for viewing
+Open journal entry for selected date for viewing.
 
 \(fn ARG &optional EVENT)" t nil)
 
@@ -97,10 +81,10 @@ is nil or avoid switching when NOSELECT is non-nil.
 \(fn TIME &optional NOSELECT)" nil nil)
 
 (autoload 'org-journal-next-entry "org-journal" "\
-Go to the next date with a journal entry." t nil)
+Go to the next journal entry." t nil)
 
 (autoload 'org-journal-previous-entry "org-journal" "\
-Go to the previous date with a journal entry." t nil)
+Go to the previous journal entry." t nil)
 
 (autoload 'org-journal-search "org-journal" "\
 Search for a string in the journal files.
@@ -134,6 +118,9 @@ Search for a string within all entries.
 Search for a string within all future entries.
 
 \(fn STR)" t nil)
+
+(autoload 'org-journal-search-future-scheduled "org-journal" "\
+Search for TODOs within all future entries." t nil)
 
 (add-hook 'org-journal-mode-hook (lambda nil (add-hook org-journal-encrypt-on 'org-journal-encryption-hook nil t)))
 

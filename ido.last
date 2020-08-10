@@ -2,154 +2,118 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/home/semi/.config/emacs/straight/build/" . "cargo/")
+ ("/" . "home/")
+ ("/home/semi/.config/emacs/" . "auto-save-list/")
+ ("/home/semi/org/" . "personal/")
+ ("/home/semi/Code/learning/" . "haskell/")
+ ("/home/semi/.config/emacs/straight/build/" . "flymake/")
  ("/home/semi/.config/emacs/straight/" . "build/")
- ("/home/semi/Code/yed/rust/" . "src/")
- ("/home/semi/Code/yed/scribe/" . "src/")
- ("/home/semi/Code/luminance/first-steps/" . "src/")
- ("/home/semi/Code/luminance/" . "first-steps/")
- ("/home/semi/Code/yed/" . "brick/")
- ("/home/semi/Code/" . "speedmath/")
- ("/home/semi/school/bell_prep/" . "day_5/")
- ("/home/semi/org/school/bell_prep/" . "day_5/")
- ("/home/semi/org/school/" . "bell_prep/")
- ("/home/" . "semi/")
+ ("/home/semi/Code/yed/" . "yed/")
  ("/home/semi/.config/" . "emacs/")
- ("/home/semi/school/" . "bell_prep/")
- ("/home/semi/org/" . "school/")
- ("/home/semi/" . ".config/")
+ ("/home/semi/Code/chortle/" . "python/")
+ ("/home/semi/Code/" . "minecalc/")
+ ("/home/" . "semi/")
+ ("/home/semi/" . "Code/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
  "/home/semi/.config/emacs/"
+ "/home/semi/Code/learnyouahaskell/"
+ "/home/semi/Code/org-css/"
+ "/home/semi/Code/minecalc/"
  "/home/semi/school/"
- "/home/semi/.config/emacs/straight/build/cargo/"
- "/home/semi/Code/speedmath/src/"
- "/home/semi/Code/speedmath/"
- "/home/semi/Code/ultratable/"
- "/home/semi/org/school/"
- "/home/semi/school/bell_prep/day_7/"
- "/home/semi/Code/yed/brick/"
- "/home/semi/Code/yed/haskell/"
- "/home/semi/Code/yed/rust/src/"
- "/home/semi/Code/yed/scribe/src/"
- "/home/semi/Code/luminance/first-steps/src/"
- "/home/semi/Code/luminance/first-steps/"
- "/home/semi/Code/yed/scribe/"
- "/home/semi/Code/yed/"
- "/home/semi/school/bell_prep/day_5/"
- "/home/semi/org/school/bell_prep/day_5/"
- "/home/semi/org/school/bell_prep/day_4/"
+ "/home/semi/org/"
+ "/home/semi/.config/emacs/old/"
+ "/home/semi/Code/sudoku/"
+ "/home/semi/Code/"
+ "/home/semi/Code/mineanalyze/"
+ "/home/semi/org/personal/"
+ "/home/semi/Code/learning/haskell/1/"
+ "/home/semi/.config/emacs/straight/build/flymake/"
+ "/home/semi/Code/yed/yed/"
+ "/home/semi/Code/chortle/python/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "init.el"
- "meetings.org"
- "cargo-process.el"
- "cargo.el"
- "assignments.org"
- "Problem.hs"
- "Main.hs"
- "question.go"
+ "config.org"
+ "main.hs"
+ "org.css"
+ "config.html"
+ "#org.css#"
+ "resource.go"
+ "config.org_archive"
  "assignments.org_archive"
- "hughes-colin-ignatian-identity.org"
+ "assignments.org"
+ "meetings.org_archive"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/semi/.config/emacs/" (24335 52216 99091 183000) "auto-save-list/" ".git/" "hooks/" "description" "refs/" "smex-items" "./" "init.el" "info/" "../" "HEAD" "ido.last" "recentf~" ".lsp-session-v1" "objects/" "eshell/" "xkcd/" "elpa/" "backup/" "straight/" "recentf" "bookmarks" "config" "#init.el#")
+ ("/home/semi/.config/emacs/" (24368 22428 450034 124000) "config.el~" "snippets/" "auto-save-list/" ".git/" "config.html~" "hooks/" "quicktangle.el~" "quicktangle.el" "config.org" "config.html" "refs/" "smex-items" "./" "init.el" "info/" "../" "ido.last" "config.org_archive" "recentf~" ".lsp-session-v1" "objects/" "eshell/" "config.org~" "elpa/" "backup/" "straight/" "config.el" "init.org~" "recentf" "bookmarks" "config.org_archive~" "ido.last~" "url/" "old/")
 
- ("/home/semi/school/" (24335 52082 471088 193000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+ ("/home/semi/Code/minecalc/" (24368 21332 75009 598000) "resource.go~" "cli.go" "main.go" "#resource.go#" "./" "../" "main.go~" "minecalc" "resource.go" "cli.go~" ".#resource.go")
 
- ("/home/semi/org/journal/" (24335 51594 769077 283000) "./" "../" "2020-07-13.org" "2020-07-06.org")
+ ("/home/semi/.config/" (24368 14530 151023 604000) "retroarch/" "autostart/" "glib-2.0/" "mu4e/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "blugon/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "cordless/" "neofetch/" "Nextcloud/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "herbstluftwm/" "msmtp/" "dunst/" "xmobar/" "vlc/" "aerc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "qmk/" "nvim/" "okularrc" "ardour6/" "GIMP/" "wal/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "inkscape/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "enchant/" "mimeapps.list" "lunarclient/" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "VirtualBox/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/" "mupen64plus/")
 
- ("/home/semi/.config/" (24335 44598 728017 375000) "autostart/" "glib-2.0/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "cordless/" "neofetch/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "dunst/" "vlc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "nvim/" "okularrc" "ardour6/" "GIMP/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "mimeapps.list" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/")
+ ("/home/semi/" (24366 58349 634157 790000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" "org-roam/" ".zcompdump-colin-void-5.8" ".mbsyncrc" ".gitconfig" ".oracle_jre_usage/" "qmk_firmware/" ".deft/" ".Xmodmap" ".themes/" ".config/" ".mozilla/" ".zcompdump" ".xsession" ".elfeed/" ".zshrc.pre-oh-my-zsh" "Nextcloud/" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" "My Games/" ".zshrc" ".ghc/" ".alsoftrc" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".elinks/" ".aspell.en.pws" "mail/" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" "org/" ".rexuiz/" ".prxMofneP" ".xmonad/" ".lunarclient/" ".gradle/" ".xsession-errors" ".gnupg/" ".aspell.en.prepl" "Downloads/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".notmuch-config" ".node_repl_history" ".dbus/" ".npm/" ".password-store/" ".cargo/" ".redeclipse/" ".getmail/" "Images/" "go/" "Templates/" ".java/" ".viminfo" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".gtk-bookmarks" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".XSM-Default" ".inputrc" ".ssh/" ".cabal/")
 
- ("/home/semi/school/bell_prep/day_7/" (24335 45067 709027 866000) "hughes-colin-ignatian-identity.log" "./" "../" "hughes-colin-ignatian-identity.odt" "hughes-colin-ignatian-identity.pdf" "hughes-colin-ignatian-identity.tex" "hughes-colin-ignatian-identity.org")
+ ("/home/semi/.config/bspwm/" (24367 9541 18009 105000) "bspwmrc" "config.org" "./" "../" "config.org~")
 
- ("/home/semi/school/bell_prep/day_5/" (24335 45067 736027 867000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
+ ("/home/semi/org/personal/" (24364 20201 672039 991000) "books.org" "books.org~" "inbox.org" "room.org" "./" "../" "coding.org" "books.org_archive" "room.org~" "coding.org~" "frettournament.org~" "tasks.org" "frettournament.org" "inbox.org~" "tasks.org_archive" "tasks.org~" "firealarms.org" "writing/")
 
- ("/home/semi/.config/emacs/straight/build/cargo/" (24335 44084 790005 878000) "cargo-process.elc" "./" "cargo-process.el" "../" "cargo.el" "cargo.elc" "cargo-autoloads.el")
+ ("/home/semi/school/" (24363 2106 61009 17000) "bell_prep/" "assignments.org" "assignments.org~" "./" "assignments.org_archive~" "../" "#assignments.org#" "meetings.org_archive" "homework.org~" "computer_architecture/" "assignments.org_archive" "homework.org" "general/" "meetings.org")
 
- ("/home/semi/.config/emacs/straight/build/" (24334 32514 699063 32000) "ht/" "s/" "xah-fly-keys/" "gdscript-mode/" "dashboard/" "org-roam/" "f/" "poet-theme/" "dracula-theme/" "company/" "aggressive-indent/" "modalka/" "lsp-mode/" "emacsql/" "./" "deft/" "flycheck/" "org-journal/" "helm/" "undo-tree/" "../" "org-recur/" "markdown-mode/" "pkg-info/" "let-alist/" "haskell-emacs/" "epl/" "cargo/" "all-the-icons/" "goto-chg/" "easy-kill/" "telephone-line/" "lv/" "smex/" "org/" "org-bullets/" "projectile/" "dash/" "page-break-lines/" "esup/" "xkcd/" "bind-key/" "async/" "dash-functional/" "company-box/" "ox-reveal/" "emacsql-sqlite3/" "popup/" "rust-mode/" "straight/" "ido-vertical-mode/" "helm-core/" "visual-fill-column/" "org-notebook/" "haskell-mode/" "gcmh/" "company-go/" "use-package/" "golint/" "general/" "memoize/" "org-present/" "go-mode/" "spinner/" "evil/")
+ ("/home/semi/Code/learnyouahaskell/" (24365 53753 419033 341000) "./" "main.hs~" "../" "main.hs")
 
- ("/home/semi/.config/emacs/straight/" (24335 44061 405005 355000) "build/" "build-cache.el" "./" "../" "repos/")
+ ("/home/semi/Code/forks/" (24305 18937 473677 343000) "./" "../" "micro/")
 
- ("/home/semi/.config/emacs/elpa/" (24278 50998 266286 492000) "archives/" "./" "../")
+ ("/home/semi/.config/emacs/straight/" (24364 31343 603055 714000) "modified/" "build/" "build-cache.el" "./" "../" "repos/")
 
- ("/home/semi/school/bell_prep/" (24335 35592 237158 675000) "day_4/" "day_8/" "day_3/" "day_10/" "./" "../" "day_6/" "day_9/" "day_5/" "notebook/" "day_2/" "day_7/" "day_1/")
+ ("/home/semi/.config/emacs/straight/repos/" (24364 28897 738001 0) "f.el/" "ht.el/" "mu4e/" "gocode/" "org-roam/" "ido-vertical-mode.el/" "shrink-path.el/" "emacsmirror-mirror/" "jsonrpc/" "gnu-elpa-mirror/" "flymake/" "ts.el/" "straight.el/" "eldoc/" "company-org-roam/" "major-mode-hydra.el/" "emacsql/" "company-mode/" "./" "all-the-icons.el/" "flycheck/" "org-journal/" "hydra/" "doom-modeline/" "../" "org-recur/" "pkg-info/" "eglot/" "ace-jump-mode/" "let-alist/" "epl/" "go-mode.el/" "emacs-memoize/" "smex/" "org/" "dash.el/" "org-bullets/" "notmuch/" "s.el/" "melpa/" "page-break-lines/" "centered-window-mode/" "powerline/" "nord-emacs/" "emacs-which-key/" "emacsql-sqlite3/" "rust-mode/" "emacs/" "org-superstar-mode/" "project/" "haskell-mode/" "writegood-mode/" "emacs-doom-themes/" "aggressive-indent-mode/" "emacs-dashboard/" "use-package/" "ryo-modal/" "centaur-tabs/" "toc-org/" "xref/" "org-super-agenda/" "elfeed/")
 
- ("/home/semi/Code/speedmath/" (24335 31813 469074 144000) "CHANGELOG.md" "dist-newstyle/" "./" "../" "src/" ".#question.go" "speedmath.cabal" "Setup.hs" "go/")
+ ("/home/semi/.config/emacs/straight/repos/ace-jump-mode/" (24364 28898 448001 16000) ".git/" "README.md" ".gitattributes" "./" "../" "ace-jump-mode.el")
 
- ("/home/semi/Code/speedmath/src/" (24335 35661 440160 223000) "Main.hs" "./" "../" "Problem.hs")
+ ("/home/semi/org-roam/" (24362 10776 681097 34000) "20200801180049-org_roam.org~" "./" "../" "org-roam.db" "20200801180049-org_roam.org" "20200804201504-reviung41.org" "20200801173921-.org")
 
- ("/home/semi/Code/" (24335 18713 566231 609000) "gamepadtest/" "canvas2org/" "supertris/" "yed/" "./" "../" "semilin.github.io/" "xi-term/" "chortle/" "rng-core/" "luminance/" "forks/" "learn-luminance/" "lang/" "sorting/" "speedmath/")
+ ("/home/semi/org/school/" (24354 8628 914425 993000) "bell_prep/" "assignments.org" "assignments.org~" "./" "assignments.org_archive~" "../" "#assignments.org#" "meetings.org_archive" "homework.org~" "computer_architecture/" "assignments.org_archive" "homework.org" "general/" "meetings.org")
 
- ("/home/semi/org/school/bell_prep/day_5/" (24335 18361 36223 723000) "./" "../" "hughes-colin-note_taking_crash_course.png" "note-taking.org")
+ ("/home/semi/org/roam/" (24358 4863 390049 692000) "./" "../" "20200731131315-school.org" "20200731131315-school.org~" "org-roam.db")
 
- ("/home/semi/org/school/" (24335 18067 574217 158000) "bell_prep/" "assignments.org" "Document.docx" "./" "../" "computer_architecture/" "assignments.org_archive" "meetings.org")
+ ("/home/semi/org/" (24356 31571 592040 660000) "gtd.org~" "gtd.org" "./" "#tasks.org#" "../" "journal/" "school/" "roam/" "#gtd.org#" "personal/")
 
- ("/home/semi/Code/ultratable/" (24335 18350 694223 491000) "./" "../")
+ ("/home/semi/Downloads/" (24355 6537 958037 291000) "PencilSharpeningSimulatorWinx86.rar" "builds/" "./" "../" "Ruined Lands/" "Legend of Zelda, The - Majora's Mask (U) [!].z64" "blockset.png" "Moonscraper Chart Editor v1.3.5.2 Linux (Universal)/" "Win/" "Discord/" "iso/")
 
- ("/home/semi/org/school/bell_prep/" (24334 31544 27041 318000) "day_4/" "day_3/" "./" "../" "day_6/" "day_5/" "notebook/" "day_2/" "day_7/" "day_1/")
+ ("/home/semi/Code/org-css/" (24353 55831 864047 850000) "./" "../" "org.css" "org.css~")
 
- ("/home/semi/" (24335 8389 909000 669000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" "Public/" "deps/" "org-roam/" ".zcompdump-colin-void-5.8" ".gitconfig" ".deft/" ".themes/" ".config/" ".mozilla/" ".zcompdump" ".zshrc.pre-oh-my-zsh" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" ".zshrc" ".ghc/" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".elinks/" ".aspell.en.pws" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" "org/" ".gradle/" ".xsession-errors" ".aspell.en.prepl" "Downloads/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".dbus/" ".npm/" ".cargo/" ".redeclipse/" "Images/" "go/" "Templates/" ".java/" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".inputrc" ".cabal/")
+ ("/home/semi/Code/" (24353 53906 247008 132000) "gamepadtest/" "canvas2org/" "supertris/" "yed/" "./" "sudoku/" "learnyouahaskell/" "../" "semilin.github.io/" "xi-term/" "chortle/" "quicktangle/" "minecalc/" "rng-core/" "forks/" "lang/" "sorting/" "speedmath/" "plastic/" "org-css/")
 
- ("/home/semi/school/bell_prep/notebook/" (24334 31948 395050 364000) "img/" "./" "../")
+ ("/home/semi/org/journal/" (24352 47172 899217 399000) "./" "../" "28-07-2020.org~" "#27_07_2020.org#" "27-07-2020.org" "#20200727#" "28-07-2020.org" "#27_07_2020#")
 
- ("/home/semi/Code/yed/brick/" (24334 17617 687167 902000) "Main.o" "Main" "CHANGELOG.md" "Main.hs" "dist-newstyle/" "Main.hi" "./" "../" "src/" "Setup.hs" "cabal.project.local" "yed.cabal")
+ ("/home/semi/.config/emacs/old/" (24338 28615 635534 590000) "init.el~" "./" "init.el" "../")
 
- ("/home/semi/school/bell_prep/day_6/" (24333 10477 292052 777000) "./" "../" "Hughes-Colin-Examen-Reflection.docx" "Hughes-Colin-Study-Habits.docx")
+ ("/home/semi/Code/sudoku/" (24350 20212 616079 217000) "index.html~" "./" "../" "index.html")
+
+ ("/home/semi/.config/emacs/auto-save-list/" (24346 12125 543018 307000) ".saves-8238-colin-void~" "./" "../" ".saves-29066-colin-void~" ".saves-13520-colin-void~" ".saves-10929-colin-void~" ".saves-2409-colin-void~" ".saves-4339-colin-void~" ".saves-4988-colin-void~" ".saves-31639-colin-void~" ".saves-18560-colin-void~" ".saves-19288-colin-void~" ".saves-16587-colin-void~" ".saves-815-colin-void~" ".saves-12983-colin-void~")
+
+ ("/home/semi/Code/mineanalyze/" (24343 14987 13164 805000) "./" "../")
+
+ ("/home/semi/Code/yed/yed/" (24340 48181 479084 516000) "view.go" "yed" "./" "../" "message.go" "buffer.go" "file_test.go" "file.go~" "file.go" "buffer.go~")
+
+ ("/home/semi/.config/emacs/straight/repos/flymake/" (24340 46938 67058 869000) ".git/" "./" "../" "flymake.el")
+
+ ("/home/semi/.config/emacs/straight/build/flymake/" (24340 46938 775058 884000) "./" "../" "flymake.elc" "flymake.el" "flymake-autoloads.el")
+
+ ("/home/semi/.config/emacs/straight/build/" (24340 47681 163074 196000) "s/" "dashboard/" "f/" "jsonrpc/" "flymake/" "dracula-theme/" "company/" "eldoc/" "aggressive-indent/" "./" "doom-modeline/" "../" "nord-theme/" "eglot/" "shrink-path/" "all-the-icons/" "smex/" "org-bullets/" "dash/" "page-break-lines/" "powerline/" "bind-key/" "rust-mode/" "straight/" "ido-vertical-mode/" "project/" "company-go/" "use-package/" "ryo-modal/" "centaur-tabs/" "doom-themes/" "memoize/" "which-key/" "go-mode/" "xref/")
 
  ("/home/semi/Code/yed/" (24333 2695 652217 966000) "brick/" "yed/" "./" "../" "xi/" "rust/")
 
- ("/home/semi/Code/luminance/first-steps/src/" (24332 45952 818204 33000) "./" "../" "main.rs")
+ ("/home/semi/Code/chortle/python/" (24322 6332 702642 224000) "./" "../" "chortle_env/" ".idea/" "chortle.py")
 
- ("/home/semi/Code/yed/rust/src/" (24332 45952 818204 33000) "./" "../" "main.rs")
-
- ("/home/semi/Code/yed/haskell/" (24333 2001 665202 441000) "./" "../")
-
- ("/home/semi/Code/yed/yed/" (24332 60385 614042 450000) "view.go" "yed" "./" "../" "message.go" "buffer.go" "file_test.go" "file.go")
-
- ("/home/semi/Code/yed/rust/" (24331 17605 880127 372000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "target/" ".gitignore")
-
- ("/home/semi/Code/luminance/first-steps/" (24331 34510 166046 175000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "main.rs" "target/" ".gitignore")
-
- ("/home/semi/Code/luminance/" (24331 33440 618022 249000) "./" "../" "first-steps/")
-
- ("/home/semi/Code/yed/scribe/" (24331 17605 880127 372000) ".git/" "./" "../" "Cargo.lock" "src/" "Cargo.toml" "target/" ".gitignore")
-
- ("/home/semi/Code/yed/scribe/src/" (24331 32366 461025 601000) "./" "../" "main.rs")
-
- ("/home/semi/go/" (24301 33378 608847 169000) "pkg/" "./" "termdraw/" "../" "src/" "bin/")
-
- ("/home/semi/go/src/" (24321 18306 646444 42000) "./" "mvdan.cc/" "../" "github.com/" "golang.org/" "honnef.co/")
-
- ("/home/semi/go/src/github.com/" (24327 45615 910039 123000) "yuin/" "gdamore/" "linde12/" "BurntSushi/" "./" "../" "MichaelS11/" "jfreymuth/" "mattn/" "hajimehoshi/" "lucasb-eyer/" "gofrs/" "sergi/" "go-gl/" "golang/")
-
- ("/home/semi/go/src/github.com/go-gl/" (24313 26596 829528 523000) "./" "../" "glfw/")
-
- ("/home/semi/go/src/github.com/go-gl/glfw/" (24330 32768 186023 828000) "LICENSE" "v3.2/" "v3.1/" ".git/" "README.md" "scripts/" "v3.0/" "./" "../" ".travis.yml" "v3.3/" "AUTHORS")
-
- ("/home/semi/go/src/github.com/go-gl/glfw/v3.3/" (24313 26598 130528 450000) "./" "../" "glfw/")
-
- ("/home/semi/go/src/github.com/go-gl/glfw/v3.3/glfw/" (24313 26598 144528 449000) "go.mod" "c_glfw_lin.go" "input.go" "util.go" "window.c" "time.go" "build_cgo_hack.go" "./" "vulkan.go" "monitor.c" "../" "context.go" "glfw.go" "c_glfw_darwin.go" "native_linbsd.go" "c_glfw.go" "native_windows.go" "error.go" "c_glfw_freebsd.go" "c_glfw_windows.go" "GLFW_C_REVISION.txt" "input.c" "error.c" "monitor.go" "native_darwin.go" "build.go" "glfw/" "window.go")
-
- ("/home/semi/school/computer_architecture/" (24329 64779 401206 529000) "./" "../" "ram.org" "ssd.org")
-
- ("/home/semi/.deft/" (24328 63082 146024 432000) "./" "../")
-
- ("/home/semi/org/school/bell_prep/day_4/" (24328 54226 915349 373000) "Digital_Citizenship.tex" "Hughes-Colin-Digital_Citizenship.pdf" "./" "../" "Digital_Citizenship.org" "Digital_Citizenship.odt" "Digital_Citizenship.log")
-
- ("/home/semi/org/" (24328 44929 606141 392000) "./" "../" "journal/" "school/" "personal/")
+ ("/home/semi/Code/chortle/" (24293 3060 582440 643000) ".git/" "README.md" "./" "../" "songs_directory.txt" "chortle.exe" "chortle-linux" "python/")
 
  ("/home/" (24277 30943 906202 658000) "./" "../" "semi/")
-
- ("/home/semi/school/algorithms/" (24306 32517 426139 107000) "./" "../" "final/" "sorting/" "decksorter/")
-
- ("/home/semi/Documents/" (24327 49762 921131 892000) "./" "BlackmagicDesign/" "../" "ardour/" "random/" "godot/" "theflyingrat/")
 )
 
 ;; ----- ido-unc-hosts-cache -----

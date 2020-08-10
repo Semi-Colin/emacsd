@@ -1,0 +1,1634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-07-29 Wed 13:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Config</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="semi" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/home/semi/Code/org-css/org.css" />
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Emacs Config</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7f0cc8e">Packages</a>
+<ul>
+<li><a href="#orgd542ca6">Bootstrap</a></li>
+<li><a href="#orga425dcf">Use-package</a></li>
+</ul>
+</li>
+<li><a href="#org3fb1bf2">Org</a>
+<ul>
+<li><a href="#org8295be6">Get latest version</a></li>
+<li><a href="#orgbe112dc">Aesthetics</a></li>
+<li><a href="#org6d68923">Bullets</a>
+<ul>
+<li><a href="#org88f5f5c">Install with straight.el</a></li>
+<li><a href="#org95dba86">Activate when opening an org-mode file</a></li>
+</ul>
+</li>
+<li><a href="#orgd86defd">Capture</a>
+<ul>
+<li><a href="#org547959d">Templates</a></li>
+<li><a href="#org3d78854">Keybind</a></li>
+</ul>
+</li>
+<li><a href="#orgcc6b19c">Tempo</a></li>
+<li><a href="#org873f9b4">Writegood</a>
+<ul>
+<li><a href="#org85c196a">Install</a></li>
+<li><a href="#org087a64c">Config</a></li>
+</ul>
+</li>
+<li><a href="#org0c50ae0">Center Window</a>
+<ul>
+<li><a href="#orgd1735a8">Install</a></li>
+<li><a href="#org8ee74e8">Config</a></li>
+</ul>
+</li>
+<li><a href="#org7db6f07">Recur</a>
+<ul>
+<li><a href="#org027ca96">Install</a></li>
+</ul>
+</li>
+<li><a href="#org223be83">Indentation</a></li>
+<li><a href="#orge871e7b">Agenda</a></li>
+<li><a href="#org9e9b0f5">Journal</a>
+<ul>
+<li><a href="#org91800f2">Install</a></li>
+<li><a href="#org834b622">Config</a></li>
+<li><a href="#org8785fe0">Keybinds</a></li>
+<li><a href="#orgbb7b271">Activate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb459956">Aesthetics</a>
+<ul>
+<li><a href="#org1422678"><span class="done DONE">DONE</span> Theme</a>
+<ul>
+<li><a href="#org7b8f5d1">Install Dracula</a></li>
+<li><a href="#orgf72b804">Install Doom Themes</a></li>
+<li><a href="#org6e35d84">Set theme to Doom One</a></li>
+</ul>
+</li>
+<li><a href="#org0967a0f">Font</a>
+<ul>
+<li><a href="#orgd062f26">Set</a></li>
+<li><a href="#orgc541420">Credit</a></li>
+</ul>
+</li>
+<li><a href="#orgbd36d76">Default UI</a>
+<ul>
+<li><a href="#org778f6c5">Hide the menu bar</a></li>
+<li><a href="#org52e6560">Hide the scroll bar</a></li>
+<li><a href="#org92be1ef">Hide the tool bar</a></li>
+</ul>
+</li>
+<li><a href="#org81b6db1">Modeline</a>
+<ul>
+<li><a href="#orgb89f4b4">Install</a></li>
+<li><a href="#orgd5dac62">Activate</a></li>
+</ul>
+</li>
+<li><a href="#orgeb2d762">Dashboard</a>
+<ul>
+<li><a href="#org79557e1">Install</a></li>
+<li><a href="#org4c26140">Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org35af456">Functionality</a>
+<ul>
+<li><a href="#orged9ba6c">Ido</a>
+<ul>
+<li><a href="#org017f0c4">Enable</a></li>
+<li><a href="#org3a36e4c">Vertical Hints</a></li>
+</ul>
+</li>
+<li><a href="#orgfbd3e92">Smex</a>
+<ul>
+<li><a href="#orga494011">Install</a></li>
+</ul>
+</li>
+<li><a href="#orgb90b635">Centaur Tabs</a>
+<ul>
+<li><a href="#org3e3f7e8">Install</a></li>
+<li><a href="#orgf800122">Customization</a></li>
+</ul>
+</li>
+<li><a href="#org3f1a97f">Flymake</a></li>
+<li><a href="#orgc67432c">Company</a>
+<ul>
+<li><a href="#org918a8e0">Install</a></li>
+<li><a href="#org1b6dafd">Extra Backends</a></li>
+</ul>
+</li>
+<li><a href="#orged95b75">eglot</a>
+<ul>
+<li><a href="#org36298ca">Install</a></li>
+</ul>
+</li>
+<li><a href="#orge4014f0">elfeed</a>
+<ul>
+<li><a href="#orga3f63a8">Install</a></li>
+<li><a href="#orgc379d4d">Feeds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org0566608">Custom</a>
+<ul>
+<li><a href="#orgf300efa">Functions</a>
+<ul>
+<li><a href="#orgec28c03">Quicktangle</a></li>
+<li><a href="#org2df94cf">Reload-config</a></li>
+<li><a href="#org915319b">Open-next-line</a></li>
+<li><a href="#orgeeabdc9">Open-prev-line</a></li>
+<li><a href="#orgcf2ac33">Delete Line</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org85b976c">Programming</a>
+<ul>
+<li><a href="#org34ff7a6">Rust</a>
+<ul>
+<li><a href="#org4fc3b9b">Rust-mode</a></li>
+</ul>
+</li>
+<li><a href="#org17fdd8a">Go</a>
+<ul>
+<li><a href="#org3594033">Go-mode</a></li>
+<li><a href="#org6b786b5">LSP</a></li>
+</ul>
+</li>
+<li><a href="#org99c3127">Haskell</a>
+<ul>
+<li><a href="#orgf5bfae9">Haskell-mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2b03275">Editing</a>
+<ul>
+<li><a href="#orge90e874">Aggressive Indent</a>
+<ul>
+<li><a href="#orge0b19e4">Install</a></li>
+<li><a href="#org4c38134">Activate Globally</a></li>
+</ul>
+</li>
+<li><a href="#orgc8cc379">Electric Indent</a>
+<ul>
+<li><a href="#orgb9fefd8">Activate</a></li>
+</ul>
+</li>
+<li><a href="#org30536f7">Line Numbers</a></li>
+</ul>
+</li>
+<li><a href="#org36e29ac">Keybinds</a>
+<ul>
+<li><a href="#org47f21d0">Hydra</a>
+<ul>
+<li><a href="#org5d75afb">Install</a></li>
+</ul>
+</li>
+<li><a href="#org9b904d2">Ryo-Modal</a>
+<ul>
+<li><a href="#org3e3e4fe">Install</a></li>
+<li><a href="#orge95fb73">Toggle</a></li>
+<li><a href="#org3075727">Movement</a></li>
+<li><a href="#orgc48d9bc">General</a></li>
+<li><a href="#org82de6b0">Editing</a></li>
+<li><a href="#org65f8736">Functions</a></li>
+<li><a href="#orge6d1ba0">Hydras</a></li>
+<li><a href="#org8462cb4">Global Activation</a></li>
+</ul>
+</li>
+<li><a href="#org06a871f">Global</a></li>
+<li><a href="#orgeda0e9d">Which Key</a>
+<ul>
+<li><a href="#org788462d">Install</a></li>
+<li><a href="#orge0f942b">Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+This is my personal emacs init file. I am restarting it, because my old one was kind of a copy-pasted mess.
+</p>
+
+<div id="outline-container-org7f0cc8e" class="outline-2">
+<h2 id="org7f0cc8e">Packages</h2>
+<div class="outline-text-2" id="text-org7f0cc8e">
+</div>
+<div id="outline-container-orgd542ca6" class="outline-3">
+<h3 id="orgd542ca6">Bootstrap</h3>
+<div class="outline-text-3" id="text-orgd542ca6">
+<p>
+Yeah, this code is copy-pasted, but I think it gets a pass because it's pretty much necessary.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(defvar bootstrap-version)
+(let ((bootstrap-file
+(expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+(bootstrap-version 5))
+(unless (file-exists-p bootstrap-file)
+(with-current-buffer
+(url-retrieve-synchronously
+"https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+'silent 'inhibit-cookies)
+(goto-char (point-max))
+(eval-print-last-sexp)))
+(load bootstrap-file nil 'nomessage))
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga425dcf" class="outline-3">
+<h3 id="orga425dcf">Use-package</h3>
+<div class="outline-text-3" id="text-orga425dcf">
+<p>
+A lot of packages use use-package as their examples, and I don't know how to translate those to just raw straight. So I install it here.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'use-package)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3fb1bf2" class="outline-2">
+<h2 id="org3fb1bf2">Org</h2>
+<div class="outline-text-2" id="text-org3fb1bf2">
+<p>
+Org-mode really is the killer application for emacs.
+</p>
+</div>
+<div id="outline-container-org8295be6" class="outline-3">
+<h3 id="org8295be6">Get latest version</h3>
+<div class="outline-text-3" id="text-org8295be6">
+<pre class="example">
+(straight-use-package 'org)
+(require 'org)
+(require 'ox)
+</pre>
+</div>
+</div>
+<div id="outline-container-orgbe112dc" class="outline-3">
+<h3 id="orgbe112dc">Aesthetics</h3>
+<div class="outline-text-3" id="text-orgbe112dc">
+<p>
+Hide keywords for title, date, and author.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq org-hidden-keywords '(author date email title))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6d68923" class="outline-3">
+<h3 id="org6d68923">Bullets</h3>
+<div class="outline-text-3" id="text-org6d68923">
+<p>
+Org-bullets makes all of my bullets look very fancy.
+</p>
+</div>
+
+<div id="outline-container-org88f5f5c" class="outline-4">
+<h4 id="org88f5f5c">Install with straight.el</h4>
+<div class="outline-text-4" id="text-org88f5f5c">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(straight-use-package 'org-bullets)
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95dba86" class="outline-4">
+<h4 id="org95dba86">Activate when opening an org-mode file</h4>
+<div class="outline-text-4" id="text-org95dba86">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+(add-hook 'org-mode-hook #'org-bullets-mode)
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd86defd" class="outline-3">
+<h3 id="orgd86defd">Capture</h3>
+<div class="outline-text-3" id="text-orgd86defd">
+</div>
+<div id="outline-container-org547959d" class="outline-4">
+<h4 id="org547959d">Templates</h4>
+<div class="outline-text-4" id="text-org547959d">
+<div class="org-src-container">
+<pre class="src src-elisp">(setq org-capture-templates
+      '(
+      ("t" "Todo" entry (file+headline "~/org/tasks.org" "Tasks")
+      "* TODO %?\n  %i\n")
+      ("g" "Geometry" entry (file+headline "~/school/geometry/notes.org" "Geometry")
+      "* %t %?\n")
+      ))
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3d78854" class="outline-4">
+<h4 id="org3d78854">Keybind</h4>
+<div class="outline-text-4" id="text-org3d78854">
+<div class="org-src-container">
+<pre class="src src-elisp">(global-set-key (kbd "C-c x") 'org-capture)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc6b19c" class="outline-3">
+<h3 id="orgcc6b19c">Tempo</h3>
+<div class="outline-text-3" id="text-orgcc6b19c">
+<p>
+Org tempo is a quick shortcut for adding blocks. For example, writing simply " &lt;s " and followed by TAB will automatically fill out a source code block. Seems pretty nifty, and quite useful (especially for this config file) 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(require 'org-tempo)
+</pre>
+</div>
+<p>
+Credit: <a href="https://orgmode.org/manual/Structure-Templates.html">orgmode.org</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org873f9b4" class="outline-3">
+<h3 id="org873f9b4">Writegood</h3>
+<div class="outline-text-3" id="text-org873f9b4">
+</div>
+<div id="outline-container-org85c196a" class="outline-4">
+<h4 id="org85c196a">Install</h4>
+<div class="outline-text-4" id="text-org85c196a">
+<div class="org-src-container">
+<pre class="src src-elisp">(straight-use-package 'writegood-mode)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org087a64c" class="outline-4">
+<h4 id="org087a64c">Config</h4>
+<div class="outline-text-4" id="text-org087a64c">
+<div class="org-src-container">
+<pre class="src src-elisp">(global-set-key (kbd "C-c g") 'writegood-mode)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c50ae0" class="outline-3">
+<h3 id="org0c50ae0">Center Window</h3>
+<div class="outline-text-3" id="text-org0c50ae0">
+</div>
+<div id="outline-container-orgd1735a8" class="outline-4">
+<h4 id="orgd1735a8">Install</h4>
+<div class="outline-text-4" id="text-orgd1735a8">
+<div class="org-src-container">
+<pre class="src src-elisp">(straight-use-package 'centered-window)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8ee74e8" class="outline-4">
+<h4 id="org8ee74e8">Config</h4>
+<div class="outline-text-4" id="text-org8ee74e8">
+<div class="org-src-container">
+<pre class="src src-elisp">(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
+(add-hook 'org-mode-hook 'centered-window-mode)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org7db6f07" class="outline-3">
+<h3 id="org7db6f07">Recur</h3>
+<div class="outline-text-3" id="text-org7db6f07">
+<p>
+Org-mode's scheduled dates is pretty lacking, so recur covers most of the gaps.
+</p>
+</div>
+<div id="outline-container-org027ca96" class="outline-4">
+<h4 id="org027ca96">Install</h4>
+<div class="outline-text-4" id="text-org027ca96">
+<div class="org-src-container">
+<pre class="src src-elisp">(straight-use-package 'org-recur)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org223be83" class="outline-3">
+<h3 id="org223be83">Indentation</h3>
+<div class="outline-text-3" id="text-org223be83">
+<p>
+For some reason, org-mode does not auto-indent by default.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">
+(add-hook 'org-mode-hook #'org-indent-mode)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge871e7b" class="outline-3">
+<h3 id="orge871e7b">Agenda</h3>
+<div class="outline-text-3" id="text-orge871e7b">
+<div class="org-src-container">
+<pre class="src src-elisp">(global-set-key (kbd "C-c a") 'org-agenda)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e9b0f5" class="outline-3">
+<h3 id="org9e9b0f5">Journal</h3>
+<div class="outline-text-3" id="text-org9e9b0f5">
+</div>
+<div id="outline-container-org91800f2" class="outline-4">
+<h4 id="org91800f2">Install</h4>
+<div class="outline-text-4" id="text-org91800f2">
+<pre class="example">
+(straight-use-package 'org-journal)
+</pre>
+</div>
+</div>
+<div id="outline-container-org834b622" class="outline-4">
+<h4 id="org834b622">Config</h4>
+<div class="outline-text-4" id="text-org834b622">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq org-journal-dir "~/org/journal")
+(setq org-journal-file-format "%d-%m-%Y.org")
+(setq org-journal-enable-agenda-integration t)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8785fe0" class="outline-4">
+<h4 id="org8785fe0">Keybinds</h4>
+<div class="outline-text-4" id="text-org8785fe0">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(global-set-key (kbd "C-c j") 'org-journal-new-entry)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbb7b271" class="outline-4">
+<h4 id="orgbb7b271">Activate</h4>
+<div class="outline-text-4" id="text-orgbb7b271">
+<div class="org-src-container">
+<pre class="src src-elisp">(require 'org-journal)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb459956" class="outline-2">
+<h2 id="orgb459956">Aesthetics</h2>
+<div class="outline-text-2" id="text-orgb459956">
+<p>
+I'll be honest, GUI Emacs does not look great by default&#x2026; let's fix that!
+</p>
+</div>
+<div id="outline-container-org1422678" class="outline-3">
+<h3 id="org1422678"><span class="done DONE">DONE</span> Theme</h3>
+<div class="outline-text-3" id="text-org1422678">
+<p>
+I used the Dracula theme in my old config as well. It seems to be the only one I've tried that properly works with org-mode.
+</p>
+</div>
+<div id="outline-container-org7b8f5d1" class="outline-4">
+<h4 id="org7b8f5d1">Install Dracula</h4>
+<div class="outline-text-4" id="text-org7b8f5d1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;(straight-use-package 'dracula-theme)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf72b804" class="outline-4">
+<h4 id="orgf72b804">Install Doom Themes</h4>
+<div class="outline-text-4" id="text-orgf72b804">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'doom-themes)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6e35d84" class="outline-4">
+<h4 id="org6e35d84">Set theme to Doom One</h4>
+<div class="outline-text-4" id="text-org6e35d84">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(load-theme 'doom-one t)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0967a0f" class="outline-3">
+<h3 id="org0967a0f">Font</h3>
+<div class="outline-text-3" id="text-org0967a0f">
+<p>
+Fira Code looks pretty nice in my opinion. 
+</p>
+</div>
+<div id="outline-container-orgd062f26" class="outline-4">
+<h4 id="orgd062f26">Set</h4>
+<div class="outline-text-4" id="text-orgd062f26">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(set-frame-font "Fira Code 14" nil t)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc541420" class="outline-4">
+<h4 id="orgc541420">Credit</h4>
+<div class="outline-text-4" id="text-orgc541420">
+<p>
+<a href="https://stackoverflow.com/a/6050987">Dov Grobgeld on StackExchange</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd36d76" class="outline-3">
+<h3 id="orgbd36d76">Default UI</h3>
+<div class="outline-text-3" id="text-orgbd36d76">
+</div>
+<div id="outline-container-org778f6c5" class="outline-4">
+<h4 id="org778f6c5">Hide the menu bar</h4>
+<div class="outline-text-4" id="text-org778f6c5">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(menu-bar-mode -1)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org52e6560" class="outline-4">
+<h4 id="org52e6560">Hide the scroll bar</h4>
+<div class="outline-text-4" id="text-org52e6560">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(scroll-bar-mode -1)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92be1ef" class="outline-4">
+<h4 id="org92be1ef">Hide the tool bar</h4>
+<div class="outline-text-4" id="text-org92be1ef">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(tool-bar-mode -1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org81b6db1" class="outline-3">
+<h3 id="org81b6db1">Modeline</h3>
+<div class="outline-text-3" id="text-org81b6db1">
+<p>
+More Doom stealing, yay.
+</p>
+</div>
+<div id="outline-container-orgb89f4b4" class="outline-4">
+<h4 id="orgb89f4b4">Install</h4>
+<div class="outline-text-4" id="text-orgb89f4b4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'doom-modeline)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd5dac62" class="outline-4">
+<h4 id="orgd5dac62">Activate</h4>
+<div class="outline-text-4" id="text-orgd5dac62">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(doom-modeline-mode 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeb2d762" class="outline-3">
+<h3 id="orgeb2d762">Dashboard</h3>
+<div class="outline-text-3" id="text-orgeb2d762">
+<p>
+Even more Doom stealing!
+</p>
+</div>
+<div id="outline-container-org79557e1" class="outline-4">
+<h4 id="org79557e1">Install</h4>
+<div class="outline-text-4" id="text-org79557e1">
+<p>
+Dependencies
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'page-break-lines)
+(straight-use-package 'all-the-icons)
+</pre>
+</div>
+
+<p>
+Dashboard
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'dashboard)
+(dashboard-setup-startup-hook)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4c26140" class="outline-4">
+<h4 id="org4c26140">Config</h4>
+<div class="outline-text-4" id="text-org4c26140">
+</div>
+<ul class="org-ul">
+<li><a id="orgf45388e"></a>Comply with emacsclient<br />
+<div class="outline-text-5" id="text-orgf45388e">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org1451a2b"></a>Set the banner title and logo<br />
+<div class="outline-text-5" id="text-org1451a2b">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq dashboard-banner-logo-title "Semimacs")
+(setq dashboard-startup-banner 'logo)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org5f2ee1c"></a>Center the content<br />
+<div class="outline-text-5" id="text-org5f2ee1c">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq dashboard-center-content t)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org84c3c6c"></a>Set what items should appear<br />
+<div class="outline-text-5" id="text-org84c3c6c">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">;     (setq dashboard-items '((recents  . 5)
+;                        (bookmarks . 5)
+;                       (agenda . 5))
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org745ca81"></a>Show cool looking icons!<br />
+<div class="outline-text-5" id="text-org745ca81">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org0c06b21"></a>Display load time and packages and such.<br />
+<div class="outline-text-5" id="text-org0c06b21">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq dashboard-set-init-info t)
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org2351876"></a>Show a dumb footer message<br />
+<div class="outline-text-5" id="text-org2351876">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq dashboard-footer-messages '("Yeah, I look like I know what I'm doing."))
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org35af456" class="outline-2">
+<h2 id="org35af456">Functionality</h2>
+<div class="outline-text-2" id="text-org35af456">
+</div>
+<div id="outline-container-orged9ba6c" class="outline-3">
+<h3 id="orged9ba6c">Ido</h3>
+<div class="outline-text-3" id="text-orged9ba6c">
+</div>
+<div id="outline-container-org017f0c4" class="outline-4">
+<h4 id="org017f0c4">Enable</h4>
+<div class="outline-text-4" id="text-org017f0c4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+</pre>
+</div>
+
+<p>
+Credit: <a href="https://masteringemacs.org/article/introduction-to-ido-mode">masteringemacs.org</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3a36e4c" class="outline-4">
+<h4 id="org3a36e4c">Vertical Hints</h4>
+<div class="outline-text-4" id="text-org3a36e4c">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'ido-vertical-mode)
+(ido-vertical-mode 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfbd3e92" class="outline-3">
+<h3 id="orgfbd3e92">Smex</h3>
+<div class="outline-text-3" id="text-orgfbd3e92">
+</div>
+<div id="outline-container-orga494011" class="outline-4">
+<h4 id="orga494011">Install</h4>
+<div class="outline-text-4" id="text-orga494011">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'smex)
+(global-set-key (kbd "M-x") 'smex)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb90b635" class="outline-3">
+<h3 id="orgb90b635">Centaur Tabs</h3>
+<div class="outline-text-3" id="text-orgb90b635">
+</div>
+<div id="outline-container-org3e3f7e8" class="outline-4">
+<h4 id="org3e3f7e8">Install</h4>
+<div class="outline-text-4" id="text-org3e3f7e8">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'centaur-tabs)
+(centaur-tabs-mode t)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf800122" class="outline-4">
+<h4 id="orgf800122">Customization</h4>
+<div class="outline-text-4" id="text-orgf800122">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq centaur-tabs-set-icons t)
+(setq centaur-tabs-style "bar")
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f1a97f" class="outline-3">
+<h3 id="org3f1a97f">Flymake</h3>
+<div class="outline-text-3" id="text-org3f1a97f">
+<p>
+Flymake is slightly outdated for eglot, so I have to install the newest version
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'flymake)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc67432c" class="outline-3">
+<h3 id="orgc67432c">Company</h3>
+<div class="outline-text-3" id="text-orgc67432c">
+</div>
+<div id="outline-container-org918a8e0" class="outline-4">
+<h4 id="org918a8e0">Install</h4>
+<div class="outline-text-4" id="text-org918a8e0">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org1b6dafd" class="outline-4">
+<h4 id="org1b6dafd">Extra Backends</h4>
+<div class="outline-text-4" id="text-org1b6dafd">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'company-go)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orged95b75" class="outline-3">
+<h3 id="orged95b75">eglot</h3>
+<div class="outline-text-3" id="text-orged95b75">
+</div>
+<div id="outline-container-org36298ca" class="outline-4">
+<h4 id="org36298ca">Install</h4>
+<div class="outline-text-4" id="text-org36298ca">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'eglot)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge4014f0" class="outline-3">
+<h3 id="orge4014f0">elfeed</h3>
+<div class="outline-text-3" id="text-orge4014f0">
+</div>
+<div id="outline-container-orga3f63a8" class="outline-4">
+<h4 id="orga3f63a8">Install</h4>
+<div class="outline-text-4" id="text-orga3f63a8">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'elfeed)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc379d4d" class="outline-4">
+<h4 id="orgc379d4d">Feeds</h4>
+<div class="outline-text-4" id="text-orgc379d4d">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq elfeed-feeds
+'(("https://xkcd.com/rss.xml" entertainment)
+("https://www.distrotube.com/videos/index.xml" technology)
+("https://lukesmith.xyz/rss.xml" technology)
+("reddit.com/r/emacs/.rss" software)
+))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org0566608" class="outline-2">
+<h2 id="org0566608">Custom</h2>
+<div class="outline-text-2" id="text-org0566608">
+</div>
+<div id="outline-container-orgf300efa" class="outline-3">
+<h3 id="orgf300efa">Functions</h3>
+<div class="outline-text-3" id="text-orgf300efa">
+</div>
+<div id="outline-container-orgec28c03" class="outline-4">
+<h4 id="orgec28c03">Quicktangle</h4>
+<div class="outline-text-4" id="text-orgec28c03">
+<p>
+org-babel-tangle is too slow, so I wrote my own in go.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2df94cf" class="outline-4">
+<h4 id="org2df94cf">Reload-config</h4>
+<div class="outline-text-4" id="text-org2df94cf">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun reload-config ()
+(interactive)
+(quicktangle "~/.config/emacs/config.org" "~/.config/emacs/config.el")
+(load-file "~/.config/emacs/config.el")
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org915319b" class="outline-4">
+<h4 id="org915319b">Open-next-line</h4>
+<div class="outline-text-4" id="text-org915319b">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun open-next-line ()
+(interactive)
+(end-of-line)
+(newline-and-indent)
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeeabdc9" class="outline-4">
+<h4 id="orgeeabdc9">Open-prev-line</h4>
+<div class="outline-text-4" id="text-orgeeabdc9">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun open-prev-line ()
+(interactive)
+(beginning-of-line)
+(newline-and-indent)
+(previous-line)
+)
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcf2ac33" class="outline-4">
+<h4 id="orgcf2ac33">Delete Line</h4>
+<div class="outline-text-4" id="text-orgcf2ac33">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun delete-line ()
+(interactive)
+(beginning-of-line)
+(kill-line)
+)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org85b976c" class="outline-2">
+<h2 id="org85b976c">Programming</h2>
+<div class="outline-text-2" id="text-org85b976c">
+</div>
+<div id="outline-container-org34ff7a6" class="outline-3">
+<h3 id="org34ff7a6">Rust</h3>
+<div class="outline-text-3" id="text-org34ff7a6">
+</div>
+<div id="outline-container-org4fc3b9b" class="outline-4">
+<h4 id="org4fc3b9b">Rust-mode</h4>
+<div class="outline-text-4" id="text-org4fc3b9b">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'rust-mode
+:defer t)
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org17fdd8a" class="outline-3">
+<h3 id="org17fdd8a">Go</h3>
+<div class="outline-text-3" id="text-org17fdd8a">
+</div>
+<div id="outline-container-org3594033" class="outline-4">
+<h4 id="org3594033">Go-mode</h4>
+<div class="outline-text-4" id="text-org3594033">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'go-mode
+:defer t
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6b786b5" class="outline-4">
+<h4 id="org6b786b5">LSP</h4>
+<div class="outline-text-4" id="text-org6b786b5">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'go-mode-hook 'eglot-ensure)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org99c3127" class="outline-3">
+<h3 id="org99c3127">Haskell</h3>
+<div class="outline-text-3" id="text-org99c3127">
+</div>
+<div id="outline-container-orgf5bfae9" class="outline-4">
+<h4 id="orgf5bfae9">Haskell-mode</h4>
+<div class="outline-text-4" id="text-orgf5bfae9">
+<pre class="example">
+(straight-use-package 'haskell-mode)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b03275" class="outline-2">
+<h2 id="org2b03275">Editing</h2>
+<div class="outline-text-2" id="text-org2b03275">
+</div>
+<div id="outline-container-orge90e874" class="outline-3">
+<h3 id="orge90e874">Aggressive Indent</h3>
+<div class="outline-text-3" id="text-orge90e874">
+<p>
+This plugin is great; it just indents everything as I am typing.
+</p>
+</div>
+<div id="outline-container-orge0b19e4" class="outline-4">
+<h4 id="orge0b19e4">Install</h4>
+<div class="outline-text-4" id="text-orge0b19e4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'aggressive-indent)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4c38134" class="outline-4">
+<h4 id="org4c38134">Activate Globally</h4>
+<div class="outline-text-4" id="text-org4c38134">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(global-aggressive-indent-mode 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc8cc379" class="outline-3">
+<h3 id="orgc8cc379">Electric Indent</h3>
+<div class="outline-text-3" id="text-orgc8cc379">
+<p>
+Honestly don't know how people live without it.
+</p>
+</div>
+<div id="outline-container-orgb9fefd8" class="outline-4">
+<h4 id="orgb9fefd8">Activate</h4>
+<div class="outline-text-4" id="text-orgb9fefd8">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(electric-pair-mode 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org30536f7" class="outline-3">
+<h3 id="org30536f7">Line Numbers</h3>
+</div>
+</div>
+<div id="outline-container-org36e29ac" class="outline-2">
+<h2 id="org36e29ac">Keybinds</h2>
+<div class="outline-text-2" id="text-org36e29ac">
+</div>
+<div id="outline-container-org47f21d0" class="outline-3">
+<h3 id="org47f21d0">Hydra</h3>
+<div class="outline-text-3" id="text-org47f21d0">
+</div>
+<div id="outline-container-org5d75afb" class="outline-4">
+<h4 id="org5d75afb">Install</h4>
+<div class="outline-text-4" id="text-org5d75afb">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'hydra)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9b904d2" class="outline-3">
+<h3 id="org9b904d2">Ryo-Modal</h3>
+<div class="outline-text-3" id="text-org9b904d2">
+</div>
+<div id="outline-container-org3e3e4fe" class="outline-4">
+<h4 id="org3e3e4fe">Install</h4>
+<div class="outline-text-4" id="text-org3e3e4fe">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(use-package ryo-modal
+:straight t
+:commands ryo-modal-mode
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orge95fb73" class="outline-4">
+<h4 id="orge95fb73">Toggle</h4>
+<div class="outline-text-4" id="text-orge95fb73">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">:bind ("&lt;escape&gt;" . ryo-modal-mode)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3075727" class="outline-4">
+<h4 id="org3075727">Movement</h4>
+<div class="outline-text-4" id="text-org3075727">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">:config
+(ryo-modal-keys 
+(:norepeat t)
+("i" previous-line)
+("j" backward-char)
+("k" next-line)
+("l" forward-char)
+("o" forward-word)
+("u" backward-word)
+("h" beginning-of-line)
+(";" end-of-line)
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc48d9bc" class="outline-4">
+<h4 id="orgc48d9bc">General</h4>
+<div class="outline-text-4" id="text-orgc48d9bc">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(ryo-modal-keys
+(:norepeat t)
+("g" keyboard-escape-quit)
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org82de6b0" class="outline-4">
+<h4 id="org82de6b0">Editing</h4>
+<div class="outline-text-4" id="text-org82de6b0">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(ryo-modal-keys
+(:norepeat t)
+("x" delete-char)
+("r" open-next-line)
+("R" open-prev-line)
+("v" set-mark-command) 
+("q" undo)
+("w" kill-ring-save)
+("t" yank)
+))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org65f8736" class="outline-4">
+<h4 id="org65f8736">Functions</h4>
+<div class="outline-text-4" id="text-org65f8736">
+</div>
+<ul class="org-ul">
+<li><a id="org3f5c544"></a>Change Word<br />
+<div class="outline-text-5" id="text-org3f5c544">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun change-word ()
+(interactive)
+(kill-word 1)
+(ryo-modal-mode 0)
+)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org8ca4507"></a>Backward Change Word<br />
+<div class="outline-text-5" id="text-org8ca4507">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun backward-change-word ()
+(interactive)
+(backward-kill-word 1)
+(ryo-modal-mode 0)
+)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgd285125"></a>Change Line<br />
+<div class="outline-text-5" id="text-orgd285125">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(defun change-line ()
+(interactive)
+(delete-line)
+(ryo-modal-mode -1)
+)
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-orge6d1ba0" class="outline-4">
+<h4 id="orge6d1ba0">Hydras</h4>
+<div class="outline-text-4" id="text-orge6d1ba0">
+</div>
+<ul class="org-ul">
+<li><a id="orgdcd2ecc"></a>Delete<br />
+<div class="outline-text-5" id="text-orgdcd2ecc">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(ryo-modal-key
+"d" :hydra
+'(hydra-delete (:color blue)
+"Delete..."
+("o" kill-word "word forward")
+("u" backward-kill-word "word backward")
+("d" delete-line "line")
+("r" kill-region "region")
+))
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org3c3efc3"></a>Change<br />
+<div class="outline-text-5" id="text-org3c3efc3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(ryo-modal-key 
+"c" :hydra
+'(hydra-change (:color blue)
+"Change..."
+("o" change-word "word forward")
+("u" backward-change-word "word backward")
+("c" change-line "line")
+("r" kill-region "region")
+))
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org81861c7"></a>Leader<br />
+<ul class="org-ul">
+<li><a id="org8ccad09"></a>Org<br />
+<div class="outline-text-6" id="text-org8ccad09">
+<div class="org-src-container">
+<pre class="src src-elisp">(defhydra org-leader (:color blue)
+"Org"
+("a" org-agenda "Agenda")
+("j" org-journal-new-entry "Journal")
+("c" org-capture "Capture")
+)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org5dcc044"></a>File<br />
+<div class="outline-text-6" id="text-org5dcc044">
+<div class="org-src-container">
+<pre class="src src-elisp">(defhydra file-leader (:color blue)
+"File"
+("f" find-file "Find File")
+("s" save-buffer "Save")
+("b" switch-to-buffer "Switch Buffer")
+("d" dired "Dired")
+)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org587d82e"></a>Activate<br />
+<div class="outline-text-6" id="text-org587d82e">
+<div class="org-src-container">
+<pre class="src src-elisp">(ryo-modal-key 
+"SPC" :hydra
+'(hydra-leader (:color blue)
+"Leader"
+("o" org-leader/body "Org")
+("f" file-leader/body "File")
+("&lt;tab&gt;" other-window "Switch window")
+))
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org774ed13"></a>Major Mode<br />
+<ul class="org-ul">
+<li><a id="orgd9c7cc2"></a>Install<br />
+<div class="outline-text-6" id="text-orgd9c7cc2">
+<div class="org-src-container">
+<pre class="src src-elisp">(straight-use-package 'major-mode-hydra)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org9b839b7"></a>Keybind<br />
+<div class="outline-text-6" id="text-org9b839b7">
+<div class="org-src-container">
+<pre class="src src-elisp">(ryo-modal-set-key (kbd "RET") 'major-mode-hydra)
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgc52996a"></a>Elisp<br />
+<div class="outline-text-6" id="text-orgc52996a">
+<div class="org-src-container">
+<pre class="src src-elisp">(major-mode-hydra-define emacs-lisp-mode nil
+("Eval"
+   (("e b" eval-buffer "buffer")
+    ("e d" eval-defun "defun")
+    ("e r" eval-region "region"))
+   "REPL"
+   (("I" ielm "ielm"))
+   "Doc"
+   (("d d" describe-foo-at-point "thing-at-pt")
+    ("d f" describe-function "function")
+    ("d v" describe-variable "variable")
+    ("d i" info-lookup-symbol "info lookup"))))
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org0f51a22"></a>Org<br />
+<div class="outline-text-6" id="text-org0f51a22">
+<div class="org-src-container">
+<pre class="src src-elisp">(major-mode-hydra-define org-mode (:color blue)
+("tree"
+(("a" org-archive-subtree "archive")
+("t" org-todo "toggle todo")
+)
+))
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-org8462cb4" class="outline-4">
+<h4 id="org8462cb4">Global Activation</h4>
+<div class="outline-text-4" id="text-org8462cb4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'text-mode-hook #'ryo-modal-mode)
+(add-hook 'prog-mode-hook #'ryo-modal-mode)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org06a871f" class="outline-3">
+<h3 id="org06a871f">Global</h3>
+<div class="outline-text-3" id="text-org06a871f">
+<p>
+Map C-ESC to keyboard-escape-quit
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(global-set-key (kbd "C-&lt;escape&gt;") 'keyboard-escape-quit)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgeda0e9d" class="outline-3">
+<h3 id="orgeda0e9d">Which Key</h3>
+<div class="outline-text-3" id="text-orgeda0e9d">
+<p>
+Which Key tells me what keybindings are available
+</p>
+</div>
+
+<div id="outline-container-org788462d" class="outline-4">
+<h4 id="org788462d">Install</h4>
+<div class="outline-text-4" id="text-org788462d">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(straight-use-package 'which-key)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge0f942b" class="outline-4">
+<h4 id="orge0f942b">Config</h4>
+<div class="outline-text-4" id="text-orge0f942b">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(which-key-mode)
+(setq which-key-idle-delay 1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: semi</p>
+<p class="date">Created: 2020-07-29 Wed 13:13</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/semi/.config/emacs/config.org
+
+
+
+
+* Toggle
+:PROPERTIES:
+:ARCHIVE_TIME: 2020-07-27 Mon 20:59
+:ARCHIVE_FILE: ~/.config/emacs/config.org
+:ARCHIVE_OLPATH: Keybinds/Ryo-Modal
+:ARCHIVE_CATEGORY: config
+:END:
+    #+begin_src emacs-lisp
+    :bind ("<escape>" . ryo-modal-mode)
+    #+end_src
+
+* Install
+:PROPERTIES:
+:ARCHIVE_TIME: 2020-07-30 Thu 18:13
+:ARCHIVE_FILE: ~/.config/emacs/config.org
+:ARCHIVE_OLPATH: Functionality/Smex
+:ARCHIVE_CATEGORY: config
+:END:
+#+begin_src emacs-lisp 
+(straight-use-package 'smex)
+(global-set-key (kbd "M-x") 'smex)
+#+end_src

@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/shrink-path.el/shrink-path.el

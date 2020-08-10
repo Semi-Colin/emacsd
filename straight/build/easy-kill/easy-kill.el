@@ -1,1 +1,0 @@
-/home/semi/.config/emacs/straight/repos/easy-kill/easy-kill.el

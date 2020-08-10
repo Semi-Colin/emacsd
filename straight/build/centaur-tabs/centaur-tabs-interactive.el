@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/centaur-tabs/centaur-tabs-interactive.el

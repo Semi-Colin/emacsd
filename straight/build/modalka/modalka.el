@@ -1,1 +1,0 @@
-/home/semi/.config/emacs/straight/repos/modalka/modalka.el

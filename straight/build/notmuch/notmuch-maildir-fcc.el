@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/notmuch/emacs/notmuch-maildir-fcc.el

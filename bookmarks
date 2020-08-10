@@ -2,9 +2,24 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("school"
- (filename . "~/school/")
- (front-context-string . "bell_prep\n  drwx")
- (rear-context-string . "96 Jul 14 20:42 ")
- (position . 400))
+(("org-capture-last-stored-marker"
+ (filename . "~/org/gtd.org")
+ (front-context-string . "** TODO DO THE T")
+ (rear-context-string . "es][Templates]]\n")
+ (position . 94))
+("org-refile-last-stored"
+ (filename . "~/org/gtd.org")
+ (front-context-string . "** TODO DO THE T")
+ (rear-context-string . "es][Templates]]\n")
+ (position . 94))
+("org-capture-last-stored"
+ (filename . "~/org-roam/20200806114545-zettelkasten.org")
+ (front-context-string . "#+title:Zettelka")
+ (rear-context-string)
+ (position . 1))
+("Emacs Config"
+ (filename . "~/.config/emacs/config.org")
+ (front-context-string . "* Org\n\n  Org-mod")
+ (rear-context-string . "  #+end_src\n   \n")
+ (position . 1005))
 )

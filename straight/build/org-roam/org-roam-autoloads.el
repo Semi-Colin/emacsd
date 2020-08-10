@@ -228,7 +228,8 @@ ARG may be any of the following values:
 
 ;;;***
 
-;;;### (autoloads nil nil ("org-roam-compat.el") (0 0 0 0))
+;;;### (autoloads nil nil ("org-roam-compat.el" "org-roam-faces.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

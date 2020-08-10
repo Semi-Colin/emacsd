@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/ace-jump-mode/ace-jump-mode.el

@@ -1,0 +1,1 @@
+/home/semi/.config/emacs/straight/repos/writegood-mode/writegood-mode.el
