@@ -25,9 +25,35 @@ of the project instance object.
 
 \(fn &optional MAYBE-PROMPT DIRECTORY)" nil nil)
 
-(defvar project-prefix-map (let ((map (make-sparse-keymap))) (define-key map "f" 'project-find-file) (define-key map "b" 'project-switch-to-buffer) (define-key map "s" 'project-shell) (define-key map "d" 'project-dired) (define-key map "v" 'project-vc-dir) (define-key map "c" 'project-compile) (define-key map "e" 'project-eshell) (define-key map "k" 'project-kill-buffers) (define-key map "p" 'project-switch-project) (define-key map "g" 'project-find-regexp) (define-key map "r" 'project-query-replace-regexp) map) "\
+(defvar project-prefix-map (let ((map (make-sparse-keymap))) (define-key map "f" 'project-find-file) (define-key map "F" 'project-or-external-find-file) (define-key map "b" 'project-switch-to-buffer) (define-key map "s" 'project-shell) (define-key map "d" 'project-dired) (define-key map "v" 'project-vc-dir) (define-key map "c" 'project-compile) (define-key map "e" 'project-eshell) (define-key map "k" 'project-kill-buffers) (define-key map "p" 'project-switch-project) (define-key map "g" 'project-find-regexp) (define-key map "G" 'project-or-external-find-regexp) (define-key map "r" 'project-query-replace-regexp) map) "\
 Keymap for project commands.")
  (define-key ctl-x-map "p" project-prefix-map)
+
+(autoload 'project-other-window-command "project" "\
+Run project command, displaying resultant buffer in another window.
+
+The following commands are available:
+
+\\{project-prefix-map}
+\\{project-other-window-map}" t nil)
+ (define-key ctl-x-4-map "p" #'project-other-window-command)
+
+(autoload 'project-other-frame-command "project" "\
+Run project command, displaying resultant buffer in another frame.
+
+The following commands are available:
+
+\\{project-prefix-map}
+\\{project-other-frame-map}" t nil)
+ (define-key ctl-x-5-map "p" #'project-other-frame-command)
+
+(autoload 'project-other-tab-command "project" "\
+Run project command, displaying resultant buffer in a new tab.
+
+The following commands are available:
+
+\\{project-prefix-map}" t nil)
+ (define-key tab-prefix-map "p" #'project-other-tab-command)
 
 (autoload 'project-find-regexp "project" "\
 Find all matches for REGEXP in the current project's roots.
@@ -100,17 +126,56 @@ Arguments the same as in `compile'.
 \(fn COMMAND &optional COMINT)" t nil)
 
 (autoload 'project-switch-to-buffer "project" "\
-Switch to another buffer belonging to the current project.
-This function prompts for another buffer, offering as candidates
-buffers that belong to the same project as the current buffer.
-Two buffers belong to the same project if their project instances,
-as reported by `project-current' in each buffer, are identical." t nil)
+Display buffer BUFFER-OR-NAME in the selected window.
+When called interactively, prompts for a buffer belonging to the
+current project.  Two buffers belong to the same project if their
+project instances, as reported by `project-current' in each
+buffer, are identical.
+
+\(fn BUFFER-OR-NAME)" t nil)
+
+(autoload 'project-display-buffer "project" "\
+Display BUFFER-OR-NAME in some window, without selecting it.
+When called interactively, prompts for a buffer belonging to the
+current project.  Two buffers belong to the same project if their
+project instances, as reported by `project-current' in each
+buffer, are identical.
+
+This function uses `display-buffer' as a subroutine, which see
+for how it is determined where the buffer will be displayed.
+
+\(fn BUFFER-OR-NAME)" t nil)
+
+(autoload 'project-display-buffer-other-frame "project" "\
+Display BUFFER-OR-NAME preferably in another frame.
+When called interactively, prompts for a buffer belonging to the
+current project.  Two buffers belong to the same project if their
+project instances, as reported by `project-current' in each
+buffer, are identical.
+
+This function uses `display-buffer-other-frame' as a subroutine,
+which see for how it is determined where the buffer will be
+displayed.
+
+\(fn BUFFER-OR-NAME)" t nil)
 
 (autoload 'project-kill-buffers "project" "\
-Kill all live buffers belonging to the current project.
-Two buffers belong to the same project if their project instances,
-as reported by `project-current' in each buffer, are identical.
-Certain buffers may be \"spared\", see `project-kill-buffers-ignores'." t nil)
+Kill the buffers belonging to the current project.
+Two buffers belong to the same project if their project
+instances, as reported by `project-current' in each buffer, are
+identical.  Only the buffers that match a condition in
+`project-kill-buffer-conditions' will be killed.  If NO-CONFIRM
+is non-nil, the command will not ask the user for confirmation.
+NO-CONFIRM is always nil when the command is invoked
+interactivly.
+
+\(fn &optional NO-CONFIRM)" t nil)
+
+(autoload 'project-remember-project "project" "\
+Add project PR to the front of the project list.
+Save the result in `project-list-file' if the list of projects has changed.
+
+\(fn PR)" nil nil)
 
 (autoload 'project-known-project-roots "project" "\
 Return the list of root directories of all known projects." nil nil)

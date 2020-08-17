@@ -46,8 +46,9 @@ COMPLETIONS is a list of completions to be used instead of
 FILTER-FN is the name of a function to apply on the candidates
 which takes as its argument an alist of path-completions.  See
 `org-roam--get-title-path-completions' for details.
+If NO-CONFIRM, assume that the user does not want to modify the initial prompt.
 
-\(fn &optional INITIAL-PROMPT COMPLETIONS FILTER-FN)" t nil)
+\(fn &optional INITIAL-PROMPT COMPLETIONS FILTER-FN NO-CONFIRM)" t nil)
 
 (autoload 'org-roam-find-directory "org-roam" "\
 Find and open `org-roam-directory'." t nil)
@@ -72,6 +73,7 @@ Find a random Org-roam file." t nil)
 (autoload 'org-roam-insert "org-roam" "\
 Find an Org-roam file, and insert a relative org link to it at point.
 Return selected file if it exists.
+LINK-TYPE is the type of link to be created. It defaults to \"file\".
 If LOWERCASE, downcase the title before insertion.
 COMPLETIONS is a list of completions to be used instead of
 `org-roam--get-title-path-completions`.
@@ -80,7 +82,7 @@ which takes as its argument an alist of path-completions.
 If DESCRIPTION is provided, use this as the link label.  See
 `org-roam--get-title-path-completions' for details.
 
-\(fn &optional LOWERCASE COMPLETIONS FILTER-FN DESCRIPTION)" t nil)
+\(fn &optional LOWERCASE COMPLETIONS FILTER-FN DESCRIPTION LINK-TYPE)" t nil)
 
 (autoload 'org-roam-insert-immediate "org-roam" "\
 Find an Org-roam file, and insert a relative org link to it at point.
@@ -137,6 +139,14 @@ Launches an `org-capture' process for a new or existing note.
 This uses the templates defined at `org-roam-capture-templates'." t nil)
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-capture" '("org-roam-capture-")))
+
+;;;***
+
+;;;### (autoloads nil "org-roam-compat" "org-roam-compat.el" (0 0
+;;;;;;  0 0))
+;;; Generated autoloads from org-roam-compat.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-roam-compat" '("org-roam-link-")))
 
 ;;;***
 
@@ -228,8 +238,7 @@ ARG may be any of the following values:
 
 ;;;***
 
-;;;### (autoloads nil nil ("org-roam-compat.el" "org-roam-faces.el")
-;;;;;;  (0 0 0 0))
+;;;### (autoloads nil nil ("org-roam-faces.el") (0 0 0 0))
 
 ;;;***
 

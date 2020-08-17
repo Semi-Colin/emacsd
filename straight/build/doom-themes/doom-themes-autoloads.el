@@ -456,6 +456,14 @@ Enable flashing the mode-line on error." nil nil)
 
 ;;;***
 
+;;;### (autoloads nil "doom-zenburn-theme" "doom-zenburn-theme.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from doom-zenburn-theme.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-zenburn-theme" '("doom-zenburn")))
+
+;;;***
+
 (provide 'doom-themes-autoloads)
 ;; Local Variables:
 ;; version-control: never

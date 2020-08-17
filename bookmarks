@@ -8,15 +8,15 @@
  (rear-context-string . "es][Templates]]\n")
  (position . 94))
 ("org-refile-last-stored"
- (filename . "~/org/gtd.org")
- (front-context-string . "** TODO DO THE T")
- (rear-context-string . "es][Templates]]\n")
- (position . 94))
+ (filename . "~/org/personal/books.org")
+ (front-context-string . "** DONE Of Mice ")
+ (rear-context-string . "ONE Animal Farm\n")
+ (position . 428))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20200806114545-zettelkasten.org")
- (front-context-string . "#+title:Zettelka")
- (rear-context-string)
- (position . 1))
+ (filename . "~/org/inbox.org")
+ (front-context-string . "** TODO Download")
+ (rear-context-string . "ce @outage_done\n")
+ (position . 102))
 ("Emacs Config"
  (filename . "~/.config/emacs/config.org")
  (front-context-string . "* Org\n\n  Org-mod")

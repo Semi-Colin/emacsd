@@ -1491,10 +1491,11 @@ File: org-roam.info,  Node: Spaced Repetition,  Prev: Bibliography,  Up: Note-ta
 Spaced Repetition
 .................
 
-Org-fc (https://github.com/l3kn/org-fc/) is a spaced repetition system
-that scales well with a large number of files.  Other alternatives
-include org-drill (https://orgmode.org/worg/org-contrib/org-drill.html),
-and pamparam (https://github.com/abo-abo/pamparam).
+Org-fc (https://www.leonrische.me/fc/index.html) is a spaced repetition
+system that scales well with a large number of files.  Other
+alternatives include org-drill
+(https://orgmode.org/worg/org-contrib/org-drill.html), and pamparam
+(https://github.com/abo-abo/pamparam).
 
 
 File: org-roam.info,  Node: FAQ,  Prev: Appendix,  Up: Top
@@ -1521,7 +1522,8 @@ this by checking for a file named ‘.dir-locals.el’.
 ‘org-roam-directory’ variable using directory-local variables.  This is
 what ‘.dir-locals.el’ may contain:
 
-     ((nil . ((org-roam-directory . "/path/to/here/"))))
+     ((nil . ((org-roam-directory . ".")
+              (org-roam-db-location . "./org-roam.db"))))
 
    All files within that directory will be treated as their own separate
 set of Org-roam files.  Remember to run ‘org-roam-db-build-cache’ from a
@@ -1594,9 +1596,9 @@ Node: mathpixel53727
 Node: Org-noter / Interleave54293
 Node: Bibliography54672
 Node: Spaced Repetition55113
-Node: FAQ55510
-Node: How do I have more than one Org-roam directory?55690
-Node: How do I migrate from Roam Research?56553
+Node: FAQ55518
+Node: How do I have more than one Org-roam directory?55698
+Node: How do I migrate from Roam Research?56603
 
 End Tag Table
 

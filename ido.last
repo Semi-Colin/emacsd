@@ -2,28 +2,31 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/semi/Documents/godot/" . "onh/")
+ ("/home/semi/Documents/" . "godot/")
  ("/" . "home/")
- ("/home/semi/.config/emacs/" . "auto-save-list/")
- ("/home/semi/org/" . "personal/")
+ ("/home/semi/.config/emacs/" . "straight/")
+ ("/home/semi/org/" . "school/")
  ("/home/semi/Code/learning/" . "haskell/")
- ("/home/semi/.config/emacs/straight/build/" . "flymake/")
+ ("/home/semi/.config/emacs/straight/build/" . "doom-themes/")
  ("/home/semi/.config/emacs/straight/" . "build/")
  ("/home/semi/Code/yed/" . "yed/")
  ("/home/semi/.config/" . "emacs/")
  ("/home/semi/Code/chortle/" . "python/")
  ("/home/semi/Code/" . "minecalc/")
  ("/home/" . "semi/")
- ("/home/semi/" . "Code/")
+ ("/home/semi/" . ".config/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/semi/org/"
  "/home/semi/.config/emacs/"
+ "/home/semi/Documents/godot/onh/"
  "/home/semi/Code/learnyouahaskell/"
  "/home/semi/Code/org-css/"
  "/home/semi/Code/minecalc/"
  "/home/semi/school/"
- "/home/semi/org/"
  "/home/semi/.config/emacs/old/"
  "/home/semi/Code/sudoku/"
  "/home/semi/Code/"
@@ -37,57 +40,85 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "inbox.org"
  "config.org"
+ "README.org"
+ "twist.el"
  "main.hs"
  "org.css"
  "config.html"
  "#org.css#"
  "resource.go"
  "config.org_archive"
- "assignments.org_archive"
- "assignments.org"
- "meetings.org_archive"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/semi/.config/emacs/" (24368 22428 450034 124000) "config.el~" "snippets/" "auto-save-list/" ".git/" "config.html~" "hooks/" "quicktangle.el~" "quicktangle.el" "config.org" "config.html" "refs/" "smex-items" "./" "init.el" "info/" "../" "ido.last" "config.org_archive" "recentf~" ".lsp-session-v1" "objects/" "eshell/" "config.org~" "elpa/" "backup/" "straight/" "config.el" "init.org~" "recentf" "bookmarks" "config.org_archive~" "ido.last~" "url/" "old/")
+ ("/home/semi/school/" (24377 38618 563027 528000) "bell_prep/" "assignments.org" "assignments.org~" "./" "assignments.org_archive~" "../" "#assignments.org#" "meetings.org_archive" "homework.org~" "computer_architecture/" "assignments.org_archive" "homework.org" "general/" "meetings.org")
 
- ("/home/semi/Code/minecalc/" (24368 21332 75009 598000) "resource.go~" "cli.go" "main.go" "#resource.go#" "./" "../" "main.go~" "minecalc" "resource.go" "cli.go~" ".#resource.go")
+ ("/home/semi/Documents/godot/onh/" (24376 19754 358434 657000) "LICENSE" "Node.gd" ".git/" "README.md" "notes.chart" "project.godot" "README.org" "./" "../" "default_env.tres" ".import/" "Node.tscn" "assets/" "export_presets.cfg")
 
- ("/home/semi/.config/" (24368 14530 151023 604000) "retroarch/" "autostart/" "glib-2.0/" "mu4e/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "blugon/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "cordless/" "neofetch/" "Nextcloud/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "herbstluftwm/" "msmtp/" "dunst/" "xmobar/" "vlc/" "aerc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "qmk/" "nvim/" "okularrc" "ardour6/" "GIMP/" "wal/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "inkscape/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "enchant/" "mimeapps.list" "lunarclient/" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "VirtualBox/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/" "mupen64plus/")
+ ("/home/semi/.config/emacs/" (24377 37287 658007 889000) "snippets/" "auto-save-list/" ".git/" "hooks/" "quicktangle.el" "config.org" "config.html" "refs/" "smex-items" "./" "init.el" "info/" "../" "ido.last" "early-init.el" ".lsp-session-v1" "early-init.el~" "objects/" "eshell/" "bind-key/" "elpa/" "backup/" "straight/" "config.el" "recentf" "bookmarks" "use-package/" "ido.last~" "url/" "old/")
 
- ("/home/semi/" (24366 58349 634157 790000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" "org-roam/" ".zcompdump-colin-void-5.8" ".mbsyncrc" ".gitconfig" ".oracle_jre_usage/" "qmk_firmware/" ".deft/" ".Xmodmap" ".themes/" ".config/" ".mozilla/" ".zcompdump" ".xsession" ".elfeed/" ".zshrc.pre-oh-my-zsh" "Nextcloud/" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" "My Games/" ".zshrc" ".ghc/" ".alsoftrc" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".elinks/" ".aspell.en.pws" "mail/" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" "org/" ".rexuiz/" ".prxMofneP" ".xmonad/" ".lunarclient/" ".gradle/" ".xsession-errors" ".gnupg/" ".aspell.en.prepl" "Downloads/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".notmuch-config" ".node_repl_history" ".dbus/" ".npm/" ".password-store/" ".cargo/" ".redeclipse/" ".getmail/" "Images/" "go/" "Templates/" ".java/" ".viminfo" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".gtk-bookmarks" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".XSM-Default" ".inputrc" ".ssh/" ".cabal/")
+ ("/home/semi/org/" (24377 38625 585027 685000) "gtd.org~" "gtd.org" "inbox.org" "./" "#tasks.org#" "../" "journal/" "school/" "roam/" "#gtd.org#" "inbox.org~" "personal/")
+
+ ("/home/semi/org/school/" (24377 37063 926002 884000) "bell_prep/" "assignments.org" "assignments.org~" "./" "assignments.org_archive~" "../" "#assignments.org#" "meetings.org_archive" "homework.org~" "computer_architecture/" "assignments.org_archive" "homework.org" "general/" "meetings.org")
+
+ ("/home/semi/org/personal/" (24376 42274 822938 439000) "books.org" "books.org~" "inbox.org" "room.org" "./" "../" "coding.org" "books.org_archive" "room.org~" "coding.org~" "frettournament.org~" "tasks.org" "frettournament.org" "inbox.org~" "tasks.org_archive" "tasks.org~" "firealarms.org" "writing/")
+
+ ("/home/semi/" (24376 45366 235007 594000) ".bash_logout" ".steampath" "Videos/" ".wine/" "Games/" ".zsh_history" ".theme/" ".oh-my-zsh/" ".pinerc" "org-roam/" ".zcompdump-colin-void-5.8" ".mbsyncrc" ".gitconfig" ".oracle_jre_usage/" "qmk_firmware/" ".deft/" ".Xmodmap" ".themes/" ".clojure/" ".config/" ".mozilla/" ".zcompdump" ".xsession" ".elfeed/" ".zshrc.pre-oh-my-zsh" "Nextcloud/" "Code/" ".cinnamon/" ".cache/" ".gtkrc-2.0" ".texlive2020/" ".mono/" "./" ".xsession-errors.old" ".racket/" "../" ".fehbg" "My Games/" ".zshrc" ".ghc/" ".alsoftrc" ".bash_history" ".shell.pre-oh-my-zsh" ".julia/" ".clojure_history" ".elinks/" ".aspell.en.pws" "mail/" "school/" ".minecraft/" "Documents/" ".python_history" ".pki/" ".pine-debug1" "org/" ".rexuiz/" ".m2/" ".prxMofneP" ".xmonad/" ".lunarclient/" ".gradle/" ".xsession-errors" ".gnupg/" ".aspell.en.prepl" "Downloads/" ".renpy/" ".gem/" "Music/" ".ICEauthority" ".bashrc" ".Xauthority" ".openshot_qt/" ".steampid" ".local/" "Desktop/" ".vim/" ".notmuch-config" ".node_repl_history" ".dbus/" ".npm/" ".password-store/" ".cargo/" ".redeclipse/" ".getmail/" "Images/" "go/" "Templates/" ".java/" ".viminfo" ".bash_profile" "Pictures/" ".icons/" ".quake2rtx/" ".gtk-bookmarks" ".nv/" ".nvidia-settings-rc" ".git-credentials" ".steam/" ".dmrc" ".XSM-Default" ".inputrc" ".ssh/" ".cabal/")
+
+ ("/usr/" (24359 38558 202186 771000) "lib/" "share/" "lib64/" "x86_64-unknown-linux-gnu/" "etc/" "libexec/" "./" "../" "src/" "sbin/" "include/" "avr/" "local/" "lib32/" "bin/" "arm-none-eabi/")
+
+ ("/usr/local/share/emacs/" (24278 50638 522278 444000) "site-lisp/" "./" "../" "28.0.50/")
+
+ ("/usr/local/share/emacs/28.0.50/" (24372 8511 843168 85000) "site-lisp/" "lisp/" "etc/" "./" "../")
+
+ ("/usr/local/share/emacs/28.0.50/lisp/" (24372 8518 929168 244000) "faces.elc" "electric.elc" "composite.el.gz" "w32-fns.elc" "whitespace.elc" "hfy-cmap.elc" "cus-edit.elc" "window.el.gz" "mb-depth.elc" "minibuf-eldef.elc" "pcmpl-gnu.elc" "minibuf-eldef.el.gz" "locate.elc" "jka-compr.elc" "msb.elc" "vc/" "thingatpt.elc" "array.el.gz" "time.elc" "dired-x.elc" "cus-theme.el.gz" "dframe.el.gz" "display-fill-column-indicator.el.gz" "thread.elc" "skeleton.el.gz" "find-lisp.elc" "cdl.el.gz" "help-at-pt.elc" "subdirs.el" "profiler.el.gz" "epg.el.gz" "emacs-lock.el.gz" "ps-print-loaddefs.el" "ls-lisp.el.gz" "files.el.gz" "jsonrpc.el.gz" "tar-mode.el.gz" "scroll-bar.el.gz" "xt-mouse.el.gz" "find-lisp.el.gz" "winner.elc" "fringe.el.gz" "elec-pair.elc" "wid-browse.el.gz" "rtree.el.gz" "env.elc" "vcursor.elc" "select.elc" "md4.elc" "shadowfile.elc" "cus-dep.el.gz" "emacs-lock.elc" "fileloop.el.gz" "tooltip.el.gz" "windmove.elc" "epg.elc" "frameset.el.gz" "dabbrev.el.gz" "abbrev.el.gz" "find-cmd.elc" "font-lock.elc" "delim-col.el.gz" "image-dired.elc" "kermit.elc" "pcmpl-cvs.el.gz" "uniquify.el.gz" "double.el.gz" "speedbar.elc" "info-look.elc" "printing.el.gz" "rect.elc" "international/" "allout.el.gz" "msb.el.gz" "arc-mode.el.gz" "tutorial.el.gz" "menu-bar.elc" "battery.elc" "tab-bar.elc" "subr.el.gz" "double.elc" "face-remap.elc" "font-core.el.gz" "ls-lisp.elc" "desktop.elc" "image-mode.el.gz" "pcmpl-rpm.elc" "thingatpt.el.gz" "minibuffer.elc" "dired-x.el.gz" "view.el.gz" "server.el.gz" "tempo.elc" "dynamic-setting.elc" "proced.elc" "tabify.el.gz" "auth-source-pass.elc" "strokes.elc" "woman.el.gz" "pcmpl-linux.elc" "mwheel.elc" "desktop.el.gz" "foldout.elc" "tempo.el.gz" "startup.el.gz" "electric.el.gz" "vcursor.el.gz" "rect.el.gz" "epa-hook.el.gz" "pixel-scroll.elc" "help.el.gz" "pcmpl-rpm.el.gz" "char-fold.elc" "startup.elc" "man.elc" "ibuffer-loaddefs.el" "facemenu.el.gz" "mouse-drag.elc" "w32-vars.el.gz" "x-dnd.elc" "htmlfontify.elc" "font-core.elc" "saveplace.elc" "epa.el.gz" "so-long.elc" "misearch.el.gz" "paren.el.gz" "dnd.el.gz" "autorevert.el.gz" "find-dired.el.gz" "ps-mule.el.gz" "follow.elc" "json.el.gz" "mh-e/" "forms.elc" "custom.elc" "bs.elc" "informat.el.gz" "find-dired.elc" "epa-file.el.gz" "timezone.el.gz" "scroll-lock.elc" "buff-menu.el.gz" "imenu.el.gz" "shadowfile.el.gz" "tool-bar.el.gz" "fileloop.elc" "hex-util.elc" "calendar/" "savehist.el.gz" "dom.elc" "jit-lock.el.gz" "scroll-all.elc" "thumbs.elc" "battery.el.gz" "xml.el.gz" "simple.elc" "recentf.elc" "edmacro.elc" "paren.elc" "COPYING" "echistory.elc" "help-mode.elc" "find-file.el.gz" "savehist.elc" "term.elc" "obsolete/" "pcmpl-cvs.elc" "edmacro.el.gz" "thumbs.el.gz" "disp-table.elc" "pcomplete.elc" "flow-ctrl.el.gz" "format-spec.el.gz" "dirtrack.elc" "epa-mail.elc" "cus-edit.el.gz" "display-line-numbers.elc" "vt-control.elc" "loadhist.elc" "arc-mode.elc" "repeat.el.gz" "jit-lock.elc" "wdired.el.gz" "replace.elc" "isearch.el.gz" "ielm.el.gz" "nxml/" "tree-widget.elc" "talk.elc" "mwheel.el.gz" "register.elc" "vt100-led.elc" "cedet/" "obarray.el.gz" "cmuscheme.elc" "ffap.el.gz" "env.el.gz" "custom.el.gz" "window.elc" "hexl.elc" "jka-cmpr-hook.el.gz" "iimage.el.gz" "lpr.elc" "type-break.elc" "imenu.elc" "dirtrack.el.gz" "net/" "frame.elc" "bs.el.gz" "isearch.elc" "mouse-drag.el.gz" "so-long.el.gz" "midnight.elc" "reveal.el.gz" "thread.el.gz" "ps-samp.el.gz" "indent.el.gz" "format-spec.elc" "ldefs-boot.el" "bindings.elc" "mouse.elc" "cdl.elc" "finder.el.gz" "midnight.el.gz" "ansi-color.elc" "dos-fns.elc" "newcomment.el.gz" "array.elc" "pcmpl-linux.el.gz" "cus-theme.elc" "hi-lock.elc" "macros.el.gz" "ruler-mode.elc" "winner.el.gz" "color.el.gz" "notifications.elc" "filecache.el.gz" "select.el.gz" "xml.elc" "epa-hook.elc" "wid-edit.elc" "case-table.el.gz" "help-macro.el.gz" "userlock.elc" "textmodes/" "composite.elc" "dos-w32.elc" "auth-source.elc" "language/" "dframe.elc" "delsel.elc" "subr.elc" "minibuffer.el.gz" "autoarg.elc" "image-mode.elc" "linum.elc" "tab-line.el.gz" "info-look.el.gz" "epg-config.el.gz" "tar-mode.elc" "abbrev.elc" "autoarg.el.gz" "ps-def.elc" "obarray.elc" "loadup.el" "apropos.elc" "icomplete.elc" "tree-widget.el.gz" "ibuf-ext.el.gz" "widget.elc" "allout-widgets.elc" "rfn-eshadow.elc" "kermit.el.gz" "proced.el.gz" "xwidget.el.gz" "ansi-color.el.gz" "ebuff-menu.el.gz" "ps-bdf.elc" "ps-print.elc" "hippie-exp.elc" "time.el.gz" "ido.elc" "recentf.el.gz" "auth-source.el.gz" "reposition.el.gz" "progmodes/" "mail/" "makesum.elc" "delim-col.elc" "files-x.elc" "svg.el.gz" "align.elc" "tmm.el.gz" "doc-view.elc" "x-dnd.el.gz" "org/" "flow-ctrl.elc" "xdg.el.gz" "image-file.elc" "htmlfontify-loaddefs.el" "isearchb.el.gz" "ps-samp.elc" "vt-control.el.gz" "widget.el.gz" "info.elc" "reveal.elc" "registry.el.gz" "hl-line.el.gz" "reposition.elc" "eshell/" "ebuff-menu.elc" "time-stamp.elc" "epa.elc" "json.elc" "avoid.elc" "play/" "ps-bdf.el.gz" "skeleton.elc" "replace.el.gz" "wid-browse.elc" "informat.elc" "jsonrpc.elc" "disp-table.el.gz" "xdg.elc" "cus-face.el.gz" "misc.elc" "w32-fns.el.gz" "outline.el.gz" "font-lock.el.gz" "mouse-copy.elc" "tabify.elc" "bindings.el.gz" "mb-depth.el.gz" "dired.el.gz" "image.elc" "hex-util.el.gz" "finder.elc" "generic-x.el.gz" "ezimage.elc" "button.el.gz" "term.el.gz" "misc.el.gz" "whitespace.el.gz" "newcomment.elc" "w32-vars.elc" "plstore.el.gz" "finder-inf.el" "auth-source-pass.el.gz" "find-file.elc" "cmuscheme.el.gz" "help-fns.elc" "master.elc" "help-at-pt.el.gz" "mouse-copy.el.gz" "bookmark.elc" "calc/" "htmlfontify.el.gz" "hi-lock.el.gz" "password-cache.elc" "dired.elc" "kmacro.elc" "ido.el.gz" "view.elc" "jka-cmpr-hook.elc" "soundex.elc" "epg-config.elc" "dos-vars.elc" "tutorial.elc" "tool-bar.elc" "password-cache.el.gz" "dos-w32.el.gz" "ibuffer.el.gz" "hippie-exp.el.gz" "ibuffer.elc" "hexl.el.gz" "calculator.elc" "man.el.gz" "filecache.elc" "dos-fns.el.gz" "calculator.el.gz" "repeat.elc" "hilit-chg.elc" "descr-text.el.gz" "mpc.el.gz" "misearch.elc" "ezimage.el.gz" "delsel.el.gz" "dired-loaddefs.el" "tooltip.elc" "kmacro.el.gz" "vt100-led.el.gz" "loadhist.el.gz" "image/" "plstore.elc" "comint.elc" "time-stamp.el.gz" "dnd.elc" "epa-file.elc" "hfy-cmap.el.gz" "master.el.gz" "register.el.gz" "frameset.elc" "pcmpl-gnu.el.gz" "lpr.el.gz" "novice.el.gz" "tmm.elc" "t-mouse.el.gz" "t-mouse.elc" "expand.el.gz" "dired-aux.elc" "image.el.gz" "avoid.el.gz" "hl-line.elc" "dom.el.gz" "notifications.el.gz" "info-xref.elc" "ps-print.el.gz" "ehelp.elc" "soundex.el.gz" "epa-dired.elc" "follow.el.gz" "simple.el.gz" "tab-bar.el.gz" "elec-pair.el.gz" "ps-mule.elc" "comint.el.gz" "emacs-lisp/" "woman.elc" "ruler-mode.el.gz" "iimage.elc" "erc/" "generic-x.elc" "emulation/" "expand.elc" "display-fill-column-indicator.elc" "menu-bar.el.gz" "xt-mouse.elc" "saveplace.el.gz" "pcomplete.el.gz" "elide-head.el.gz" "ffap.elc" "outline.elc" "ibuf-macs.elc" "echistory.el.gz" "svg.elc" "help-mode.el.gz" "help.elc" "indent.elc" "macros.elc" "windmove.el.gz" "faces.el.gz" "pcmpl-x.el.gz" "ps-def.el.gz" "ibuf-ext.elc" "makesum.el.gz" "chistory.elc" "README" "image-dired.el.gz" "uniquify.elc" "help-macro.elc" "dired-aux.el.gz" "rot13.elc" "help-fns.el.gz" "server.elc" "cus-face.elc" "epa-dired.el.gz" "dynamic-setting.el.gz" "color.elc" "jka-compr.el.gz" "char-fold.el.gz" "doc-view.el.gz" "allout.elc" "completion.el.gz" "rtree.elc" "find-cmd.el.gz" "epa-mail.el.gz" "align.el.gz" "ecomplete.el.gz" "md4.el.gz" "apropos.el.gz" "autoinsert.el.gz" "locate.el.gz" "image-file.el.gz" "pcmpl-unix.elc" "filesets.elc" "rfn-eshadow.el.gz" "allout-widgets.el.gz" "version.elc" "mouse.el.gz" "display-line-numbers.el.gz" "loaddefs.el" "wid-edit.el.gz" "cus-start.elc" "filenotify.el.gz" "term/" "type-break.el.gz" "info-xref.el.gz" "ecomplete.elc" "descr-text.elc" "version.el.gz" "novice.elc" "frame.el.gz" "scroll-bar.elc" "ses.el.gz" "forms.el.gz" "files.elc" "cus-load.el" "icomplete.el.gz" "foldout.el.gz" "sort.elc" "sort.el.gz" "autoinsert.elc" "format.elc" "printing.elc" "scroll-all.el.gz" "dos-vars.el.gz" "facemenu.elc" "info.el.gz" "speedbar.el.gz" "pcmpl-x.elc" "face-remap.el.gz" "cus-start.el.gz" "userlock.el.gz" "wdired.elc" "elide-head.elc" "buff-menu.elc" "bookmark.el.gz" "xwidget.elc" "pcmpl-unix.el.gz" "strokes.el.gz" "completion.elc" "case-table.elc" "profiler.elc" "timezone.elc" "scroll-lock.el.gz" "linum.el.gz" "files-x.el.gz" "url/" "fringe.elc" "gnus/" "leim/" "pixel-scroll.el.gz" "ehelp.el.gz" "format.el.gz" "filenotify.elc" "ses.elc" "button.elc" "filesets.el.gz" "hilit-chg.el.gz" "ielm.elc" "autorevert.elc" "mpc.elc" "shell.elc" "shell.el.gz" "ibuf-macs.el.gz" "talk.el.gz" "isearchb.elc" "chistory.el.gz" "cus-dep.elc" "registry.elc" "rot13.el.gz" "tab-line.elc" "dabbrev.elc" "../" "./")
+
+ ("/home/semi/.config/" (24376 35344 487783 408000) "retroarch/" "autostart/" "glib-2.0/" "mu4e/" "awesome/" "baloofileinformationrc" "QtProject.conf" "chromium/" "blugon/" "dolphinrc" "amp/" "baloofilerc" "kritadisplayrc" "kglobalshortcutsrc" "fish/" "cordless/" "neofetch/" "Nextcloud/" "dolphin-emu/" "sxhkd/" "nnn/" "kritarc" "gtk-2.0/" "pulse/" "olivevideoeditor.org/" "spotify-tui/" "./" "gtk-3.0/" "alacritty/" "tetrio-desktop/" "../" "oxygen-gtk/" "session/" "ristretto/" "procps/" "kitty/" "lutris/" "dconf/" "herbstluftwm/" "msmtp/" "dunst/" "xmobar/" "vlc/" "aerc/" "xi/" "obs-studio/" "configstore/" "Thunar/" "user-dirs.dirs" "fyne/" "qmk/" "nvim/" "okularrc" "ardour6/" "GIMP/" "wal/" "htop/" "onedrive/" "xfce4/" "godot/" "lattedockrc" "emacs/" "inkscape/" "picom/" "polybar/" "kdenliverc" "discord/" "nemo/" "trashrc" "micro/" "enchant/" "PulseEffects/" "mimeapps.list" "CrossCode/" "lunarclient/" "mpv/" "cef_user_data/" "libreoffice/" "user-dirs.locale" "bspwm/" "VirtualBox/" "rofi/" "pavucontrol.ini" "menus/" "kdeglobals" "Dharkael/" "gedit/" "unity3d/" "cinnamon-session/" "glasscord/" "mupen64plus/")
+
+ ("/home/semi/.config/emacs/straight/build/flymake/" (24371 25004 779185 486000) "./" "../" "flymake.elc" "flymake.el" "flymake-autoloads.el")
+
+ ("/home/semi/Code/minecalc/" (24373 43882 955471 491000) "#main.go#" "resource.go~" "cli.go" "main.go" "#resource.go#" "./" "../" "main.go~" "minecalc" "resource.go" "cli.go~")
+
+ ("/home/semi/Documents/godot/" (24372 24751 930282 17000) "onh/" "platformer-example/" "2d Tutorial/" "./" "../" ".import/" "birbgam/")
+
+ ("/home/semi/Documents/" (24371 16828 400002 581000) "qmk_layouts/" "vbox/" "./" "BlackmagicDesign/" "../" "ardour/" "random/" "godot/" "theflyingrat/" "charts/")
+
+ ("/home/semi/org-roam/" (24373 36183 883299 263000) "20200809185150-stockfish_vs_alphazero.org" "20200801180049-org_roam.org~" "20200809185312-alphago.org" "20200806114545-zettelkasten.org" "20200813115156-quasar.org" "./" "20200809185545-alphazero.org" "../" "20200804201504-reviung41.org~" "20200809170435-covid_19.org" "org-roam.db" "20200801180049-org_roam.org" "20200809185150-stockfish_vs_alphazero.org~" "20200809185312-alphago.org~" "20200804201504-reviung41.org" "#roam_test.org#" "20200801173921-.org" "2020-08-09.org")
+
+ ("/home/semi/Code/learnyouahaskell/" (24372 38921 750141 842000) "main.hi" "./" "main.hs~" "main" "../" "main.o" "main.hs")
+
+ ("/usr/local/" (24327 19198 474014 372000) "lib/" "share/" "lib64/" "etc/" "libexec/" "./" "../" "sbin/" "include/" "bin/")
+
+ ("/usr/local/share/" (24345 52571 486094 829000) "terminfo/" "icons/" "./" "mu-wizard/" "info/" "../" "zoneinfo/" "badwolf/" "applications/" "doc/" "aerc/" "nvim/" "pixmaps/" "locale/" "metainfo/" "emacs/" "fonts/" "consolefonts/" "misc/" "man/")
+
+ ("/usr/local/share/info/" (24372 8510 961168 65000) "vhdl-mode.info.gz" "emacs-gnutls.info.gz" "emacs-mime.info.gz" "erc.info.gz" "srecode.info.gz" "ses.info.gz" "reftex.info.gz" "auth.info.gz" "edt.info.gz" "ido.info.gz" "remember.info.gz" "nxml-mode.info.gz" "elisp.info.gz" "message.info.gz" "ebrowse.info.gz" "mh-e.info.gz" "woman.info.gz" "eieio.info.gz" "pcl-cvs.info.gz" "bovine.info.gz" "eintr.info.gz" "./" "gnus.info.gz" "eudc.info.gz" "../" "ccmode.info.gz" "rcirc.info.gz" "dir" "sc.info.gz" "eww.info.gz" "widget.info.gz" "libjit.info" "ert.info.gz" "vip.info.gz" "emacs.info.gz" "org.info.gz" "mairix-el.info.gz" "flymake.info.gz" "viper.info.gz" "efaq.info.gz" "sasl.info.gz" "info.info.gz" "octave-mode.info.gz" "autotype.info.gz" "forms.info.gz" "calc.info.gz" "ede.info.gz" "cl.info.gz" "pgg.info.gz" "sieve.info.gz" "newsticker.info.gz" "ediff.info.gz" "smtpmail.info.gz" "semantic.info.gz" "htmlfontify.info.gz" "eshell.info.gz" "todo-mode.info.gz" "idlwave.info.gz" "dbus.info.gz" "dired-x.info.gz" "epa.info.gz" "speedbar.info.gz" "wisent.info.gz" "tramp.info.gz" "url.info.gz")
+
+ ("/home/semi/.config/emacs/straight/build/doom-themes/" (24371 24949 47184 240000) "doom-themes-base.el" "doom-laserwave-theme.el" "doom-themes-ext-treemacs.el" "doom-vibrant-theme.el" "doom-oceanic-next-theme.el" "doom-nova-theme.el" "doom-city-lights-theme.el" "doom-solarized-light-theme.el" "doom-nord-light-theme.el" "doom-ephemeral-theme.el" "doom-rouge-theme.el" "doom-acario-dark-theme.el" "doom-themes-ext-visual-bell.el" "./" "doom-wilmersdorf-theme.el" "doom-tomorrow-night-theme.el" "doom-zenburn-theme.el" "doom-manegarm-theme.el" "../" "doom-nord-theme.el" "doom-themes.elc" "doom-one-theme.el" "doom-dark+-theme.el" "doom-themes-ext-visual-bell.elc" "doom-tomorrow-day-theme.el" "doom-solarized-dark-theme.el" "doom-henna-theme.el" "doom-monokai-pro-theme.el" "doom-moonlight-theme.el" "doom-themes-ext-neotree.elc" "doom-themes-base.elc" "doom-outrun-electric-theme.el" "doom-acario-light-theme.el" "doom-dracula-theme.el" "doom-themes-ext-org.el" "doom-themes-autoloads.el" "doom-themes-ext-org.elc" "doom-themes-ext-neotree.el" "doom-peacock-theme.el" "doom-monokai-classic-theme.el" "doom-horizon-theme.el" "doom-Iosvkem-theme.el" "doom-gruvbox-theme.el" "doom-themes.el" "doom-opera-theme.el" "doom-molokai-theme.el" "doom-spacegrey-theme.el" "doom-sourcerer-theme.el" "doom-fairy-floss-theme.el" "doom-opera-light-theme.el" "doom-palenight-theme.el" "doom-snazzy-theme.el" "doom-challenger-deep-theme.el" "doom-monokai-spectrum-theme.el" "doom-material-theme.el" "doom-gruvbox-light-theme.el" "doom-one-light-theme.el")
+
+ ("/home/semi/.config/emacs/straight/build/" (24371 25084 672187 274000) "ht/" "s/" "dashboard/" "org-roam/" "f/" "jsonrpc/" "flymake/" "company/" "eldoc/" "centered-window/" "company-org-roam/" "aggressive-indent/" "ts/" "yasnippet-snippets/" "emacsql/" "./" "org-journal/" "hydra/" "doom-modeline/" "../" "org-recur/" "eglot/" "org-superstar/" "ace-jump-mode/" "shrink-path/" "all-the-icons/" "lv/" "smex/" "org/" "notmuch/" "pretty-hydra/" "dash/" "page-break-lines/" "powerline/" "bind-key/" "dash-functional/" "emacsql-sqlite3/" "straight/" "ido-vertical-mode/" "major-mode-hydra/" "project/" "haskell-mode/" "company-go/" "writegood-mode/" "yasnippet/" "use-package/" "ryo-modal/" "centaur-tabs/" "doom-themes/" "toc-org/" "memoize/" "which-key/" "go-mode/" "xref/" "org-super-agenda/" "elfeed/")
+
+ ("/home/semi/.config/emacs/straight/" (24372 3291 236051 300000) "build/" "build-cache.el" "./" "../" "repos/")
+
+ ("/home/semi/Code/gl/" (24369 35478 797312 101000) "./" "../")
+
+ ("/home/semi/Code/" (24369 35478 797312 101000) "gamepadtest/" "canvas2org/" "supertris/" "yed/" "./" "sudoku/" "learnyouahaskell/" "../" "semilin.github.io/" "xi-term/" "chortle/" "quicktangle/" "minecalc/" "rng-core/" "forks/" "lang/" "gl/" "sorting/" "speedmath/" "plastic/" "org-css/")
 
  ("/home/semi/.config/bspwm/" (24367 9541 18009 105000) "bspwmrc" "config.org" "./" "../" "config.org~")
 
- ("/home/semi/org/personal/" (24364 20201 672039 991000) "books.org" "books.org~" "inbox.org" "room.org" "./" "../" "coding.org" "books.org_archive" "room.org~" "coding.org~" "frettournament.org~" "tasks.org" "frettournament.org" "inbox.org~" "tasks.org_archive" "tasks.org~" "firealarms.org" "writing/")
-
- ("/home/semi/school/" (24363 2106 61009 17000) "bell_prep/" "assignments.org" "assignments.org~" "./" "assignments.org_archive~" "../" "#assignments.org#" "meetings.org_archive" "homework.org~" "computer_architecture/" "assignments.org_archive" "homework.org" "general/" "meetings.org")
-
- ("/home/semi/Code/learnyouahaskell/" (24365 53753 419033 341000) "./" "main.hs~" "../" "main.hs")
-
  ("/home/semi/Code/forks/" (24305 18937 473677 343000) "./" "../" "micro/")
-
- ("/home/semi/.config/emacs/straight/" (24364 31343 603055 714000) "modified/" "build/" "build-cache.el" "./" "../" "repos/")
 
  ("/home/semi/.config/emacs/straight/repos/" (24364 28897 738001 0) "f.el/" "ht.el/" "mu4e/" "gocode/" "org-roam/" "ido-vertical-mode.el/" "shrink-path.el/" "emacsmirror-mirror/" "jsonrpc/" "gnu-elpa-mirror/" "flymake/" "ts.el/" "straight.el/" "eldoc/" "company-org-roam/" "major-mode-hydra.el/" "emacsql/" "company-mode/" "./" "all-the-icons.el/" "flycheck/" "org-journal/" "hydra/" "doom-modeline/" "../" "org-recur/" "pkg-info/" "eglot/" "ace-jump-mode/" "let-alist/" "epl/" "go-mode.el/" "emacs-memoize/" "smex/" "org/" "dash.el/" "org-bullets/" "notmuch/" "s.el/" "melpa/" "page-break-lines/" "centered-window-mode/" "powerline/" "nord-emacs/" "emacs-which-key/" "emacsql-sqlite3/" "rust-mode/" "emacs/" "org-superstar-mode/" "project/" "haskell-mode/" "writegood-mode/" "emacs-doom-themes/" "aggressive-indent-mode/" "emacs-dashboard/" "use-package/" "ryo-modal/" "centaur-tabs/" "toc-org/" "xref/" "org-super-agenda/" "elfeed/")
 
  ("/home/semi/.config/emacs/straight/repos/ace-jump-mode/" (24364 28898 448001 16000) ".git/" "README.md" ".gitattributes" "./" "../" "ace-jump-mode.el")
 
- ("/home/semi/org-roam/" (24362 10776 681097 34000) "20200801180049-org_roam.org~" "./" "../" "org-roam.db" "20200801180049-org_roam.org" "20200804201504-reviung41.org" "20200801173921-.org")
-
- ("/home/semi/org/school/" (24354 8628 914425 993000) "bell_prep/" "assignments.org" "assignments.org~" "./" "assignments.org_archive~" "../" "#assignments.org#" "meetings.org_archive" "homework.org~" "computer_architecture/" "assignments.org_archive" "homework.org" "general/" "meetings.org")
-
  ("/home/semi/org/roam/" (24358 4863 390049 692000) "./" "../" "20200731131315-school.org" "20200731131315-school.org~" "org-roam.db")
-
- ("/home/semi/org/" (24356 31571 592040 660000) "gtd.org~" "gtd.org" "./" "#tasks.org#" "../" "journal/" "school/" "roam/" "#gtd.org#" "personal/")
 
  ("/home/semi/Downloads/" (24355 6537 958037 291000) "PencilSharpeningSimulatorWinx86.rar" "builds/" "./" "../" "Ruined Lands/" "Legend of Zelda, The - Majora's Mask (U) [!].z64" "blockset.png" "Moonscraper Chart Editor v1.3.5.2 Linux (Universal)/" "Win/" "Discord/" "iso/")
 
  ("/home/semi/Code/org-css/" (24353 55831 864047 850000) "./" "../" "org.css" "org.css~")
-
- ("/home/semi/Code/" (24353 53906 247008 132000) "gamepadtest/" "canvas2org/" "supertris/" "yed/" "./" "sudoku/" "learnyouahaskell/" "../" "semilin.github.io/" "xi-term/" "chortle/" "quicktangle/" "minecalc/" "rng-core/" "forks/" "lang/" "sorting/" "speedmath/" "plastic/" "org-css/")
 
  ("/home/semi/org/journal/" (24352 47172 899217 399000) "./" "../" "28-07-2020.org~" "#27_07_2020.org#" "27-07-2020.org" "#20200727#" "28-07-2020.org" "#27_07_2020#")
 
@@ -102,10 +133,6 @@
  ("/home/semi/Code/yed/yed/" (24340 48181 479084 516000) "view.go" "yed" "./" "../" "message.go" "buffer.go" "file_test.go" "file.go~" "file.go" "buffer.go~")
 
  ("/home/semi/.config/emacs/straight/repos/flymake/" (24340 46938 67058 869000) ".git/" "./" "../" "flymake.el")
-
- ("/home/semi/.config/emacs/straight/build/flymake/" (24340 46938 775058 884000) "./" "../" "flymake.elc" "flymake.el" "flymake-autoloads.el")
-
- ("/home/semi/.config/emacs/straight/build/" (24340 47681 163074 196000) "s/" "dashboard/" "f/" "jsonrpc/" "flymake/" "dracula-theme/" "company/" "eldoc/" "aggressive-indent/" "./" "doom-modeline/" "../" "nord-theme/" "eglot/" "shrink-path/" "all-the-icons/" "smex/" "org-bullets/" "dash/" "page-break-lines/" "powerline/" "bind-key/" "rust-mode/" "straight/" "ido-vertical-mode/" "project/" "company-go/" "use-package/" "ryo-modal/" "centaur-tabs/" "doom-themes/" "memoize/" "which-key/" "go-mode/" "xref/")
 
  ("/home/semi/Code/yed/" (24333 2695 652217 966000) "brick/" "yed/" "./" "../" "xi/" "rust/")
 

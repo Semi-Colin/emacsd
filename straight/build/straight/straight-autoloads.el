@@ -337,7 +337,7 @@ according to the value of `straight-profiles'.
 (autoload 'straight-thaw-versions "straight" "\
 Read version lockfiles and restore package versions to those listed." t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "straight" '("straight-")))
+(register-definition-prefixes "straight" '("straight-"))
 
 ;;;***
 
@@ -347,7 +347,7 @@ Read version lockfiles and restore package versions to those listed." t nil)
 (defvar straight-x-pinned-packages nil "\
 List of pinned packages.")
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "straight-x" '("straight-x-")))
+(register-definition-prefixes "straight-x" '("straight-x-"))
 
 ;;;***
 

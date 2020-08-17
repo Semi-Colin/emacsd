@@ -10,71 +10,28 @@
 (goto-char (point-max))
 (eval-print-last-sexp)))
 (load bootstrap-file nil 'nomessage))
-(straight-use-package 'use-package)
-(straight-use-package 'org)
-(require 'org)
-(require 'ox)
-(setq org-hidden-keywords '(author date email title))
-(setq org-log-done 'time)
-(straight-use-package 'org-superstar)
-(add-hook 'org-mode-hook #'org-superstar-mode)
-(straight-use-package 'toc-org)
-(add-hook 'org-mode-hook 'toc-org-mode)
-(setq org-todo-keyword-faces
-'(("TODO" . "yellow") ("DONE" . "dark gray")
-))
-(setq org-capture-templates
-'(
-("t" "Task" entry (file+headline "~/org/personal/tasks.org" "Tasks")
-"* TODO %?\n  %i\n")
-("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
-"* TODO %?\nDEADLINE: %t")
-))
-(global-set-key (kbd "C-c x") 'org-capture)
-(require 'org-tempo)
-(straight-use-package 'org-roam)
-(setq org-roam-tag-sources '(prop))
-(straight-use-package 'company-org-roam)
-(setq org-roam-completion-system 'ido)
-(setq org-roam-capture-templates
-'(("d" "default" plain (function org-roam--capture-get-point)
-"%?"
-:file-name "${slug}"
-:head "#+title: ${title}
-#+date:%u
-#+roam_tags:
-%i"
-:unnarrowed t)
-))
-(straight-use-package 'writegood-mode)
-(global-set-key (kbd "C-c g") 'writegood-mode)
-(straight-use-package 'centered-window)
-(add-hook 'org-mode-hook 'visual-line-mode)
-(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
-(add-hook 'org-mode-hook 'centered-window-mode)
-(straight-use-package 'org-recur)
-(add-hook 'org-mode-hook #'org-indent-mode)
-(global-set-key (kbd "C-c a") 'org-agenda)
-(setq org-agenda-use-time-grid nil)
-(straight-use-package 'org-super-agenda)
-(straight-use-package 'org-journal)
-(setq org-journal-dir "~/org/journal")
-(setq org-journal-file-format "%d-%m-%Y.org")
-(setq org-journal-enable-agenda-integration t)
-(global-set-key (kbd "C-c j") 'org-journal-new-entry)
-(require 'org-journal)
-(straight-use-package 'doom-themes)
+(eval-when-compile
+(add-to-list 'load-path "~/.config/emacs/use-package")
+(add-to-list 'load-path "~/.config/emacs/bind-key")
+(require 'use-package))
+(require 'bind-key)
+(use-package doom-themes
+:straight t
+)
 (load-theme 'doom-one t)
-(set-frame-font "Fira Code 14" nil t)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(straight-use-package 'doom-modeline)
+(use-package doom-modeline
+:defer 1
+:straight t
+:config
 (doom-modeline-mode 1)
-(straight-use-package 'page-break-lines)
-(straight-use-package 'all-the-icons)
-(straight-use-package 'dashboard)
-(dashboard-setup-startup-hook)
+)
+(use-package dashboard
+:straight t
+:init
+(use-package page-break-lines :straight t)
+(use-package all-the-icons :straight t)
+:config (dashboard-setup-startup-hook)
+)
 (setq dashboard-banner-logo-title "Semimacs")
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-center-content t)
@@ -82,24 +39,111 @@
 (setq dashboard-set-file-icons t)
 (setq dashboard-set-init-info t)
 (setq dashboard-footer-messages '("Yeah, I look like I know what I'm doing."))
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-(straight-use-package 'ido-vertical-mode)
-(ido-vertical-mode 1)
-(straight-use-package 'smex)
-(global-set-key (kbd "M-x") 'smex)
+(use-package org
+:straight t
+:defer t
+:config
+(use-package ox
+:defer t
+)
+(setq org-hidden-keywords '(author date email title))
+(use-package org-tempo)
+(setq org-log-done 'time)
+(use-package org-superstar
+:straight t
+:defer t
+:config
+(add-hook 'org-mode-hook #'org-superstar-mode)
+)
+(use-package toc-org
+:defer t
+:straight t
+:config
+(add-hook 'org-mode-hook 'toc-org-mode)
+)
+(setq org-capture-templates
+'(
+("c" "Inbox" entry (file+headline "~/org/inbox.org" "Inbox")
+"* TODO %?\n  %i\n")
+("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
+"* TODO %?\nDEADLINE: %t")
+("v" "Vocabulary" entry (file+headline "~/vocabulary.org" "Vocabulary")
+"* %?\n** Definition")
+))
+(global-set-key (kbd "C-c x") 'org-capture)
+)
+(setq org-refile-targets '(("~/org/project.org" :maxlevel . 3)
+("~/org/defer.org" :level . 1)
+))
+(use-package org-roam
+:straight t
+:defer t
+:config
+(setq org-roam-tag-sources '(prop))
+(straight-use-package 'company-org-roam)
+(setq org-roam-completion-system 'ivy)
+)
+(use-package writegood-mode
+:straight t
+:defer t
+:config
+(global-set-key (kbd "C-c g") 'writegood-mode)
+)
+(use-package centered-window
+:straight t
+:defer t
+)
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
+(add-hook 'org-mode-hook 'centered-window-mode)
+(use-package org-recur
+:defer t
+:straight t
+)
+(add-hook 'org-mode-hook #'org-indent-mode)
+(use-package org-agenda :defer t
+:bind
+("C-c a" . org-agenda)
+:config
+(setq org-agenda-use-time-grid nil)
+)
+(use-package org-journal
+:defer t
+:straight t
+:config
+(setq org-journal-dir "~/org/journal")
+(setq org-journal-file-format "%d-%m-%Y.org")
+(setq org-journal-enable-agenda-integration t)
+:bind ("C-c j" . org-journal-new-entry)
+)
+(use-package ivy :straight t
+:config
+(ivy-mode 1)
+)
 (show-paren-mode t)
 (straight-use-package 'centaur-tabs)
 (centaur-tabs-mode t)
 (setq centaur-tabs-set-icons t)
 (setq centaur-tabs-style "bar")
 (straight-use-package 'flymake)
-(straight-use-package 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(straight-use-package 'company-go)
-(straight-use-package 'eglot)
-(straight-use-package 'elfeed)
+(use-package company
+:straight t
+:defer 5
+:config
+(global-company-mode)
+(use-package company-go
+:straight t
+:defer t
+)
+)
+(use-package eglot
+:straight t
+:defer t
+)
+(use-package elfeed
+:straight t
+:defer t
+)
 (setq elfeed-feeds
 '(("https://xkcd.com/rss.xml" entertainment)
 ("https://www.distrotube.com/videos/index.xml" technology)
@@ -135,18 +179,33 @@
 )
 (add-hook 'go-mode-hook 'eglot-ensure)
 (straight-use-package 'haskell-mode)
-(straight-use-package 'aggressive-indent)
+(use-package aggressive-indent
+:defer t
+:straight t
+:config
 (global-aggressive-indent-mode 1)
+)
 (electric-pair-mode 1)
-(straight-use-package 'ace-jump-mode)
-(straight-use-package 'yasnippet)
-(require 'yasnippet)
+(use-package ace-jump-mode
+:defer t
+:straight t
+)
+(use-package yasnippet
+:straight t
+:defer 4
+:config
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
-(straight-use-package 'yasnippet-snippets)
-(straight-use-package 'hydra)
+(use-package yasnippet-snippets
+:straight t
+))
+(use-package hydra
+:defer t
+:straight t
+)
 (use-package ryo-modal
 :straight t
+:defer t
 :commands ryo-modal-mode
 :bind ("<escape>" . ryo-modal-mode)
 :config
@@ -255,10 +314,19 @@
 ("t" org-todo "toggle todo")
 ("r" org-refile "refile")
 )
-))
+"schedule"
+(("s t" org-time-stamp "timestamp")
+("s s" org-schedule "schedule")
+("s d" org-deadline "deadline")
+)
+)
+)
 (add-hook 'text-mode-hook #'ryo-modal-mode)
 (add-hook 'prog-mode-hook #'ryo-modal-mode)
 (global-set-key (kbd "C-<escape>") 'keyboard-escape-quit)
-(straight-use-package 'which-key)
+(use-package which-key
+:straight t
+:config
 (which-key-mode)
-(setq which-key-idle-delay 1)
+(setq which-key-idle-delay .5)
+)

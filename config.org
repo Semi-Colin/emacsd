@@ -3,269 +3,35 @@
 
 This is my personal emacs init file. I am restarting it, because my old one was kind of a copy-pasted mess.
 
-* Table of Contents                                                     :toc:
-- [[#packages][Packages]]
-  - [[#bootstrap][Bootstrap]]
-  - [[#use-package][Use-package]]
-- [[#org][Org]]
-  - [[#get-latest-version][Get latest version]]
-  - [[#aesthetics][Aesthetics]]
-  - [[#log-time][Log Time]]
-  - [[#superstar][Superstar]]
-  - [[#toc][TOC]]
-  - [[#faces][Faces]]
-  - [[#capture][Capture]]
-  - [[#tempo][Tempo]]
-  - [[#roam][Roam]]
-  - [[#writegood][Writegood]]
-  - [[#center-window][Center Window]]
-  - [[#recur][Recur]]
-  - [[#indentation][Indentation]]
-  - [[#agenda][Agenda]]
-  - [[#super-agenda][Super Agenda]]
-  - [[#journal][Journal]]
-- [[#aesthetics-1][Aesthetics]]
-  - [[#theme][Theme]]
-  - [[#font][Font]]
-  - [[#default-ui][Default UI]]
-  - [[#modeline][Modeline]]
-  - [[#dashboard][Dashboard]]
-- [[#functionality][Functionality]]
-  - [[#ido][Ido]]
-  - [[#smex][Smex]]
-  - [[#matching-parens][Matching Parens]]
-  - [[#centaur-tabs][Centaur Tabs]]
-  - [[#flymake][Flymake]]
-  - [[#company][Company]]
-  - [[#eglot][eglot]]
-  - [[#elfeed][elfeed]]
-  - [[#notmuch][NotMuch]]
-- [[#custom][Custom]]
-  - [[#functions][Functions]]
-- [[#programming][Programming]]
-  - [[#rust][Rust]]
-  - [[#go][Go]]
-  - [[#haskell][Haskell]]
-- [[#editing][Editing]]
-  - [[#aggressive-indent][Aggressive Indent]]
-  - [[#electric-indent][Electric Indent]]
-  - [[#line-numbers][Line Numbers]]
-  - [[#ace-jump][Ace Jump]]
-  - [[#yasnippets][Yasnippets]]
-- [[#keybinds][Keybinds]]
-  - [[#hydra][Hydra]]
-  - [[#ryo-modal][Ryo-Modal]]
-  - [[#global][Global]]
-  - [[#which-key][Which Key]]
-
 * Packages
 ** Bootstrap
 
    Yeah, this code is copy-pasted, but I think it gets a pass because it's pretty much necessary.
    #+BEGIN_SRC emacs-lisp
+     (defvar bootstrap-version)
+     (let ((bootstrap-file
+     (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+     (bootstrap-version 5))
+     (unless (file-exists-p bootstrap-file)
+     (with-current-buffer
+     (url-retrieve-synchronously
+     "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+     'silent 'inhibit-cookies)
+     (goto-char (point-max))
+     (eval-print-last-sexp)))
+     (load bootstrap-file nil 'nomessage))
 
-   (defvar bootstrap-version)
-   (let ((bootstrap-file
-   (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-   (bootstrap-version 5))
-   (unless (file-exists-p bootstrap-file)
-   (with-current-buffer
-   (url-retrieve-synchronously
-   "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-   'silent 'inhibit-cookies)
-   (goto-char (point-max))
-   (eval-print-last-sexp)))
-   (load bootstrap-file nil 'nomessage))
-   
    #+END_SRC
 ** Use-package
    A lot of packages use use-package as their examples, and I don't know how to translate those to just raw straight. So I install it here.
    #+begin_src emacs-lisp
-   (straight-use-package 'use-package)
+   (eval-when-compile
+   (add-to-list 'load-path "~/.config/emacs/use-package")
+   (add-to-list 'load-path "~/.config/emacs/bind-key")
+   (require 'use-package))
+   (require 'bind-key)
    #+end_src
 
-* Org
-
-Org-mode really is the killer application for emacs.
-** Get latest version
-#+begin_src 
-(straight-use-package 'org)
-(require 'org)
-(require 'ox)
-#+end_src
-** Aesthetics
-   Hide keywords for title, date, and author.
-   #+begin_src emacs-lisp
-   (setq org-hidden-keywords '(author date email title))
-   #+end_src
-** Log Time
-This will automatically write a timestamp when I close a todo.
-#+begin_src elisp
-(setq org-log-done 'time)
-#+end_src
-** Superstar
-
-Superstar is a descendant of org-bullets, which increases performance and makes its scope a little bit better.
-*** Install with straight.el
-    #+begin_src emacs-lisp
-
-    (straight-use-package 'org-superstar)
-    
-    #+end_src
-    
-*** Activate when opening an org-mode file
-    #+begin_src emacs-lisp
-
-    (add-hook 'org-mode-hook #'org-superstar-mode)
-   
-    #+end_src    
-** TOC
-#+begin_src elisp
-  (straight-use-package 'toc-org)
-  (add-hook 'org-mode-hook 'toc-org-mode)
-#+end_src
-** TODO Faces
-*** Todo
-#+begin_src elisp 
-(setq org-todo-keyword-faces
-      '(("TODO" . "yellow") ("DONE" . "dark gray")
-        ))
-#+end_src
-** Capture
-*** Templates
-#+begin_src elisp 
-(setq org-capture-templates
-      '(
-      ("t" "Task" entry (file+headline "~/org/personal/tasks.org" "Tasks")
-      "* TODO %?\n  %i\n")
-      ("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
-      "* TODO %?\nDEADLINE: %t")
-      ))
-      
-#+end_src
-*** Keybind
-#+begin_src elisp
-(global-set-key (kbd "C-c x") 'org-capture)
-#+end_src
-** Tempo
-   Org tempo is a quick shortcut for adding blocks. For example, writing simply " <s " and followed by TAB will automatically fill out a source code block. Seems pretty nifty, and quite useful (especially for this config file) 
-   
-   #+BEGIN_SRC emacs-lisp
-     (require 'org-tempo)
-   #+END_SRC
-*** TODO Make Tempo Cooperate with Electric Pairs
-*** Credit
-[[https://orgmode.org/manual/Structure-Templates.html][orgmode.org]]
-** Roam
-*** Install
-#+begin_src elisp
-(straight-use-package 'org-roam)
-#+end_src
-*** Tag Sources
-#+begin_src elisp
-(setq org-roam-tag-sources '(prop))
-#+end_src
-*** Company
-#+begin_src elisp
-(straight-use-package 'company-org-roam)
-#+end_src
-*** Use Ido
-#+begin_src elisp
-(setq org-roam-completion-system 'ido)
-#+end_src
-*** Capture Templates
-#+begin_src elisp
-  (setq org-roam-capture-templates
-
-        '(("d" "default" plain (function org-roam--capture-get-point)
-
-           "%?"
-
-           :file-name "${slug}"
-
-           :head "#+title: ${title}
-
-#+date:%u
-
-#+roam_tags:
-
-%i"
-
-           :unnarrowed t)
-
-          ))
-#+end_src
-** Writegood
-*** Install
-#+begin_src elisp
-(straight-use-package 'writegood-mode)
-#+end_src
-*** Config
-#+begin_src elisp
-(global-set-key (kbd "C-c g") 'writegood-mode)
-#+end_src
-** Center Window
-*** Install
-#+begin_src elisp
-(straight-use-package 'centered-window)
-#+end_src
-*** Config
-#+begin_src elisp
-(add-hook 'org-mode-hook 'visual-line-mode)
-(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
-(add-hook 'org-mode-hook 'centered-window-mode)
-#+end_src
-** Recur
-Org-mode's scheduled dates is pretty lacking, so recur covers most of the gaps.
-*** Install
-#+begin_src elisp
-(straight-use-package 'org-recur)
-#+end_src
-** Indentation
-   For some reason, org-mode does not auto-indent by default.
-
-   #+begin_src elisp
-
-   (add-hook 'org-mode-hook #'org-indent-mode)
-   
-   #+end_src
-** Agenda
-*** Keybind
-#+begin_src elisp
-(global-set-key (kbd "C-c a") 'org-agenda)
-#+end_src
-*** Time Grid
-#+begin_src elisp
-(setq org-agenda-use-time-grid nil)
-#+end_src
-** Super Agenda
-*** Install
-#+begin_src elisp
-  (straight-use-package 'org-super-agenda)
-#+end_src
-*** Config
-#+begin_src elisp
-
-#+end_src
-** Journal
-*** Install
-#+begin_src 
-(straight-use-package 'org-journal)
-#+end_src
-*** Config
-#+begin_src emacs-lisp
-(setq org-journal-dir "~/org/journal")
-(setq org-journal-file-format "%d-%m-%Y.org")
-(setq org-journal-enable-agenda-integration t)
-#+end_src
-*** Keybinds
-#+begin_src emacs-lisp 
-(global-set-key (kbd "C-c j") 'org-journal-new-entry)
-#+end_src
-*** Activate
-#+begin_src elisp
-(require 'org-journal)
-#+end_src
 * Aesthetics
 
 I'll be honest, GUI Emacs does not look great by default... let's fix that!
@@ -278,7 +44,9 @@ I used the Dracula theme in my old config as well. It seems to be the only one I
      #+end_src
 *** Install Doom Themes
      #+begin_src emacs-lisp
-     (straight-use-package 'doom-themes)
+     (use-package doom-themes
+     :straight t
+     )
      #+end_src
 *** Set theme to Doom One
      #+begin_src emacs-lisp
@@ -286,11 +54,10 @@ I used the Dracula theme in my old config as well. It seems to be the only one I
      #+end_src
      
 ** Font
-  
-   Fira Code looks pretty nice in my opinion. 
+Iosevka looks pretty nice in my opinion. 
 *** Set
     #+begin_src emacs-lisp
-    (set-frame-font "Fira Code 14" nil t)
+      ;(add-hook 'after-init-hook (lambda () (set-frame-font "Iosevka 13" nil t)))
     #+end_src
 *** Credit
 
@@ -299,45 +66,48 @@ I used the Dracula theme in my old config as well. It seems to be the only one I
 ** Default UI
 *** Hide the menu bar
     #+begin_src emacs-lisp
-    (menu-bar-mode -1)
+    ;(menu-bar-mode -1)
     #+end_src
     
 *** Hide the scroll bar
     #+begin_src emacs-lisp
-    (scroll-bar-mode -1)
+    ;(scroll-bar-mode -1)
     #+end_src
     
 *** Hide the tool bar
     #+begin_src emacs-lisp
-    (tool-bar-mode -1)
+    ;(tool-bar-mode -1)
     #+end_src
     
 ** Modeline
-
 More Doom stealing, yay.
 *** Install
     #+begin_src emacs-lisp
-    (straight-use-package 'doom-modeline)
+          (use-package doom-modeline
+            :defer 1
+            :straight t
+
     #+end_src
     
 *** Activate
     #+begin_src emacs-lisp
-    (doom-modeline-mode 1)
+            :config
+            (doom-modeline-mode 1)
+      )
     #+end_src
 ** Dashboard
 
 Even more Doom stealing!
 *** Install
-Dependencies
     #+begin_src emacs-lisp
-      (straight-use-package 'page-break-lines)
-      (straight-use-package 'all-the-icons)
-    #+end_src
-    
-    Dashboard
-    #+begin_src emacs-lisp
-      (straight-use-package 'dashboard)
-      (dashboard-setup-startup-hook)
+      (use-package dashboard
+        :straight t
+        :init
+        (use-package page-break-lines :straight t)
+        (use-package all-the-icons :straight t)
+        :config (dashboard-setup-startup-hook)
+        )
+
     #+end_src
     
 *** Config
@@ -378,28 +148,268 @@ Dependencies
 **** Show a dumb footer message
      #+begin_src emacs-lisp
        (setq dashboard-footer-messages '("Yeah, I look like I know what I'm doing."))
+       
      #+end_src
       
+* Org
+Org-mode really is the killer application for emacs.
+** Get latest version
+#+begin_src elisp 
+  (use-package org
+    :straight t
+    :defer t
+    :config
+    (use-package ox
+      :defer t
+      )
+    
+#+end_src
+** Aesthetics
+   Hide keywords for title, date, and author.
+   #+begin_src emacs-lisp
+   (setq org-hidden-keywords '(author date email title))
+   #+end_src
+** Tempo
+   Org tempo is a quick shortcut for adding blocks. For example, writing simply " <s " and followed by TAB will automatically fill out a source code block. Seems pretty nifty, and quite useful (especially for this config file) 
+   
+   #+BEGIN_SRC emacs-lisp
+     (use-package org-tempo)
+   #+END_SRC
+*** TODO Make Tempo Cooperate with Electric Pairs
+*** Credit
+[[https://orgmode.org/manual/Structure-Templates.html][orgmode.org]]
+** Log Time
+This will automatically write a timestamp when I close a todo.
+#+begin_src elisp
+(setq org-log-done 'time)
+#+end_src
+** Drill
+#+begin_src elisp
+;(require 'org-drill)
+#+end_src
+** Superstar
+
+Superstar is a descendant of org-bullets, which increases performance and makes its scope a little bit better.
+*** Install
+    #+begin_src emacs-lisp
+          (use-package org-superstar
+            :straight t
+            :defer t
+            :config
+    #+end_src
+    
+*** Activate when opening an org-mode file
+    #+begin_src emacs-lisp
+      (add-hook 'org-mode-hook #'org-superstar-mode)
+      )
+    #+end_src    
+** TOC
+#+begin_src elisp
+  (use-package toc-org
+    :defer t
+    :straight t
+    :config
+    (add-hook 'org-mode-hook 'toc-org-mode)
+    )
+#+end_src
+** TODO Faces
+*** Todo
+#+begin_src elisp 
+; (setq org-todo-keyword-faces
+;       '(("TODO" . "green") ("DONE" . "dark gray")
+;         ))
+#+end_src
+** Capture
+*** Templates
+#+begin_src elisp 
+  (setq org-capture-templates
+        '(
+        ("c" "Inbox" entry (file+headline "~/org/inbox.org" "Inbox")
+        "* TODO %?\n  %i\n")
+        ("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
+        "* TODO %?\nDEADLINE: %t")
+        ("v" "Vocabulary" entry (file+headline "~/vocabulary.org" "Vocabulary")
+         "* %?\n** Definition")
+        ))
+
+#+end_src
+*** Keybind
+#+begin_src elisp
+  (global-set-key (kbd "C-c x") 'org-capture)
+)
+#+end_src
+*** Refile
+#+begin_src elisp
+  (setq org-refile-targets '(("~/org/project.org" :maxlevel . 3)
+                             ("~/org/defer.org" :level . 1)
+                             ))
+#+end_src
+** Roam
+*** Install
+#+begin_src elisp
+  (use-package org-roam
+    :straight t
+    :defer t 
+    :config
+#+end_src
+*** Tag Sources
+#+begin_src elisp
+(setq org-roam-tag-sources '(prop))
+#+end_src
+*** Company
+#+begin_src elisp
+(straight-use-package 'company-org-roam)
+#+end_src
+*** Use Ivy
+#+begin_src elisp
+(setq org-roam-completion-system 'ivy)
+#+end_src
+*** Capture Templates
+#+begin_src elisp   
+  ;; (setq org-roam-capture-templates
+
+  ;;           '(("d" "default" plain (function org-roam--capture-get-point)
+
+  ;;              "%?"
+
+  ;;              :file-name "${slug}"
+
+  ;;              :head "#+title: ${title}
+
+  ;;   #+date:%u
+
+  ;;   #+roam_tags:
+
+  ;;   %i"
+
+  ;;              :unnarrowed t)
+
+  ;;             ))
+  )
+#+end_src
+** Writegood
+*** Install
+#+begin_src elisp
+  (use-package writegood-mode
+  :straight t
+  :defer t
+        
+#+end_src
+*** Config
+#+begin_src elisp
+  :config
+  (global-set-key (kbd "C-c g") 'writegood-mode)
+  )
+#+end_src
+** Center Window
+*** Install
+#+begin_src elisp
+  (use-package centered-window
+  :straight t
+  :defer t
+  )
+#+end_src
+*** Config
+#+begin_src elisp
+(add-hook 'org-mode-hook 'visual-line-mode)
+(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
+(add-hook 'org-mode-hook 'centered-window-mode)
+#+end_src
+** Recur
+Org-mode's scheduled dates is pretty lacking, so recur covers most of the gaps.
+*** Install
+#+begin_src elisp
+  (use-package org-recur
+    :defer t
+    :straight t
+  )
+#+end_src
+** Indentation
+   For some reason, org-mode does not auto-indent by default.
+
+   #+begin_src elisp
+   (add-hook 'org-mode-hook #'org-indent-mode)
+   #+end_src
+** Agenda
+*** Use
+#+begin_src elisp
+  (use-package org-agenda :defer t
+    :bind
+    
+#+end_src
+*** Keybind
+#+begin_src elisp
+  ("C-c a" . org-agenda)
+  :config
+#+end_src
+*** Time Grid
+#+begin_src elisp
+  (setq org-agenda-use-time-grid nil)
+  )
+#+end_src
+** Super Agenda
+*** Install
+#+begin_src elisp
+:eval no
+  (use-package org-super-agenda
+    :straight t
+    :defer t
+  )
+#+end_src
+** Journal
+*** Install
+#+begin_src elisp
+  (use-package org-journal
+    :defer t
+    :straight t
+    :config
+  
+#+end_src
+*** Config
+#+begin_src emacs-lisp
+    (setq org-journal-dir "~/org/journal")
+    (setq org-journal-file-format "%d-%m-%Y.org")
+    (setq org-journal-enable-agenda-integration t)
+  
+#+end_src
+*** Keybinds
+#+begin_src emacs-lisp 
+  :bind ("C-c j" . org-journal-new-entry)
+)
+#+end_src
 * Functionality
 ** Ido
 *** Enable
 #+begin_src emacs-lisp
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
+  :eval no
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (ido-mode 1)
 #+end_src
 
 Credit: [[https://masteringemacs.org/article/introduction-to-ido-mode][masteringemacs.org]]
 *** Vertical Hints
 #+begin_src emacs-lisp
-(straight-use-package 'ido-vertical-mode)
-(ido-vertical-mode 1)
+  :eval no
+  (use-package ido-vertical-mode
+    :straight t
+    :config
+    (ido-vertical-mode 1)
+    )
+#+end_src
+** Ivy
+#+begin_src elisp
+  (use-package ivy :straight t
+    :config
+    (ivy-mode 1)
+    )
 #+end_src
 ** Smex
 *** Install
-#+begin_src emacs-lisp 
-(straight-use-package 'smex)
-(global-set-key (kbd "M-x") 'smex)
+#+begin_src emacs-lisp
+  :eval no
+  (straight-use-package 'smex)
+  (global-set-key (kbd "M-x") 'smex)
 #+end_src
 ** Matching Parens
 #+begin_src elisp
@@ -424,22 +434,35 @@ Flymake is slightly outdated for eglot, so I have to install the newest version
 ** Company
 *** Install
 #+begin_src emacs-lisp
-(straight-use-package 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+  (use-package company
+    :straight t
+    :defer 5
+    :config
+    (global-company-mode)
 #+end_src
 *** Extra Backends
 #+begin_src emacs-lisp
-(straight-use-package 'company-go)
+  (use-package company-go
+    :straight t
+    :defer t
+    )
+)
 #+end_src
 ** eglot
 *** Install
 #+begin_src emacs-lisp
-(straight-use-package 'eglot)
+  (use-package eglot
+    :straight t
+    :defer t
+    )
 #+end_src
 ** elfeed
-*** Install
+***  Install
 #+begin_src emacs-lisp
-(straight-use-package 'elfeed)
+  (use-package elfeed
+    :straight t
+    :defer t
+    )
 #+end_src
 *** Feeds
 #+begin_src emacs-lisp 
@@ -525,11 +548,16 @@ Flymake is slightly outdated for eglot, so I have to install the newest version
 This plugin is great; it just indents everything as I am typing.
 *** Install
     #+begin_src emacs-lisp
-    (straight-use-package 'aggressive-indent)
+      (use-package aggressive-indent
+        :defer t
+        :straight t
+
     #+end_src
 *** Activate Globally
     #+begin_src emacs-lisp
-    (global-aggressive-indent-mode 1)
+      :config
+      (global-aggressive-indent-mode 1)
+      )
     #+end_src
 ** Electric Indent
 Honestly don't know how people live without it.
@@ -542,7 +570,10 @@ Honestly don't know how people live without it.
 ** Ace Jump
 *** Install
 #+begin_src elisp
-  (straight-use-package 'ace-jump-mode)
+  (use-package ace-jump-mode
+  :defer t
+  :straight t
+  )
 #+end_src
 *** Config
 #+begin_src elisp
@@ -552,30 +583,40 @@ Honestly don't know how people live without it.
 ** Yasnippets
 *** Install
 #+begin_src elisp
-(straight-use-package 'yasnippet)
+  (use-package yasnippet
+    :straight t
+    :defer 4
+    
 #+end_src
 *** Activate on programming buffers
 #+begin_src elisp
-  (require 'yasnippet)
-  (yas-reload-all)
-  (add-hook 'prog-mode-hook #'yas-minor-mode)
+    :config
+    (yas-reload-all)
+    (add-hook 'prog-mode-hook #'yas-minor-mode)
+  
 #+end_src
 *** Default Snippets
 #+begin_src elisp
-(straight-use-package 'yasnippet-snippets)
+  (use-package yasnippet-snippets
+    :straight t
+    ))
 #+end_src
 * Keybinds
 ** Hydra
 *** Install
 #+begin_src emacs-lisp
-(straight-use-package 'hydra)
+  (use-package hydra
+    :defer t
+    :straight t
+    )
 #+end_src
 ** Ryo-Modal
 *** Install
    #+begin_src emacs-lisp
      (use-package ryo-modal
-     :straight t
-     :commands ryo-modal-mode
+       :straight t
+       :defer t
+       :commands ryo-modal-mode
    #+end_src
 *** Toggle
     #+begin_src emacs-lisp
@@ -732,13 +773,19 @@ Honestly don't know how people live without it.
 #+end_src
 ***** Org
 #+begin_src elisp
-    (major-mode-hydra-define org-mode (:color blue)
+  (major-mode-hydra-define org-mode (:color blue)
     ("tree"
-    (("a" org-archive-subtree "archive")
-    ("t" org-todo "toggle todo")
-    ("r" org-refile "refile")
-    )
-    ))
+     (("a" org-archive-subtree "archive")
+      ("t" org-todo "toggle todo")
+      ("r" org-refile "refile")
+      )
+     "schedule"
+     (("s t" org-time-stamp "timestamp")
+      ("s s" org-schedule "schedule")
+      ("s d" org-deadline "deadline")
+      )
+     )
+  )
 #+end_src
 *** Global Activation
 #+begin_src emacs-lisp
@@ -756,11 +803,16 @@ Which Key tells me what keybindings are available
 
 *** Install
 #+begin_src emacs-lisp
-  (straight-use-package 'which-key)
+  (use-package which-key
+    :straight t
+    
 #+end_src
 
 *** Config
 #+begin_src emacs-lisp
+  :config
   (which-key-mode)
-  (setq which-key-idle-delay 1)
+  (setq which-key-idle-delay .5)
+  )
 #+end_src
+
