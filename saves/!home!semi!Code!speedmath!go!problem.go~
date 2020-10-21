@@ -1,0 +1,65 @@
+package main
+
+import (
+	"math"
+	"math/rand"
+)
+
+type Problem struct {
+	A int
+	B int
+	Operator string
+	Solution int
+	UserResult int
+}
+
+func randRange(min int, max int) int {
+	return rand.Intn(max-min) + min
+}
+
+func ceil(f float64) int {
+	return int(math.Ceil(f))
+}
+
+func newProblem(a int, b int, operator string) Problem {
+	var p Problem
+	p.TermA = a
+	p.TermB = b
+	p.Operator = operator
+	
+	switch operator {
+	case "add":
+		p.Solution = a + b
+	case "subtract":
+		p.Solution = a - b
+	case "multiply":
+		p.Solution = a * b
+	case "divide":
+		p.Solution = a / b
+	}
+
+	return p
+}
+
+func GenerateNiceProblem(difficulty int, operator string) Problem {
+	var p Problem
+
+	switch operator {
+	case "add":
+		max := ceil(math.Pow(float64(difficulty + 2), 2))
+		min := ceil(float64(max * 0.8))
+
+		a := randRange(min, max)
+		b := randRange(min, max)
+
+		p = newProblem(a, b, operator)
+	case "subtract":
+		max := ceil(math.Pow(float64(difficulty + 2), 2))
+		min := ceil(float64(max * 0.8))
+
+		a := randRange(min,max)
+		b := randRange(ceil(float64(min/2)), min)
+
+		p = newProblem(a, b, operator)
+	}
+}

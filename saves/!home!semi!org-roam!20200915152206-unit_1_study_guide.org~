@@ -1,0 +1,98 @@
+#+title:Unit 1 Study Guide 
+#+roam_tags: physics
+* TODO Create Guide [66%]
+- [X] List topics
+- [X] Give definitions and explanations for topics
+- [ ] Add drill
+* Topics
+** Forces
+*** Net force
+The total absolute force that is being applied to an object.
+
+- 20 newtons of force applied downwards and 20 newtons applied upwards will result in a net force of 0.
+- 50 newtons of force applied to the left, and 25 newtons right will result in a net force of 25.
+
+Since it is the absolute value, directions don't matter aside from whether they are pairs or not. 
+*** Types of forces
+**** Gravity
+The force that is created by a very large object (i.e a planet) which pulls an object towards its surface.
+**** Normal/Support
+A resting object that does not exert any more force than that to oppose gravity. The name explains it well enough.
+***** Examples
++ Table
++ Ground
+**** Applied
+A force that is being actively exerted to push or pull an object.
+***** Examples
++ Pushing hand
++ Hammer
+**** Friction
+The result of two objects rubbing together as they move. This causes the moving object(s) to slow down slightly. 
+**** Air Resistance
+The result of the air pushing back against a moving object. Usually has a negligible effect except for very rapid objects.
+**** Tension
+The result of a rope, rod, string, etc. pulling an object. 
+*** Free Body Diagrams
+A type of diagram that represents all forces being applied to an object as arrows labeled by the type of force. 
+*** Equilibrium
+**** Static equilibrium
+A state in which almost no force is being exerted on an object, rendering the net force zero.
+**** Dynamic equilibrium
+A state in which forces applied cancel out, rendering the net force zero.
+** Weight
+*** Standard SI Unit
+Newtons
+** Mass
+*** Standard SI Unit
+Kilogram
+** Relationships of Weight, Mass, and Gravity
+*** Weight = Mass * Gravity
+*** Mass = Weight / Gravity
+*** Gravity = Weight / Mass
+** GUESS
+*** Givens
+The information that is told through the problem. Ideas that are easily inferred, such as that 'on Earth' means that gravity is 10m/s², are also included.
+*** Unknowns 
+The information that is not given, usually things that you need to find to solve the problem.
+*** Equation
+The equation that results in finding the unknown.
+
+Unknown = [Expression involving givens]
+*** Substitute
+Replace placeholder items with their actual values.
+*** Solve
+Solve the problem algebraically.
+** System Internationale
+*** Acronym
+The acronym for System Internationale is SI.
+*** Translation
+It means "International System"
+*** Metric System
+**** Prefixes
+The metric system uses the same set of prefixes for every unit. These modify the magnitude of the unit. Kilo means thousand, so a kilogram is 1,000 grams. Centi means hundredth, so 100 centimeters is 1 meter. 
+***** Converting between prefixes
+To convert, between prefixes, you can move the decimal point. For every x10 it increases, move the decimal right. For every ÷10 it decreases, move the decimal point left. 
+** Scatter Plots
+*** Independent variable
+The independent variable is the variable that influences the dependent variable. You change the independent to see how the dependent is changed.
+**** What axis it belongs to
+The X axis, always.
+*** Dependent variable
+The variable that is changed by the independent. 
+**** What axis it belongs to
+The Y axis, always.
+*** Chart title
+Lists the independent and dependent variables
+*** Axis titles
+The axes should be labeled with the variable name and its unit. 
+*** Trendline
+**** Negative association
+When the trendline decreases throughout the x axis
+**** Positive association
+When the trendline increases throughout the x axis.
+**** Equation
+The slope-intercept equation of the trendline.
+**** R²
+How accurate the trendline is. The closer it is to 1, the better it is.
+*** Caption
+Describes whether there is a negative or positive association, and other useful details to include. 

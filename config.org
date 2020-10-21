@@ -5,7 +5,6 @@ This is my personal emacs init file. I am restarting it, because my old one was 
 
 * Packages
 ** Bootstrap
-
    Yeah, this code is copy-pasted, but I think it gets a pass because it's pretty much necessary.
    #+BEGIN_SRC emacs-lisp
      (defvar bootstrap-version)
@@ -25,7 +24,7 @@ This is my personal emacs init file. I am restarting it, because my old one was 
 ** Use-package
    A lot of packages use use-package as their examples, and I don't know how to translate those to just raw straight. So I install it here.
    #+begin_src emacs-lisp
-   (eval-when-compile
+   (eval-when-compile  
    (add-to-list 'load-path "~/.config/emacs/use-package")
    (add-to-list 'load-path "~/.config/emacs/bind-key")
    (require 'use-package))
@@ -40,7 +39,8 @@ I'll be honest, GUI Emacs does not look great by default... let's fix that!
 I used the Dracula theme in my old config as well. It seems to be the only one I've tried that properly works with org-mode.
 *** Install Dracula
      #+begin_src emacs-lisp
-     ;(straight-use-package 'dracula-theme)
+       :eval no
+       (straight-use-package 'dracula-theme)
      #+end_src
 *** Install Doom Themes
      #+begin_src emacs-lisp
@@ -181,21 +181,22 @@ Org-mode really is the killer application for emacs.
 ** Log Time
 This will automatically write a timestamp when I close a todo.
 #+begin_src elisp
-(setq org-log-done 'time)
+  (setq org-log-done 'time)
 #+end_src
 ** Drill
 #+begin_src elisp
-;(require 'org-drill)
+  (straight-use-package 'org-drill)
+  (require 'org-drill)
 #+end_src
 ** Superstar
 
 Superstar is a descendant of org-bullets, which increases performance and makes its scope a little bit better.
 *** Install
     #+begin_src emacs-lisp
-          (use-package org-superstar
-            :straight t
-            :defer t
-            :config
+      (use-package org-superstar
+        :straight t
+        :defer t
+        :config
     #+end_src
     
 *** Activate when opening an org-mode file
@@ -215,9 +216,9 @@ Superstar is a descendant of org-bullets, which increases performance and makes 
 ** TODO Faces
 *** Todo
 #+begin_src elisp 
-; (setq org-todo-keyword-faces
-;       '(("TODO" . "green") ("DONE" . "dark gray")
-;         ))
+                                          ; ((setq )etq org-todo-keyword-faces
+                                          ;       '(("TODO" . "green") ("DONE" . "dark gray")
+                                          ;         ))
 #+end_src
 ** Capture
 *** Templates
@@ -228,7 +229,7 @@ Superstar is a descendant of org-bullets, which increases performance and makes 
         "* TODO %?\n  %i\n")
         ("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
         "* TODO %?\nDEADLINE: %t")
-        ("v" "Vocabulary" entry (file+headline "~/vocabulary.org" "Vocabulary")
+        ("v" "Vocabulary" entry (file+headline "~/org/vocabulary.org" "Vocabulary")
          "* %?\n** Definition")
         ))
 
@@ -254,37 +255,37 @@ Superstar is a descendant of org-bullets, which increases performance and makes 
 #+end_src
 *** Tag Sources
 #+begin_src elisp
-(setq org-roam-tag-sources '(prop))
+  (setq org-roam-tag-sources '(prop))
 #+end_src
 *** Company
 #+begin_src elisp
-(straight-use-package 'company-org-roam)
+  (straight-use-package 'company-org-roam)
 #+end_src
 *** Use Ivy
 #+begin_src elisp
-(setq org-roam-completion-system 'ivy)
+  (setq org-roam-completion-system 'ivy)
 #+end_src
 *** Capture Templates
 #+begin_src elisp   
-  ;; (setq org-roam-capture-templates
+  (setq org-roam-capture-templates
 
-  ;;           '(("d" "default" plain (function org-roam--capture-get-point)
+            '(("d" "default" plain (function org-roam--capture-get-point)
 
-  ;;              "%?"
+               "%?"
 
-  ;;              :file-name "${slug}"
+               :file-name "${slug}"
 
-  ;;              :head "#+title: ${title}
+               :head "#+title: ${title}
 
-  ;;   #+date:%u
+    #+date:%u
 
-  ;;   #+roam_tags:
+    #+roam_tags:
 
-  ;;   %i"
+    %i"
 
-  ;;              :unnarrowed t)
+               :unnarrowed t)
 
-  ;;             ))
+              ))
   )
 #+end_src
 ** Writegood
@@ -311,9 +312,9 @@ Superstar is a descendant of org-bullets, which increases performance and makes 
 #+end_src
 *** Config
 #+begin_src elisp
-(add-hook 'org-mode-hook 'visual-line-mode)
-(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
-(add-hook 'org-mode-hook 'centered-window-mode)
+(visual-line-mode)
+(setq cwm-center-window-width 180)
+(centered-window-mode)
 #+end_src
 ** Recur
 Org-mode's scheduled dates is pretty lacking, so recur covers most of the gaps.
@@ -478,6 +479,30 @@ Flymake is slightly outdated for eglot, so I have to install the newest version
 #+begin_src elisp
 (straight-use-package 'notmuch)
 #+end_src
+** Clean Filesystem
+#+begin_src elisp
+(setq backup-directory-alist `(("." . "~/.config/emacs/saves/")))
+#+end_src
+** Neotree
+*** Install
+#+begin_src elisp
+  (use-package neotree
+    :defer t
+    :straight t
+   
+#+end_src
+*** Theme
+#+begin_src elisp
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+)
+#+end_src
+** Edit Server
+#+begin_src elisp
+  :eval no
+  (require 'edit-server)
+  (edit-server-start)
+#+end_src
 * Custom
 ** Functions 
 *** Quicktangle
@@ -487,37 +512,37 @@ Flymake is slightly outdated for eglot, so I have to install the newest version
     #+end_src
 *** Reload-config
 #+begin_src emacs-lisp
-(defun reload-config ()
-(interactive)
-(quicktangle "~/.config/emacs/config.org" "~/.config/emacs/config.el")
-(load-file "~/.config/emacs/config.el")
-)
+  (defun reload-config ()
+    (interactive)
+    (quicktangle "~/.config/emacs/config.org" "~/.config/emacs/config.el")
+    (load-file "~/.config/emacs/config.el")
+  )
 #+end_src
 *** Open-next-line
 #+begin_src emacs-lisp 
-(defun open-next-line ()
-(interactive)
-(end-of-line)
-(newline-and-indent)
-)
+  (defun open-next-line ()
+    (interactive)
+    (end-of-line)
+    (newline-and-indent)
+    )
 #+end_src
 *** Open-prev-line
 #+begin_src emacs-lisp
-(defun open-prev-line ()
-(interactive)
-(beginning-of-line)
-(newline-and-indent)
-(previous-line)
-)
+  (defun open-prev-line ()
+    (interactive)
+    (beginning-of-line)
+    (newline-and-indent)
+    (previous-line)
+  )
 
 #+end_src
 *** Delete Line
 #+begin_src emacs-lisp
-(defun delete-line ()
-(interactive)
-(beginning-of-line)
-(kill-line)
-)
+  (defun delete-line ()
+    (interactive)
+    (beginning-of-line)
+    (kill-line)
+    )
 #+end_src
 * Programming
 ** Rust
@@ -529,9 +554,9 @@ Flymake is slightly outdated for eglot, so I have to install the newest version
 ** Go
 *** Go-mode
     #+begin_src emacs-lisp
-    (straight-use-package 'go-mode
-    :defer t
-    )
+      (straight-use-package 'go-mode
+		      
+     )
     #+end_src
 *** LSP
 #+begin_src emacs-lisp 
@@ -570,15 +595,43 @@ Honestly don't know how people live without it.
 ** Ace Jump
 *** Install
 #+begin_src elisp
-  (use-package ace-jump-mode
-  :defer t
-  :straight t
-  )
+  :eval no
+    (use-package ace-jump-mode
+    :defer t
+    :straight t
+    )
 #+end_src
 *** Config
 #+begin_src elisp
   ;(setq ace-jump-mode-move-keys
         ;(split-string "fjdkslaghrueiwoqprieowpqtyvmcxzbn"))
+#+end_src
+** Avy
+A more modern, flexible interpretation of ace-jump-mode
+*** Install
+#+begin_src elisp 
+  (use-package avy
+    :defer t
+    :straight t
+    )
+#+end_src
+*** Config
+**** Keys
+#+begin_src 
+(setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?d ?h ?f ?u ?g ?k ?w ?y ?o))
+#+end_src
+**** Make background dim
+#+begin_src elisp
+(setq avy-background t)
+#+end_src
+** Swiper
+Swiper is an amazing alternative to isearch built with ivy.
+*** Install
+#+begin_src 
+(use-package swiper
+:defer t
+:straight t
+)
 #+end_src
 ** Yasnippets
 *** Install
@@ -622,28 +675,37 @@ Honestly don't know how people live without it.
     #+begin_src emacs-lisp
       :bind ("<escape>" . ryo-modal-mode)
     #+end_src
+*** Cursor Type
+#+begin_src elisp
+    :config
+  (setq ryo-modal-cursor-type 'box)
+  (setq-default cursor-type 'bar)
+  (setq ryo-modal-cursor-color "red")
+#+end_src
+
 *** Movement
    #+begin_src emacs-lisp
-     :config
-     (ryo-modal-keys 
-      (:norepeat t)
-      ("i" previous-line)
-      ("j" backward-char)
-      ("k" next-line)
-      ("l" forward-char)
-      ("o" forward-word)
-      ("u" backward-word)
-      ("J" beginning-of-line)
-      ("L" end-of-line)
-      ("h" ace-jump-mode)
-      )
+         (ryo-modal-keys 
+          (:norepeat t)
+          ("u" previous-line)
+          ("n" backward-char)
+          ("e" next-line)
+          ("i" forward-char)
+          ("y" forward-word)
+          ("l" backward-word)
+          ("N" beginning-of-line)
+          ("I" end-of-line)
+          ("o" avy-goto-word-1)
+          ("/" swiper)
+          )
    #+end_src
 *** General
 #+begin_src emacs-lisp
-  (ryo-modal-keys
-   (:norepeat t)
-   ("g" keyboard-escape-quit)
-   )
+   (ryo-modal-keys
+    (:norepeat t)
+    ("g" keyboard-escape-quit)
+    (";" execute-extended-command)
+    )
 #+end_src
 *** Editings
 #+begin_src emacs-lisp 
@@ -655,7 +717,7 @@ Honestly don't know how people live without it.
    ("v" set-mark-command) 
    ("q" undo)
    ("w" kill-ring-save)
-   ("t" yank)
+   ("p" yank)
    ))
 #+end_src
 *** Functions
@@ -683,32 +745,30 @@ Honestly don't know how people live without it.
     (ryo-modal-mode -1)
     )
 #+end_src
-*** Hydras
+*** Leaders
 **** Delete
 #+begin_src emacs-lisp 
   (ryo-modal-key
-   "d" :hydra
-   '(hydra-delete (:color blue)
-                  "Delete..."
-                  ("o" kill-word "word forward")
-                  ("u" backward-kill-word "word backward")
-                  ("d" delete-line "line")
-                  ("r" kill-region "region")
-                  ))
+   "d" '(
+         ("i" kill-word)
+         ("n" backward-kill-word)
+         ("d" delete-line)
+         ("r" kill-region)
+         ))
 #+end_src
 **** Change
 #+begin_src emacs-lisp
   (ryo-modal-key 
-   "c" :hydra
-   '(hydra-change (:color blue)
-                  "Change..."
-                  ("o" change-word "word forward")
-                  ("u" backward-change-word "word backward")
-                  ("c" change-line "line")
-                  ("r" kill-region "region")
+   "c" '(
+         ("i" change-word)
+         ("n" backward-change-word)
+         ("u" capitalize-word "capitalize")
+         ("e" downcase-word "lowercase")
+         ("c" change-line "line")
+         ("r" kill-region "region")
   ))
 #+end_src
-**** Leader
+**** Main Leader
 ***** Org
 #+begin_src elisp
   (defhydra org-leader (:color blue)

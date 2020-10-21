@@ -1,0 +1,516 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"strings"
+	//"math"
+)
+
+type Layout struct {
+	Keys [3][]string
+	Name string
+}
+
+type OneLayout struct {
+	Layer1 [3][]string
+	Layer2 [3][]string
+}
+
+var onestress = [3][5]int{
+	{5, 3, 2, 2, 5},
+	{2, 0, 0, 0, 0},
+	{4, 1, 3, 4, 3},
+}
+
+var stressmap = [3][10]int{
+	{5, 2, 2, 3, 4, 4, 3, 2, 2, 5},
+	{1, 0, 0, 0, 2, 2, 0, 0, 0, 1},
+	{4, 3, 3, 2, 4, 4, 2, 3, 4, 4}}
+
+var qwerty = Layout{
+	[3][]string{
+		[]string{"q", "w", "e", "r", "t", "y", "u", "i", "o", "p"},
+		[]string{"a", "s", "d", "f", "g", "h", "j", "k", "l", ";"},
+		[]string{"z", "x", "c", "v", "b", "n", "m", ",", ".", "/"}},
+	"QWERTY",
+}
+
+var dvorak = Layout{
+	[3][]string{
+		[]string{"'", ",", ".", "p", "y", "f", "g", "c", "r", "l"},
+		[]string{"a", "o", "e", "u", "i", "d", "h", "t", "n", "s"},
+		[]string{";", "q", "j", "k", "x", "b", "m", "w", "v", "z"}},
+	"Dvorak",
+}
+
+var colemak = Layout{
+	[3][]string{
+		[]string{"q", "w", "f", "p", "g", "j", "l", "u", "y", ";"},
+		[]string{"a", "r", "s", "t", "d", "h", "n", "e", "i", "o"},
+		[]string{"z", "x", "c", "v", "b", "k", "m", ",", ".", "/"}},
+	"Colemak",
+}
+
+var colemak_dh = Layout{
+	[3][]string{
+		[]string{"q", "w", "f", "p", "b", "j", "l", "u", "y", ";"},
+		[]string{"a", "r", "s", "t", "g", "k", "n", "e", "i", "o"},
+		[]string{"z", "x", "c", "d", "v", "m", "h", ",", ".", "/"}},
+	"Colemak DH",
+}
+
+var hirou = Layout{
+	[3][]string{
+		[]string{"q", "w", "l", "p", "g", "f", "h", "u", "y", "j"},
+		[]string{"a", "r", "s", "t", "d", "m", "n", "e", "i", "o"},
+		[]string{"z", "x", "c", "v", "b", "k", ",", ";", ".", "/"}},
+		"Hirou",
+}
+
+var halmak = Layout{
+	[3][]string{
+		[]string{"w", "l", "r", "b", "z", ";", "q", "u", "d", "j"},
+		[]string{"s", "h", "n", "t", ",", ".", "a", "e", "o", "i"},
+		[]string{"f", "m", "v", "c", "/", "g", "p", "x", "k", "y"}},
+		"Halmak",
+}
+
+var calc = Layout{
+	colemak_dh.Keys,
+	"Best",
+}
+
+func main() {
+	rand.Seed(31632)
+	qwerty.printAnalysis()
+	dvorak.printAnalysis()
+	colemak.printAnalysis()
+	colemak_dh.printAnalysis()
+	hirou.printAnalysis()
+	halmak.printAnalysis()
+
+	l := onehand()
+	fmt.Println()
+	fmt.Println(l.Layer1[0])
+	fmt.Println(l.Layer1[1])
+	fmt.Println(l.Layer1[2])
+	fmt.Println(l.Layer2[0])
+	fmt.Println(l.Layer2[1])
+	fmt.Println(l.Layer2[2])
+}
+
+func (l *Layout) analyze() (int, int) {
+	return l.calcStress(), l.calcAlternation()
+}
+
+func (l *Layout) printAnalysis() {
+	stress, alter := l.analyze()
+	fmt.Println(l.Name, "...")
+	fmt.Printf("\tStress: %d\n", stress)
+	fmt.Printf("\tSame Hand: %d\n", alter)
+}
+
+func (l *Layout) calcStress() int {
+	stress := 0
+	addstress := 0
+	lastfinger := 0
+	finger := 0
+
+	sTop := strings.Join(l.Keys[0], "")
+	sMid := strings.Join(l.Keys[1], "")
+	sBot := strings.Join(l.Keys[2], "")
+	
+	for _, r := range strings.Split(Text, "") {
+		if r == " " {
+			continue
+		}
+
+		if strings.ContainsAny(r, sMid) {
+			addstress, finger = rowStress(r, l.Keys[1], 1)
+		} else if strings.ContainsAny(r, sTop) {
+			addstress, finger = rowStress(r, l.Keys[0], 0)
+		} else if strings.ContainsAny(r, sBot) {
+			addstress, finger = rowStress(r, l.Keys[2], 2)
+		} else {
+			continue
+		}
+
+		stress += addstress
+		if finger == 4 {
+			finger = 3
+		} else if finger == 5 {
+			finger = 6
+		}
+		if finger == lastfinger {
+			stress += 6
+		} 
+		lastfinger = finger
+
+	}
+
+	return stress
+}
+
+func rowStress(r string, row []string, num int) (int, int) {
+	if strings.ContainsAny(r, strings.Join(row, "")) {
+		for i, k := range row {
+			if k == r {
+				return stressmap[num][i], i
+			}
+		}
+	}
+
+	return 0, 0
+}
+
+func (l *Layout) calcAlternation() int {
+	lasthand := 0
+	hand := 0
+
+	samehands := 0
+
+	sTop := strings.Join(l.Keys[0], "")
+	sMid := strings.Join(l.Keys[1], "")
+	sBot := strings.Join(l.Keys[2], "")
+
+	for i, r := range strings.Split(Text, "") {
+		if r == " " {
+			continue
+		}
+
+		if strings.ContainsAny(r, sMid) {
+			hand = rowHand(l.Keys[1], r)
+		} else if strings.ContainsAny(r, sTop) {
+			hand = rowHand(l.Keys[0], r)
+		} else if strings.ContainsAny(r, sBot) {
+			hand = rowHand(l.Keys[2], r)
+		} else {
+			continue
+		}
+
+		if hand == lasthand && i != 0 {
+			samehands++
+		}
+
+	}
+
+	return samehands
+}
+
+func rowHand(row []string, r string) int {
+	for i, k := range row {
+		if k == r {
+			if i <= 4 {
+				return 0
+			} else {
+				return 1
+			}
+		}
+	}
+
+	return 0
+}
+
+func (l OneLayout) effort() int{
+	layer1 := strings.Join(l.Layer1[0], "") + strings.Join(l.Layer1[1], "") + strings.Join(l.Layer1[2], "")
+	layer2 := strings.Join(l.Layer2[0], "") + strings.Join(l.Layer2[1], "") + strings.Join(l.Layer2[2], "")
+	sum := layer1 + layer2
+
+	var effort = 0
+	
+	var finger int
+	var lastfinger int
+	var layer int
+	var lastlayer int
+	var row int
+	for _, r := range strings.Split(Text, "") {
+		if r == " " || !strings.Contains(sum, r){
+			if lastlayer == 2 && r == "" {
+				effort += 2
+			}
+
+			continue
+		} else {
+			var lay [3][]string
+			if strings.Contains(layer1, r) {
+				layer = 1
+				lay = l.Layer1
+			} else {
+				layer = 2
+				lay = l.Layer2
+			}
+			for i:=0;i<5;i++ {
+				switch {
+				case lay[0][i] == r:
+					finger = i
+					row = 0
+					break
+				case lay[1][i] == r:
+					finger = i
+					row = 1
+					break
+				case lay[2][i] == r:
+					finger = i
+					row = 2
+					break
+				}
+			}
+
+			//fmt.Println(finger, lastfinger)
+
+			effort += onestress[row][finger]
+
+			if finger == 0 {
+				finger = 1
+			}
+
+
+
+			if finger == lastfinger {
+				effort += 7
+				//fmt.Println("same finger")
+			}
+			if layer == 2 {
+				effort += 2
+			}
+			if layer != lastlayer {
+				effort += 2
+				//fmt.Println("switched layers")
+			} else {
+				/*if finger > lastfinger {
+					//fmt.Println("outward roll")
+					effort++
+				}*/
+			}
+
+			lastfinger = finger
+			lastlayer = layer
+
+		}
+	}
+	return effort
+}
+
+func onehand() OneLayout {
+	l := OneLayout{
+		[3][]string{
+			{"a","b","c","d","e"},
+			{"f","g","h","i","j"},
+			{"k","l","m","n","o"},
+		},
+		[3][]string{
+			{"p","q","r","s","t"},
+			{"u","v","w","x","y"},
+			{"z",",",".","-","'"},
+		},
+	}
+
+	var init = l.effort() - 200000
+	fmt.Println(init)
+
+	fmt.Println()
+
+	for temp:=100;temp>=0;temp-- {
+		for i:=0;i<=(150-temp)*5;i++{
+			x1 := rand.Intn(5)
+			y1 := rand.Intn(3)
+			l1 := rand.Intn(2)
+			x2 := rand.Intn(5)
+			y2 := rand.Intn(3)
+			l2 := rand.Intn(2)
+
+			first := l.effort()
+			l.swapKeys(y1, x1, l1, y2, x2, l2)
+			second := l.effort()
+
+			if second < first {
+				fmt.Printf("\r%d%% effort | %d temp",int(float32(second)/float32(init)), temp)
+				continue
+			} else if rand.Intn(100) < temp {
+				fmt.Printf("\r%d%% effort | %d temp", int(float32(second)/float32(init)), temp)
+				continue
+			} else {
+				l.swapKeys(y1, x1, l1, y2, x2, l2)
+			}
+		}
+	}
+	return l
+}
+
+func altermak() Layout {
+	l := Layout{
+		calc.Keys,
+		"Altermak",
+	}
+
+	// ALTERNATION
+	stuck := 0
+	for temp:=50;temp>0;temp--{
+		stuck = 0
+		for {
+			x1 := rand.Intn(5)+5
+			y1 := rand.Intn(3)
+			x2 := rand.Intn(5)
+			y2 := rand.Intn(3)
+			
+			first := l.calcAlternation()
+			l.swapKeys(y1, x1, y2, x2)
+			second := l.calcAlternation()
+
+			stuck++
+			if second < first + temp {
+				go fmt.Printf("\r%d same-hand | %d stuck | %d temp", second, stuck, temp)
+			} else {
+				l.swapKeys(y1,x1,y2,x2)
+
+				if stuck > ((50-temp)*3)+50 {
+					go fmt.Printf("\r%d same-hand | %d stuck | %d temp", second, stuck, temp)
+					break
+					
+				} else if stuck % 20 == 0 {
+					go fmt.Printf("\r%d same-hand | %d stuck | %d temp", first, stuck, temp)				}
+				
+				continue
+			}
+		}
+	}
+	fmt.Println()
+
+	stuck = 0
+	
+	// STRAIN
+	for temp:=100;temp>0;temp-- {
+		stuck = 0
+		for {
+			hand := rand.Intn(2)
+			x1 := rand.Intn(5) + (5 * hand)
+			y1 := rand.Intn(3)
+			x2 := rand.Intn(5) + (5 * hand)
+			y2 := rand.Intn(3)
+			
+			first := l.calcStress()
+			l.swapKeys(y1, x1, y2, x2)
+			second := l.calcStress()
+
+			stuck++
+			
+			if second < first + temp {
+				go fmt.Printf("\r%d strain | %d stuck | %d temp", second, stuck, temp)
+			} else {
+				l.swapKeys(y1,x1,y2,x2)
+
+				if stuck > ((100-temp)*5)+200 {
+					break
+				} else if stuck % 20 == 0 {
+					go fmt.Printf("\r%d strain | %d stuck | %d temp", first, stuck, temp)				}
+				
+			}
+			
+		}
+	}
+
+	return l
+}
+
+func bestLayout() Layout {
+	l := Layout{
+		calc.Keys,
+		"Calculated",
+	}
+	stuck := 0
+	for {
+		x1 := rand.Intn(5)+5
+		y1 := rand.Intn(3)
+		x2 := 9-x1
+		y2 := y1
+		
+		first := l.calcAlternation()
+		l.swapKeys(y1, x1, y2, x2)
+		second := l.calcAlternation()
+		if second < first {
+			//fmt.Println("accepted")
+			//continue
+			stuck = 0
+		} else {
+			l.swapKeys(y1,x1,y2,x2)
+			//fmt.Println("rejected")
+			stuck++
+			if stuck > 5000 {
+				break
+			}
+			continue
+		}
+	}
+
+	l.printAnalysis()
+	fmt.Println(l.Keys[0])
+	fmt.Println(l.Keys[1])
+	fmt.Println(l.Keys[2])
+	best := 10000000
+	for temp:=100;temp>0;temp-- {
+		stuck = 0
+		iters := 0
+		for {
+			x1 := rand.Intn(10)
+			y1 := rand.Intn(3)
+			x2 := rand.Intn(10)
+			y2 := rand.Intn(3)
+			
+			firsta := l.calcAlternation()
+			firsts := l.calcStress()
+			l.swapKeys(y1, x1, y2, x2)
+			seconda := l.calcAlternation()
+			seconds := l.calcStress()
+			if seconds < firsts && seconda < firsta + temp {
+				//fmt.Println("accepted")
+				//continue
+				if seconds + seconda < best {
+					stuck = 0
+					best = seconds + seconda
+				}
+				iters++
+				fmt.Printf("\r|STAGE| %d iters . %d deg |LAYOUT| %d alt . %d strain", iters, temp, seconda, seconds)
+			} else {
+				if seconds < firsts + temp && seconda < firsta + temp {
+					//fmt.Println(second-first, "accepted")
+					//stuck = 0
+					iters++
+					fmt.Printf("\r|STAGE| %d iters . %d deg |LAYOUT| %d alt . %d strain", iters, temp, seconda, seconds)
+					continue
+				} else {
+					l.swapKeys(y1,x1,y2,x2)
+					//fmt.Println("rejected")
+					stuck++
+					if stuck > 100-(temp) {
+						break
+					}
+					continue
+				}
+			}
+		}
+	}
+	
+	return l
+}
+
+func (l *Layout) swapKeys(y1 int, x1 int, y2 int, x2 int) {
+	temp := l.Keys[y1][x1]
+	l.Keys[y1][x1] = l.Keys[y2][x2]
+	l.Keys[y2][x2] = temp
+}
+
+func (l *OneLayout) swapKeys(y1 int, x1 int, l1 int, y2 int, x2 int, l2 int) {
+	lay1 := &l.Layer2
+	lay2 := &l.Layer2
+	if l1 == 1 {
+		lay1 = &l.Layer1
+	}
+	if l2 == 1 {
+		lay2 = &l.Layer1
+	}
+	temp := lay1[y1][x1]
+	lay1[y1][x1] = lay2[y2][x2]
+	lay2[y2][x2] = temp
+}
+

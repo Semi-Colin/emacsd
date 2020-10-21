@@ -1,0 +1,14 @@
+#+title: Clonetar
+#+date:[2020-10-16 Fri]
+#+roam_tags: project
+* Price
+| Item                       | Price |
+|----------------------------+-------|
+| Frets (Choc Red)           |  3.00 |
+| Strumbar (Kailh Blue)      |  0.50 |
+| Micro-controller (Elite-C) | 17.99 |
+| Total                      |       |
+
+
+#+TBLFM: $2=@1$2
+

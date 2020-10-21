@@ -13,10 +13,10 @@
  (rear-context-string . "ONE Animal Farm\n")
  (position . 428))
 ("org-capture-last-stored"
- (filename . "~/org/inbox.org")
- (front-context-string . "** TODO Download")
- (rear-context-string . "ce @outage_done\n")
- (position . 102))
+ (filename . "~/org-roam/children_story_books.org")
+ (front-context-string . "#+title:Children")
+ (rear-context-string)
+ (position . 1))
 ("Emacs Config"
  (filename . "~/.config/emacs/config.org")
  (front-context-string . "* Org\n\n  Org-mod")

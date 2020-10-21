@@ -49,6 +49,8 @@
 (setq org-hidden-keywords '(author date email title))
 (use-package org-tempo)
 (setq org-log-done 'time)
+(straight-use-package 'org-drill)
+(require 'org-drill)
 (use-package org-superstar
 :straight t
 :defer t
@@ -67,7 +69,7 @@
 "* TODO %?\n  %i\n")
 ("h" "Homework" entry (file+headline "~/school/homework.org" "Homework")
 "* TODO %?\nDEADLINE: %t")
-("v" "Vocabulary" entry (file+headline "~/vocabulary.org" "Vocabulary")
+("v" "Vocabulary" entry (file+headline "~/org/vocabulary.org" "Vocabulary")
 "* %?\n** Definition")
 ))
 (global-set-key (kbd "C-c x") 'org-capture)
@@ -82,6 +84,16 @@
 (setq org-roam-tag-sources '(prop))
 (straight-use-package 'company-org-roam)
 (setq org-roam-completion-system 'ivy)
+(setq org-roam-capture-templates
+'(("d" "default" plain (function org-roam--capture-get-point)
+"%?"
+:file-name "${slug}"
+:head "#+title: ${title}
+#+date:%u
+#+roam_tags:
+%i"
+:unnarrowed t)
+))
 )
 (use-package writegood-mode
 :straight t
@@ -93,9 +105,9 @@
 :straight t
 :defer t
 )
-(add-hook 'org-mode-hook 'visual-line-mode)
-(add-hook 'org-mode-hook (lambda () (setq cwm-center-window-width 140)))
-(add-hook 'org-mode-hook 'centered-window-mode)
+(visual-line-mode)
+(setq cwm-center-window-width 180)
+(centered-window-mode)
 (use-package org-recur
 :defer t
 :straight t
@@ -151,6 +163,13 @@
 ("reddit.com/r/emacs/.rss" software)
 ))
 (straight-use-package 'notmuch)
+(setq backup-directory-alist `(("." . "~/.config/emacs/saves/")))
+(use-package neotree
+:defer t
+:straight t
+:config
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+)
 (defun reload-config ()
 (interactive)
 (quicktangle "~/.config/emacs/config.org" "~/.config/emacs/config.el")
@@ -175,7 +194,6 @@
 (straight-use-package 'rust-mode
 :defer t)
 (straight-use-package 'go-mode
-:defer t
 )
 (add-hook 'go-mode-hook 'eglot-ensure)
 (straight-use-package 'haskell-mode)
@@ -186,7 +204,13 @@
 (global-aggressive-indent-mode 1)
 )
 (electric-pair-mode 1)
-(use-package ace-jump-mode
+(use-package avy
+:defer t
+:straight t
+)
+(setq avy-keys '(?t ?n ?s ?e ?r ?i ?a ?d ?h ?f ?u ?g ?k ?w ?y ?o))
+(setq avy-background t)
+(use-package swiper
 :defer t
 :straight t
 )
@@ -209,21 +233,26 @@
 :commands ryo-modal-mode
 :bind ("<escape>" . ryo-modal-mode)
 :config
+(setq ryo-modal-cursor-type 'box)
+(setq-default cursor-type 'bar)
+(setq ryo-modal-cursor-color "red")
 (ryo-modal-keys
 (:norepeat t)
-("i" previous-line)
-("j" backward-char)
-("k" next-line)
-("l" forward-char)
-("o" forward-word)
-("u" backward-word)
-("J" beginning-of-line)
-("L" end-of-line)
-("h" ace-jump-mode)
+("u" previous-line)
+("n" backward-char)
+("e" next-line)
+("i" forward-char)
+("y" forward-word)
+("l" backward-word)
+("N" beginning-of-line)
+("I" end-of-line)
+("o" avy-goto-word-1)
+("/" swiper)
 )
 (ryo-modal-keys
 (:norepeat t)
 ("g" keyboard-escape-quit)
+(";" execute-extended-command)
 )
 (ryo-modal-keys
 (:norepeat t)
@@ -233,7 +262,7 @@
 ("v" set-mark-command)
 ("q" undo)
 ("w" kill-ring-save)
-("t" yank)
+("p" yank)
 ))
 (defun change-word ()
 (interactive)
@@ -251,20 +280,18 @@
 (ryo-modal-mode -1)
 )
 (ryo-modal-key
-"d" :hydra
-'(hydra-delete (:color blue)
-"Delete..."
-("o" kill-word "word forward")
-("u" backward-kill-word "word backward")
-("d" delete-line "line")
-("r" kill-region "region")
+"d" '(
+("i" kill-word)
+("n" backward-kill-word)
+("d" delete-line)
+("r" kill-region)
 ))
 (ryo-modal-key
-"c" :hydra
-'(hydra-change (:color blue)
-"Change..."
-("o" change-word "word forward")
-("u" backward-change-word "word backward")
+"c" '(
+("i" change-word)
+("n" backward-change-word)
+("u" capitalize-word "capitalize")
+("e" downcase-word "lowercase")
 ("c" change-line "line")
 ("r" kill-region "region")
 ))

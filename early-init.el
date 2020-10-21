@@ -2,4 +2,5 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
-(add-hook 'after-init-hook (lambda () (set-frame-font "Iosevka 13" nil t)))
+(setq default-frame-alist '((font . "Iosevka 13")))
+;(add-hook 'after-init-hook (lambda () (set-frame-font "Iosevka 13" nil t)))
